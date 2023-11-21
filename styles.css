@@ -337,8 +337,10 @@ h2 {
 
 /* centered properly but had a big yellow wedge on top */
 .wheel-option {
+  /*
   clip-path: polygon(50% 50%, 0% 0%, 100% 0%);
   -webkit-clip-path: polygon(50% 50%, 0% 0%, 100% 0%);
+  */
   height: 100%;
   position: absolute;
   width: 100%;
@@ -425,22 +427,22 @@ h2 {
 .option16 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #ff9966; transform: rotate(337.5deg); }
 */
 
-.option1 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #ab79db; transform: rotate(11.25deg); }
-.option2 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #ff0000; transform: rotate(33.75deg); }
-.option3 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #3abaff; transform: rotate(56.25deg); }
-.option4 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #fff200; transform: rotate(78.75deg); }
-.option5 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #3bb878; transform: rotate(101.25deg); }
-.option6 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #ff6a0e; transform: rotate(123.75deg); }
-.option7 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #ab79db; transform: rotate(146.25deg); }
-.option8 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #ff0000; transform: rotate(168.75deg); }
-.option9 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #3abaff; transform: rotate(191.25deg); }
-.option10 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #fff200; transform: rotate(213.75deg); }
-.option11 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #3bb878; transform: rotate(236.25deg); }
-.option12 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #ff6a0e; transform: rotate(258.75deg); }
-.option13 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #ab79db; transform: rotate(281.25deg); }
-.option14 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #ff0000; transform: rotate(303.75deg); }
-.option15 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #3abaff; transform: rotate(326.25deg); }
-.option16 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #fff200; transform: rotate(348.75deg); }
+.option1 { background: #ab79db; transform: rotate(11.25deg); }
+.option2 { background: #000000; transform: rotate(33.75deg); }
+.option3 { background: #3abaff; transform: rotate(56.25deg); }
+.option4 { background: #fff200; transform: rotate(78.75deg); }
+.option5 { background: #3bb878; transform: rotate(101.25deg); }
+.option6 { background: #ff6a0e; transform: rotate(123.75deg); }
+.option7 { background: #ab79db; transform: rotate(146.25deg); }
+.option8 { background: #000000; transform: rotate(168.75deg); }
+.option9 { background: #3abaff; transform: rotate(191.25deg); }
+.option10 { background: #fff200; transform: rotate(213.75deg); }
+.option11 { background: #3bb878; transform: rotate(236.25deg); }
+.option12 { background: #ff6a0e; transform: rotate(258.75deg); }
+.option13 { background: #ab79db; transform: rotate(281.25deg); }
+.option14 { background: #000000; transform: rotate(303.75deg); }
+.option15 { background: #3abaff; transform: rotate(326.25deg); }
+.option16 { background: #fff200; transform: rotate(348.75deg); }
 
 .slide-in {
   animation: slide 1s ease;
