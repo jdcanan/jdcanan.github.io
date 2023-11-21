@@ -354,112 +354,112 @@ h2 {
   top: 91.5px;
   right: -83px;
   background: #3bb878;
-  transform: rotate(247.5deg);
+  transform: rotate(0deg);
 }
 
 .option2 {
   top: -60px;
   left: 171px;
   background: #ff6a0e;
-  transform: rotate(270deg);
+  transform: rotate(22.5deg);
 }
 
 .option3 {
   top: -108px;
   left: -2px;
   background: #ab79db;
-  transform: rotate(292.5deg);
+  transform: rotate(45deg);
 }
 
 .option4 {
   top: 90.5px;
   left: -91.5px;
   background: #ff0000;
-  transform: rotate(315deg);
+  transform: rotate(67.5deg);
 }
 
 .option5 {
   top: 241.5px;
   left: -3.5px;
   background: #3abaff;
-  transform: rotate(337.5deg);
+  transform: rotate(90deg);
 }
 
 .option6 {
   top: -68px;
   left: 170px;
   background: #fff200;
-  transform: rotate(360deg);
+  transform: rotate(112.5deg);
 }
 
 .option7 {
   top: -108px;
   left: -2px;
   background: #ab79db;
-  transform: rotate(22.5deg);
+  transform: rotate(135deg);
 }
 
 .option8 {
   top: 90.5px;
   left: -91.5px;
   background: #ff0000;
-  transform: rotate(45deg);
+  transform: rotate(157.5deg);
 }
 
 .option9 {
   top: 241.5px;
   left: -3.5px;
   background: #3abaff;
-  transform: rotate(67.5deg);
+  transform: rotate(180deg);
 }
 
 .option10 {
   top: -68px;
   left: 170px;
   background: #fff200;
-  transform: rotate(90deg);
+  transform: rotate(202.5deg);
 }
 
 .option11 {
   top: 91.5px;
   right: -83px;
   background: #3bb878;
-  transform: rotate(112.5deg);
+  transform: rotate(225deg);
 }
 
 .option12 {
   top: -60px;
   left: 171px;
   background: #ff6a0e;
-  transform: rotate(135deg);
+  transform: rotate(247.5deg);
 }
 
 .option13 {
   top: -108px;
   left: -2px;
   background: #ab79db;
-  transform: rotate(157.5deg);
+  transform: rotate(270deg);
 }
 
 .option14 {
   top: 90.5px;
   left: -91.5px;
   background: #ff0000;
-  transform: rotate(180deg);
+  transform: rotate(292.5deg);
 }
 
 .option15 {
   top: 241.5px;
   left: -3.5px;
   background: #3abaff;
-  transform: rotate(202.5deg);
+  transform: rotate(315deg);
 }
 
 .option16 {
   top: -68px;
   left: 170px;
   background: #fff200;
-  transform: rotate(225deg);
+  transform: rotate(337.5deg);
 }
 
 .mark1 {
