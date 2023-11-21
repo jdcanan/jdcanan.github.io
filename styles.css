@@ -337,8 +337,8 @@ h2 {
 
 /* centered properly but had a big yellow wedge on top */
 .wheel-option {
-  clip-path: polygon(50% 50%, 0% 0%, 28% 0%);
-  -webkit-clip-path: polygon(50% 50%, 0% 0%, 28% 0%);
+  clip-path: polygon(50% 50%, 0% 0%, 29% 0%);
+  -webkit-clip-path: polygon(50% 50%, 0% 0%, 29% 0%);
   height: 100%;
   position: absolute;
   width: 100%;
