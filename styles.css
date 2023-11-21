@@ -343,21 +343,24 @@ h2 {
   position: absolute;
   width: 100%;
 }
+*/
 
+/* centered properly but had a big yellow wedge on top */
 .wheel-option {
   clip-path: polygon(50% 50%, 0 0, 100% 0);
   height: 100%;
   position: absolute;
   width: 100%;
 }
-*/
 
+/* makes a sunflower of small wedges
 .wheel-option {
   clip-path: polygon(50% 0%, 100% 0%, 50% 100%, 0% 100%);
   height: 50%;
   position: absolute;
   width: 50%;
 }
+*/
 
 .q-mark {
   font-size: 1.8rem;
@@ -425,7 +428,7 @@ h2 {
 .option1 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #3bb878; transform: rotate(0deg); }
 .option2 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #ff6a0e; transform: rotate(22.5deg); }
 .option3 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #ab79db; transform: rotate(45deg); }
-.option4 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #ff0000; transform: rotate(67.5deg); }
+.option4 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #000000; transform: rotate(67.5deg); }
 .option5 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #3abaff; transform: rotate(90deg); }
 .option6 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #fff200; transform: rotate(112.5deg); }
 .option7 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #da8b1a; transform: rotate(135deg); }
