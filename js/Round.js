@@ -15,7 +15,7 @@ class Round {
 
   generateWheelValue() {
     let wheelVals = [];
-    for (var i = 0; i < 6; i++) {
+    for (var i = 0; i < wheel.spinValues.length; i++) {
       let randomIndex = Math.floor(Math.random() * data.wheel.length);
       wheelVals.push(data.wheel[randomIndex]);
     }
