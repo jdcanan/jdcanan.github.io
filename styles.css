@@ -336,11 +336,11 @@ h2 {
 }
 
 .wheel-option {
-  clip-path: polygon(0% 87%, 50% 0%, 50% 0%, 100% 87%);
-  -webkit-clip-path: polygon(0% 87%, 50% 0%, 50% 0%, 100% 87%);
-  height: 350px;
+  clip-path: polygon(50% 50%, 0% 0%, 100% 0%);
+  -webkit-clip-path: polygon(50% 50%, 0% 0%, 100% 0%);
+  height: 100%;
   position: absolute;
-  width: 350px;
+  width: 100%;
 }
 
 .q-mark {
@@ -369,70 +369,22 @@ h2 {
 .mark16 { transform: rotate(337.5deg); }
 
 /* Updated options for 16 wedges */
-.option1 { 
-  transform: rotate(11.25deg); 
-  background: #ab79db; /* Purple */
-}
-.option2 { 
-  transform: rotate(33.75deg); 
-  background: #ff0000; /* Red */
-}
-.option3 { 
-  transform: rotate(56.25deg); 
-  background: #3abaff; /* Blue */
-}
-.option4 { 
-  transform: rotate(78.75deg); 
-  background: #fff200; /* Yellow */
-}
-.option5 { 
-  transform: rotate(101.25deg); 
-  background: #3bb878; /* Green */
-}
-.option6 { 
-  transform: rotate(123.75deg); 
-  background: #ff6a0e; /* Orange */
-}
-.option7 { 
-  transform: rotate(146.25deg); 
-  background: #ab79db; /* Purple */
-}
-.option8 { 
-  transform: rotate(168.75deg); 
-  background: #ff0000; /* Red */
-}
-.option9 { 
-  transform: rotate(191.25deg); 
-  background: #3abaff; /* Blue */
-}
-.option10 { 
-  transform: rotate(213.75deg); 
-  background: #fff200; /* Yellow */
-}
-.option11 { 
-  transform: rotate(236.25deg); 
-  background: #3bb878; /* Green */
-}
-.option12 { 
-  transform: rotate(258.75deg); 
-  background: #ff6a0e; /* Orange */
-}
-.option13 { 
-  transform: rotate(281.25deg); 
-  background: #ab79db; /* Purple */
-}
-.option14 { 
-  transform: rotate(303.75deg); 
-  background: #ff0000; /* Red */
-}
-.option15 { 
-  transform: rotate(326.25deg); 
-  background: #3abaff; /* Blue */
-}
-.option16 { 
-  transform: rotate(348.75deg); 
-  background: #fff200; /* Yellow */
-}
+.option1 { background: #ab79db; transform: rotate(11.25deg); }
+.option2 { background: #ff0000; transform: rotate(33.75deg); }
+.option3 { background: #3abaff; transform: rotate(56.25deg); }
+.option4 { background: #fff200; transform: rotate(78.75deg); }
+.option5 { background: #3bb878; transform: rotate(101.25deg); }
+.option6 { background: #ff6a0e; transform: rotate(123.75deg); }
+.option7 { background: #ab79db; transform: rotate(146.25deg); }
+.option8 { background: #ff0000; transform: rotate(168.75deg); }
+.option9 { background: #3abaff; transform: rotate(191.25deg); }
+.option10 { background: #fff200; transform: rotate(213.75deg); }
+.option11 { background: #3bb878; transform: rotate(236.25deg); }
+.option12 { background: #ff6a0e; transform: rotate(258.75deg); }
+.option13 { background: #ab79db; transform: rotate(281.25deg); }
+.option14 { background: #ff0000; transform: rotate(303.75deg); }
+.option15 { background: #3abaff; transform: rotate(326.25deg); }
+.option16 { background: #fff200; transform: rotate(348.75deg); }
 
 .slide-in {
   animation: slide 1s ease;
