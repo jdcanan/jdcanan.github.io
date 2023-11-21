@@ -425,7 +425,7 @@ h2 {
 .option16 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #ff9966; transform: rotate(337.5deg); }
 */
 
-.option1 { background: #ab79db; transform: rotate(11.25deg); }
+.option1 { background: #ab79db; /*transform: rotate(11.25deg);*/ }
 .option2 { background: #000000; transform: rotate(33.75deg); }
 .option3 { background: #3abaff; transform: rotate(56.25deg); }
 .option4 { background: #fff200; transform: rotate(78.75deg); }
