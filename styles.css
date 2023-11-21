@@ -350,85 +350,22 @@ h2 {
   z-index: 7;
 }
 
-.option1 {
-  clip-path: polygon(0% 0%, 50% 0%, 50% 100%);
-  background: #3bb878;
-}
-
-.option2 {
-  clip-path: polygon(0% 0%, 50% 0%, 100% 50%, 50% 100%);
-  background: #ff6a0e;
-}
-
-.option3 {
-  clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%);
-  background: #ab79db;
-}
-
-.option4 {
-  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
-  background: #ff0000;
-}
-
-.option5 {
-  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%, 50% 50%);
-  background: #3abaff;
-}
-
-.option6 {
-  clip-path: polygon(0% 0%, 50% 0%, 100% 0%, 100% 100%, 0% 100%);
-  background: #fff200;
-}
-
-.option7 {
-  clip-path: polygon(0% 0%, 50% 0%, 100% 0%, 100% 100%, 0% 100%);
-  background: #ab79db;
-}
-
-.option8 {
-  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%, 50% 50%);
-  background: #ff0000;
-}
-
-.option9 {
-  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%, 50% 50%);
-  background: #3abaff;
-}
-
-.option10 {
-  clip-path: polygon(0% 0%, 50% 0%, 100% 0%, 100% 100%, 0% 100%);
-  background: #fff200;
-}
-
-.option11 {
-  clip-path: polygon(0% 0%, 50% 0%, 50% 100%);
-  background: #3bb878;
-}
-
-.option12 {
-  clip-path: polygon(0% 0%, 50% 0%, 100% 50%, 50% 100%);
-  background: #ff6a0e;
-}
-
-.option13 {
-  clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%);
-  background: #ab79db;
-}
-
-.option14 {
-  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
-  background: #ff0000;
-}
-
-.option15 {
-  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%, 50% 50%);
-  background: #3abaff;
-}
-
-.option16 {
-  clip-path: polygon(0% 0%, 50% 0%, 100% 0%, 100% 100%, 0% 100%);
-  background: #fff200;
-}
+.option1 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #3bb878; }
+.option2 { clip-path: polygon(50% 0%, 100% 0%, 50% 100%); background: #ff6a0e; }
+.option3 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #ab79db; }
+.option4 { clip-path: polygon(50% 0%, 100% 0%, 50% 100%); background: #ff0000; }
+.option5 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #3abaff; }
+.option6 { clip-path: polygon(50% 0%, 100% 0%, 50% 100%); background: #fff200; }
+.option7 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #da8b1a; }
+.option8 { clip-path: polygon(50% 0%, 100% 0%, 50% 100%); background: #51ef88; }
+.option9 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #ff6600; }
+.option10 { clip-path: polygon(50% 0%, 100% 0%, 50% 100%); background: #9467bd; }
+.option11 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #33cc33; }
+.option12 { clip-path: polygon(50% 0%, 100% 0%, 50% 100%); background: #66ccff; }
+.option13 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #c65353; }
+.option14 { clip-path: polygon(50% 0%, 100% 0%, 50% 100%); background: #ffff66; }
+.option15 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #3399ff; }
+.option16 { clip-path: polygon(50% 0%, 100% 0%, 50% 100%); background: #ff9966; }
 
 .mark1 {
   right: 157px;
