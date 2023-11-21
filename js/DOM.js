@@ -237,11 +237,17 @@ const domUpdates = {
     $('.hint-value').text(puzzle.currentPuzzle.category)
   },
 
+  //Replacing this part so that I can generate a wheel with 16 wedges to match the physical wheel I built
+  //displayWheelValues(wheel) {
+  //  for (var i = 0; i < 6; i++) {
+  //    $(`.mark${i + 1}`).text(wheel.spinValues[i])
+  //  }
+  //},
   displayWheelValues(wheel) {
-    for (var i = 0; i < 6; i++) {
-      $(`.mark${i + 1}`).text(wheel.spinValues[i])
-    }
-  },
+  for (let i = 0; i < wheel.spinValues.length; i++) {
+    $(`.mark${i + 1}`).text(wheel.spinValues[i]);
+  }
+},
 
   enableLetters() {
     let keyboardLetters = Array.from($('.keyboard-letters'));
