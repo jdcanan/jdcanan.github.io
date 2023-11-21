@@ -351,115 +351,83 @@ h2 {
 }
 
 .option1 {
-  top: 91.5px;
-  right: -83px;
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%);
   background: #3bb878;
-  transform: rotate(0deg);
 }
 
 .option2 {
-  top: -60px;
-  left: 171px;
+  clip-path: polygon(50% 50%, 0 0, 100% 0);
   background: #ff6a0e;
-  transform: rotate(22.5deg);
 }
 
 .option3 {
-  top: -108px;
-  left: -2px;
+  clip-path: polygon(50% 50%, 0 0, 0 100%);
   background: #ab79db;
-  transform: rotate(45deg);
 }
 
 .option4 {
-  top: 90.5px;
-  left: -91.5px;
+  clip-path: polygon(50% 50%, 0 100%, 100% 100%);
   background: #ff0000;
-  transform: rotate(67.5deg);
 }
 
 .option5 {
-  top: 241.5px;
-  left: -3.5px;
+  clip-path: polygon(50% 50%, 0 100%, 100% 0);
   background: #3abaff;
-  transform: rotate(90deg);
 }
 
 .option6 {
-  top: -68px;
-  left: 170px;
+  clip-path: polygon(50% 50%, 0 100%, 0 0);
   background: #fff200;
-  transform: rotate(112.5deg);
 }
 
 .option7 {
-  top: -108px;
-  left: -2px;
+  clip-path: polygon(50% 50%, 0 100%, 0 0);
   background: #ab79db;
-  transform: rotate(135deg);
 }
 
 .option8 {
-  top: 90.5px;
-  left: -91.5px;
+  clip-path: polygon(50% 50%, 0 100%, 100% 0);
   background: #ff0000;
-  transform: rotate(157.5deg);
 }
 
 .option9 {
-  top: 241.5px;
-  left: -3.5px;
+  clip-path: polygon(50% 50%, 0 100%, 100% 100%);
   background: #3abaff;
-  transform: rotate(180deg);
 }
 
 .option10 {
-  top: -68px;
-  left: 170px;
+  clip-path: polygon(50% 50%, 0 100%, 0 0);
   background: #fff200;
-  transform: rotate(202.5deg);
 }
 
 .option11 {
-  top: 91.5px;
-  right: -83px;
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%);
   background: #3bb878;
-  transform: rotate(225deg);
 }
 
 .option12 {
-  top: -60px;
-  left: 171px;
+  clip-path: polygon(50% 50%, 0 0, 100% 0);
   background: #ff6a0e;
-  transform: rotate(247.5deg);
 }
 
 .option13 {
-  top: -108px;
-  left: -2px;
+  clip-path: polygon(50% 50%, 0 0, 0 100%);
   background: #ab79db;
-  transform: rotate(270deg);
 }
 
 .option14 {
-  top: 90.5px;
-  left: -91.5px;
+  clip-path: polygon(50% 50%, 0 100%, 100% 100%);
   background: #ff0000;
-  transform: rotate(292.5deg);
 }
 
 .option15 {
-  top: 241.5px;
-  left: -3.5px;
+  clip-path: polygon(50% 50%, 0 100%, 100% 0);
   background: #3abaff;
-  transform: rotate(315deg);
 }
 
 .option16 {
-  top: -68px;
-  left: 170px;
+  clip-path: polygon(50% 50%, 0 100%, 0 0);
   background: #fff200;
-  transform: rotate(337.5deg);
 }
 
 .mark1 {
