@@ -350,88 +350,212 @@ h2 {
   z-index: 7;
 }
 
-.mark1 {
-  right: 115px;
-  bottom: 2px;
-  transform: rotate(-65deg);
-  height: 221px;
-}
-
-.mark2 {
-  right: 158px;
-  bottom: 100px;
-  transform: rotate(-180deg);
-}
-
-.mark3 {
-  right: 162px;
-  bottom: 100px;
-  transform: rotate(-177deg);
-}
-
-.mark4 {
-  right: 157px;
-  bottom: 98px;
-  transform: rotate(-181deg);
-}
-
-.mark5 {
-  right: 157px;
-  bottom: 95px;
-  transform: rotate(-181deg);
-}
-
-.mark6 {
-  right: 162px;
-  bottom: 98px;
-  transform: rotate(-178deg);
-  height: 221px;
-}
-
 .option1 {
-  top: -108px;
-  left: -2px;
-  transform: rotate(30deg);  
-  background: #ab79db;
-}
-
-.option2 {
-  clip-path: polygon(0% 84%, 50% 0%, 50% 0%, 100% 87%);
-  -webkit-clip-path: polygon(0% 84%, 50% 0%, 50% 0%, 100% 87%);
-  top: 90.5px;
-  left: -91.5px;
-  background: #ff0000;
-  transform: rotate(90deg);
-}
-
-.option3 {
-  top: 241.5px;
-  left: -3.5px;
-  background: #3abaff;
-  transform: rotate(30.2deg);
-}
-
-.option4 {
-  bottom: -68px;
-  left: 170px;
-  background: #fff200;
-  transform: rotate(-29.5deg);
-}
-
-.option5 {
   top: 91.5px;
   right: -83px;
   background: #3bb878;
-  transform: rotate(-89.3deg);
+  transform: rotate(247.5deg);
 }
 
-.option6 {
-  clip-path: polygon(0% 83%, 50% 0%, 50% 0%, 100% 87%);
-  -webkit-clip-path: polygon(0% 83%, 50% 0%, 50% 0%, 100% 87%);
+.option2 {
   top: -60px;
   left: 171px;
   background: #ff6a0e;
-  transform: rotate(-150.1deg);
+  transform: rotate(270deg);
+}
+
+.option3 {
+  top: -108px;
+  left: -2px;
+  background: #ab79db;
+  transform: rotate(292.5deg);
+}
+
+.option4 {
+  top: 90.5px;
+  left: -91.5px;
+  background: #ff0000;
+  transform: rotate(315deg);
+}
+
+.option5 {
+  top: 241.5px;
+  left: -3.5px;
+  background: #3abaff;
+  transform: rotate(337.5deg);
+}
+
+.option6 {
+  top: -68px;
+  left: 170px;
+  background: #fff200;
+  transform: rotate(360deg);
+}
+
+.option7 {
+  top: -108px;
+  left: -2px;
+  background: #ab79db;
+  transform: rotate(22.5deg);
+}
+
+.option8 {
+  top: 90.5px;
+  left: -91.5px;
+  background: #ff0000;
+  transform: rotate(45deg);
+}
+
+.option9 {
+  top: 241.5px;
+  left: -3.5px;
+  background: #3abaff;
+  transform: rotate(67.5deg);
+}
+
+.option10 {
+  top: -68px;
+  left: 170px;
+  background: #fff200;
+  transform: rotate(90deg);
+}
+
+.option11 {
+  top: 91.5px;
+  right: -83px;
+  background: #3bb878;
+  transform: rotate(112.5deg);
+}
+
+.option12 {
+  top: -60px;
+  left: 171px;
+  background: #ff6a0e;
+  transform: rotate(135deg);
+}
+
+.option13 {
+  top: -108px;
+  left: -2px;
+  background: #ab79db;
+  transform: rotate(157.5deg);
+}
+
+.option14 {
+  top: 90.5px;
+  left: -91.5px;
+  background: #ff0000;
+  transform: rotate(180deg);
+}
+
+.option15 {
+  top: 241.5px;
+  left: -3.5px;
+  background: #3abaff;
+  transform: rotate(202.5deg);
+}
+
+.option16 {
+  top: -68px;
+  left: 170px;
+  background: #fff200;
+  transform: rotate(225deg);
+}
+
+.mark1 {
+  right: 157px;
+  bottom: 95px;
+  transform: rotate(247.5deg);
+}
+
+.mark2 {
+  right: 162px;
+  bottom: 98px;
+  transform: rotate(270deg);
+}
+
+.mark3 {
+  right: 115px;
+  bottom: 2px;
+  transform: rotate(292.5deg);
+}
+
+.mark4 {
+  right: 158px;
+  bottom: 100px;
+  transform: rotate(315deg);
+}
+
+.mark5 {
+  right: 162px;
+  bottom: 100px;
+  transform: rotate(337.5deg);
+}
+
+.mark6 {
+  right: 157px;
+  bottom: 98px;
+  transform: rotate(360deg);
+}
+
+.mark7 {
+  right: 115px;
+  bottom: 2px;
+  transform: rotate(22.5deg);
+}
+
+.mark8 {
+  right: 158px;
+  bottom: 100px;
+  transform: rotate(45deg);
+}
+
+.mark9 {
+  right: 162px;
+  bottom: 100px;
+  transform: rotate(67.5deg);
+}
+
+.mark10 {
+  right: 157px;
+  bottom: 98px;
+  transform: rotate(90deg);
+}
+
+.mark11 {
+  right: 157px;
+  bottom: 95px;
+  transform: rotate(112.5deg);
+}
+
+.mark12 {
+  right: 162px;
+  bottom: 98px;
+  transform: rotate(135deg);
+}
+
+.mark13 {
+  right: 115px;
+  bottom: 2px;
+  transform: rotate(157.5deg);
+}
+
+.mark14 {
+  right: 158px;
+  bottom: 100px;
+  transform: rotate(180deg);
+}
+
+.mark15 {
+  right: 162px;
+  bottom: 100px;
+  transform: rotate(202.5deg);
+}
+
+.mark16 {
+  right: 157px;
+  bottom: 98px;
+  transform: rotate(225deg);
 }
 
 .slide-in {
