@@ -350,117 +350,88 @@ h2 {
   z-index: 7;
 }
 
-.option1 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #3bb878; }
-.option2 { clip-path: polygon(50% 0%, 100% 0%, 50% 100%); background: #ff6a0e; }
-.option3 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #ab79db; }
-.option4 { clip-path: polygon(50% 0%, 100% 0%, 50% 100%); background: #ff0000; }
-.option5 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #3abaff; }
-.option6 { clip-path: polygon(50% 0%, 100% 0%, 50% 100%); background: #fff200; }
-.option7 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #da8b1a; }
-.option8 { clip-path: polygon(50% 0%, 100% 0%, 50% 100%); background: #51ef88; }
-.option9 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #ff6600; }
-.option10 { clip-path: polygon(50% 0%, 100% 0%, 50% 100%); background: #9467bd; }
-.option11 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #33cc33; }
-.option12 { clip-path: polygon(50% 0%, 100% 0%, 50% 100%); background: #66ccff; }
-.option13 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #c65353; }
-.option14 { clip-path: polygon(50% 0%, 100% 0%, 50% 100%); background: #ffff66; }
-.option15 { clip-path: polygon(0% 0%, 50% 0%, 50% 100%); background: #3399ff; }
-.option16 { clip-path: polygon(50% 0%, 100% 0%, 50% 100%); background: #ff9966; }
+/* Updated marks for 16 wedges */
+.mark1 { transform: rotate(0deg); }
+.mark2 { transform: rotate(22.5deg); }
+.mark3 { transform: rotate(45deg); }
+.mark4 { transform: rotate(67.5deg); }
+.mark5 { transform: rotate(90deg); }
+.mark6 { transform: rotate(112.5deg); }
+.mark7 { transform: rotate(135deg); }
+.mark8 { transform: rotate(157.5deg); }
+.mark9 { transform: rotate(180deg); }
+.mark10 { transform: rotate(202.5deg); }
+.mark11 { transform: rotate(225deg); }
+.mark12 { transform: rotate(247.5deg); }
+.mark13 { transform: rotate(270deg); }
+.mark14 { transform: rotate(292.5deg); }
+.mark15 { transform: rotate(315deg); }
+.mark16 { transform: rotate(337.5deg); }
 
-.mark1 {
-  right: 157px;
-  bottom: 95px;
-  transform: rotate(247.5deg);
+/* Updated options for 16 wedges */
+.option1 { 
+  transform: rotate(11.25deg); 
+  background: #ab79db; /* Purple */
 }
-
-.mark2 {
-  right: 162px;
-  bottom: 98px;
-  transform: rotate(270deg);
+.option2 { 
+  transform: rotate(33.75deg); 
+  background: #ff0000; /* Red */
 }
-
-.mark3 {
-  right: 115px;
-  bottom: 2px;
-  transform: rotate(292.5deg);
+.option3 { 
+  transform: rotate(56.25deg); 
+  background: #3abaff; /* Blue */
 }
-
-.mark4 {
-  right: 158px;
-  bottom: 100px;
-  transform: rotate(315deg);
+.option4 { 
+  transform: rotate(78.75deg); 
+  background: #fff200; /* Yellow */
 }
-
-.mark5 {
-  right: 162px;
-  bottom: 100px;
-  transform: rotate(337.5deg);
+.option5 { 
+  transform: rotate(101.25deg); 
+  background: #3bb878; /* Green */
 }
-
-.mark6 {
-  right: 157px;
-  bottom: 98px;
-  transform: rotate(360deg);
+.option6 { 
+  transform: rotate(123.75deg); 
+  background: #ff6a0e; /* Orange */
 }
-
-.mark7 {
-  right: 115px;
-  bottom: 2px;
-  transform: rotate(22.5deg);
+.option7 { 
+  transform: rotate(146.25deg); 
+  background: #ab79db; /* Purple */
 }
-
-.mark8 {
-  right: 158px;
-  bottom: 100px;
-  transform: rotate(45deg);
+.option8 { 
+  transform: rotate(168.75deg); 
+  background: #ff0000; /* Red */
 }
-
-.mark9 {
-  right: 162px;
-  bottom: 100px;
-  transform: rotate(67.5deg);
+.option9 { 
+  transform: rotate(191.25deg); 
+  background: #3abaff; /* Blue */
 }
-
-.mark10 {
-  right: 157px;
-  bottom: 98px;
-  transform: rotate(90deg);
+.option10 { 
+  transform: rotate(213.75deg); 
+  background: #fff200; /* Yellow */
 }
-
-.mark11 {
-  right: 157px;
-  bottom: 95px;
-  transform: rotate(112.5deg);
+.option11 { 
+  transform: rotate(236.25deg); 
+  background: #3bb878; /* Green */
 }
-
-.mark12 {
-  right: 162px;
-  bottom: 98px;
-  transform: rotate(135deg);
+.option12 { 
+  transform: rotate(258.75deg); 
+  background: #ff6a0e; /* Orange */
 }
-
-.mark13 {
-  right: 115px;
-  bottom: 2px;
-  transform: rotate(157.5deg);
+.option13 { 
+  transform: rotate(281.25deg); 
+  background: #ab79db; /* Purple */
 }
-
-.mark14 {
-  right: 158px;
-  bottom: 100px;
-  transform: rotate(180deg);
+.option14 { 
+  transform: rotate(303.75deg); 
+  background: #ff0000; /* Red */
 }
-
-.mark15 {
-  right: 162px;
-  bottom: 100px;
-  transform: rotate(202.5deg);
+.option15 { 
+  transform: rotate(326.25deg); 
+  background: #3abaff; /* Blue */
 }
-
-.mark16 {
-  right: 157px;
-  bottom: 98px;
-  transform: rotate(225deg);
+.option16 { 
+  transform: rotate(348.75deg); 
+  background: #fff200; /* Yellow */
 }
 
 .slide-in {
