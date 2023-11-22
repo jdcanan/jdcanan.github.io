@@ -317,7 +317,6 @@ h2 {
   z-index: 6;
 }
 
-
 .wheel-circle {
   background: lightblue;
   clip-path: circle(50%);
@@ -325,7 +324,7 @@ h2 {
   height: 525px;
   left: 0;
   margin: 0 auto;
-  position: relative; /* was absolute */ 
+  position: absolute;
   right: 0;
   top: 40px;
   width: 525px;
@@ -343,6 +342,16 @@ h2 {
   width: 100%;
 }
 
+/* Original wheel with 6 wedges 
+.wheel-option {
+  clip-path: polygon(0% 87%, 50% 0%, 50% 0%, 100% 87%);
+  -webkit-clip-path: polygon(0% 87%, 50% 0%, 50% 0%, 100% 87%);
+  height: 350px;
+  position: absolute;
+  width: 350px;
+}
+*/
+
 .q-mark {
   font-size: 1.8rem;
   position: absolute;
@@ -350,7 +359,7 @@ h2 {
   z-index: 7;
 }
 
-.mark1 { transform: rotate(0deg); }
+.mark1 { transform: rotate(0deg); left: 35%; right: 35%}
 .mark2 { transform: rotate(22.5deg); }
 .mark3 { transform: rotate(45deg); }
 .mark4 { transform: rotate(67.5deg); }
