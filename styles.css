@@ -325,7 +325,7 @@ h2 {
   height: 525px;
   left: 0;
   margin: 0 auto;
-  position: relative; /* was absolute */ 
+  position: absolute;
   right: 0;
   top: 40px;
   width: 525px;
@@ -336,11 +336,11 @@ h2 {
 }
 
 .wheel-option {
-  clip-path: polygon(50% 50%, 0% 0%, 29.5% 0%);
-  -webkit-clip-path: polygon(50% 50%, 0% 0%, 29.5% 0%);
-  height: 100%;
+  clip-path: polygon(0% 87%, 50% 0%, 50% 0%, 100% 87%);
+  -webkit-clip-path: polygon(0% 87%, 50% 0%, 50% 0%, 100% 87%);
+  height: 350px;
   position: absolute;
-  width: 100%;
+  width: 350px;
 }
 
 .q-mark {
@@ -350,58 +350,89 @@ h2 {
   z-index: 7;
 }
 
-.mark1 { transform: rotate(0deg); }
-.mark2 { transform: rotate(22.5deg); }
-.mark3 { transform: rotate(45deg); }
-.mark4 { transform: rotate(67.5deg); }
-.mark5 { transform: rotate(90deg); }
-.mark6 { transform: rotate(112.5deg); }
-.mark7 { transform: rotate(135deg); }
-.mark8 { transform: rotate(157.5deg); }
-.mark9 { transform: rotate(180deg); }
-.mark10 { transform: rotate(202.5deg); }
-.mark11 { transform: rotate(225deg); }
-.mark12 { transform: rotate(247.5deg); }
-.mark13 { transform: rotate(270deg); }
-.mark14 { transform: rotate(292.5deg); }
-.mark15 { transform: rotate(315deg); }
-.mark16 { transform: rotate(337.5deg); }
+.mark1 {
+  right: 115px;
+  bottom: 2px;
+  transform: rotate(-65deg);
+  height: 221px;
+}
 
-/*
-.mark1 { transform: rotate(0deg); right: 115px; bottom: 2px; height: 221px;}
-.mark2 { transform: rotate(22.5deg); position: absolute; left: 70%; top: 15%; }
-.mark3 { transform: rotate(45deg); position: absolute; left: 85%; top: 30%; }
-.mark4 { transform: rotate(67.5deg); position: absolute; left: 95%; top: 50%; }
-.mark5 { transform: rotate(90deg); position: absolute; left: 85%; top: 70%; }
-.mark6 { transform: rotate(112.5deg); position: absolute; left: 70%; top: 85%; }
-.mark7 { transform: rotate(135deg); position: absolute; left: 50%; top: 90%; }
-.mark8 { transform: rotate(157.5deg); position: absolute; left: 30%; top: 85%; }
-.mark9 { transform: rotate(180deg); position: absolute; left: 15%; top: 70%; }
-.mark10 { transform: rotate(202.5deg); position: absolute; left: 5%; top: 50%; }
-.mark11 { transform: rotate(225deg); position: absolute; left: 15%; top: 30%; }
-.mark12 { transform: rotate(247.5deg); position: absolute; left: 30%; top: 15%; }
-.mark13 { transform: rotate(270deg); position: absolute; left: 50%; top: 5%; }
-.mark14 { transform: rotate(292.5deg); position: absolute; left: 70%; top: 15%; }
-.mark15 { transform: rotate(315deg); position: absolute; left: 85%; top: 30%; }
-.mark16 { transform: rotate(337.5deg); position: absolute; left: 95%; top: 50%; }
-*/
+.mark2 {
+  right: 158px;
+  bottom: 100px;
+  transform: rotate(-180deg);
+}
 
-.option1 { background: #ab79db; transform: rotate(0deg); }
-.option2 { background: #ff0000; transform: rotate(22.5deg); }
-.option3 { background: #3abaff; transform: rotate(45deg); }
-.option4 { background: #fff200; transform: rotate(67.5deg); }
-.option5 { background: #3bb878; transform: rotate(90deg); }
-.option6 { background: #ff6a0e; transform: rotate(112.5deg); }
-.option7 { background: #ab79db; transform: rotate(135deg); }
-.option8 { background: #ff0000; transform: rotate(157.5deg); }
-.option9 { background: #3abaff; transform: rotate(180deg); }
-.option10 { background: #fff200; transform: rotate(202.5deg); }
-.option11 { background: #3bb878; transform: rotate(225deg); }
-.option12 { background: #ff6a0e; transform: rotate(247.5deg); }
-.option13 { background: #ab79db; transform: rotate(270deg); }
-.option14 { background: #ff0000; transform: rotate(292.5deg); }
-.option15 { background: #3abaff; transform: rotate(315deg); }
-.option16 { background: #fff200; transform: rotate(337.5deg); }
+.mark3 {
+  right: 162px;
+  bottom: 100px;
+  transform: rotate(-177deg);
+}
+
+.mark4 {
+  right: 157px;
+  bottom: 98px;
+  transform: rotate(-181deg);
+}
+
+.mark5 {
+  right: 157px;
+  bottom: 95px;
+  transform: rotate(-181deg);
+}
+
+.mark6 {
+  right: 162px;
+  bottom: 98px;
+  transform: rotate(-178deg);
+  height: 221px;
+}
+
+.option1 {
+  top: -108px;
+  left: -2px;
+  transform: rotate(30deg);  
+  background: #ab79db;
+}
+
+.option2 {
+  clip-path: polygon(0% 84%, 50% 0%, 50% 0%, 100% 87%);
+  -webkit-clip-path: polygon(0% 84%, 50% 0%, 50% 0%, 100% 87%);
+  top: 90.5px;
+  left: -91.5px;
+  background: #ff0000;
+  transform: rotate(90deg);
+}
+
+.option3 {
+  top: 241.5px;
+  left: -3.5px;
+  background: #3abaff;
+  transform: rotate(30.2deg);
+}
+
+.option4 {
+  bottom: -68px;
+  left: 170px;
+  background: #fff200;
+  transform: rotate(-29.5deg);
+}
+
+.option5 {
+  top: 91.5px;
+  right: -83px;
+  background: #3bb878;
+  transform: rotate(-89.3deg);
+}
+
+.option6 {
+  clip-path: polygon(0% 83%, 50% 0%, 50% 0%, 100% 87%);
+  -webkit-clip-path: polygon(0% 83%, 50% 0%, 50% 0%, 100% 87%);
+  top: -60px;
+  left: 171px;
+  background: #ff6a0e;
+  transform: rotate(-150.1deg);
+}
 
 .slide-in {
   animation: slide 1s ease;
@@ -681,22 +712,3 @@ h2 {
   text-align: center;
   width: 100%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
