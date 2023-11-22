@@ -137,7 +137,7 @@ function spinHandler() {
   spinSound.play();
   domUpdates.spinWheel();
   setTimeout(() => {
-    game.tearDownWheel(wheel, round, 'random');
+    game.tearDownWheel(wheel, round, 'manual');
     domUpdates.yellCurrentSpin(wheel.currentValue);
     setTimeout(domUpdates.yellCurrentSpin, 2000);
     badSpinHandler();
