@@ -8,29 +8,22 @@ const data = {
     },
   },
   wheel: [
-    900,
-    'BANKRUPT',
-    2500,
-    600,
-    700,
-    600,
-    650,
-    500,
-    700,
-    'BANKRUPT',
-    600,
-    550,
-    500,
-    600,
-    'BANKRUPT',
-    /*Commenting these out so that it returns 16 wedges just like the physical wheel I built
-    'LOSE A TURN',
-    700,
-    800,
-    500,
-    650,
-    500,*/
-    900
+    1000, /* Full Size */
+    600, /* 2 */
+    250, /* 1 */
+    5000, /* 10 */
+    'BANKRUPT', /* TRY AGAIN */
+    900, /* 3 */
+    600, /* 2 */
+    250, /* 1 */
+    1000, /* Full Size */
+    600, /* 2 */
+    900, /* 3 */
+    3500, /* School Helper */
+    250, /* 1 */
+    2500, /* Salty Snack */
+    900, /* 3 */
+    600 /* 2 */
   ],
   bonusWheel: [
   20000,
