@@ -338,9 +338,9 @@ h2 {
 .wheel-option {
   clip-path: polygon(50% 50%, 0% 0%, 29.5% 0%);
   -webkit-clip-path: polygon(50% 50%, 0% 0%, 29.5% 0%);
-  height: 350px;
+  height: 100%;
   position: absolute;
-  width: 350px;
+  width: 100%;
 }
 
 .q-mark {
@@ -369,7 +369,7 @@ h2 {
 .mark16 { transform: rotate(337.5deg); }
 */
 
-.mark1 { transform: rotate(0deg); position: absolute; left: 20px; top: 20px; }
+.mark1 { transform: rotate(0deg); left: 20px; top: 20px; }
 .mark2 { transform: rotate(22.5deg); position: absolute; left: 70%; top: 15%; }
 .mark3 { transform: rotate(45deg); position: absolute; left: 85%; top: 30%; }
 .mark4 { transform: rotate(67.5deg); position: absolute; left: 95%; top: 50%; }
