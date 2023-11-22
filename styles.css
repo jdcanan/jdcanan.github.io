@@ -325,7 +325,7 @@ h2 {
   height: 525px;
   left: 0;
   margin: 0 auto;
-  position: absolute;
+  position: relative; /* was absolute */ 
   right: 0;
   top: 40px;
   width: 525px;
@@ -350,7 +350,6 @@ h2 {
   z-index: 7;
 }
 
-/*
 .mark1 { transform: rotate(0deg); }
 .mark2 { transform: rotate(22.5deg); }
 .mark3 { transform: rotate(45deg); }
@@ -367,8 +366,8 @@ h2 {
 .mark14 { transform: rotate(292.5deg); }
 .mark15 { transform: rotate(315deg); }
 .mark16 { transform: rotate(337.5deg); }
-*/
 
+/*
 .mark1 { transform: rotate(0deg); right: 115px; bottom: 2px; height: 221px;}
 .mark2 { transform: rotate(22.5deg); position: absolute; left: 70%; top: 15%; }
 .mark3 { transform: rotate(45deg); position: absolute; left: 85%; top: 30%; }
@@ -385,6 +384,7 @@ h2 {
 .mark14 { transform: rotate(292.5deg); position: absolute; left: 70%; top: 15%; }
 .mark15 { transform: rotate(315deg); position: absolute; left: 85%; top: 30%; }
 .mark16 { transform: rotate(337.5deg); position: absolute; left: 95%; top: 50%; }
+*/
 
 .option1 { background: #ab79db; transform: rotate(0deg); }
 .option2 { background: #ff0000; transform: rotate(22.5deg); }
