@@ -249,6 +249,7 @@ const domUpdates = {
   for (let i = 0; i < wheel.spinValues.length; i++) {
     $(`.mark${i + 1}`).text(wheel.spinValues[i]);
   }
+  },
   */
   
 // Supports any number of wedges and prepends a $ to numeric values
@@ -263,10 +264,6 @@ displayWheelValues(wheel) {
       $(`.mark${i + 1}`).text(wheel.spinValues[i]);
     }
   }
-}
-
-    
-    
 },
 
   enableLetters() {
