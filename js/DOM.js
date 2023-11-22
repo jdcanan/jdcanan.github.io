@@ -243,10 +243,30 @@ const domUpdates = {
   //    $(`.mark${i + 1}`).text(wheel.spinValues[i])
   //  }
   //},
+
+  /* This works for 16 wedges but I want to replace it with one that prepends a $ to numeric values
   displayWheelValues(wheel) {
   for (let i = 0; i < wheel.spinValues.length; i++) {
     $(`.mark${i + 1}`).text(wheel.spinValues[i]);
   }
+  */
+  
+// Supports any number of wedges and prepends a $ to numeric values
+displayWheelValues(wheel) {
+  for (let i = 0; i < wheel.spinValues.length; i++) {
+    // Check if wheel.spinValues[i] is a number
+    if (typeof wheel.spinValues[i] === 'number') {
+      // Prepend a dollar sign ($) only if it's a number
+      $(`.mark${i + 1}`).text('$' + wheel.spinValues[i]);
+    } else {
+      // If it's not a number, just set the text without modifying it
+      $(`.mark${i + 1}`).text(wheel.spinValues[i]);
+    }
+  }
+}
+
+    
+    
 },
 
   enableLetters() {
