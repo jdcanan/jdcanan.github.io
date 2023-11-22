@@ -23,13 +23,13 @@ const data = {
     500,
     600,
     'BANKRUPT',
-    //Commenting these out so that it returns 16 wedges just like the physical wheel I built
-    //'LOSE A TURN',
-    //700,
-    //800,
-    //500,
-    //650,
-    //500,
+    /*Commenting these out so that it returns 16 wedges just like the physical wheel I built
+    'LOSE A TURN',
+    700,
+    800,
+    500,
+    650,
+    500,*/
     900
   ],
   bonusWheel: [
