@@ -344,7 +344,7 @@ h2 {
 
 .q-mark {
   font-size: 1.8rem;
-  position: relative;
+  position: absolute;
   left: 28%; 
   top: 16%; 
   width: 40px;
@@ -353,7 +353,7 @@ h2 {
   z-index: 7;
 }
 
-.mark1 { transform: rotate(+0.5deg); top: -2%; } /* 1000 */
+.mark1 { position: relative; transform: rotate(+0.5deg); top: -2%; } /* 1000 */
 .mark2 {  } /* 600 */
 .mark3 { } /* 250 */
 .mark4 { transform: rotate(+0.5deg); top: -2%; } /* 5000 */
