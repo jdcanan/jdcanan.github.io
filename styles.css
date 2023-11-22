@@ -353,7 +353,7 @@ h2 {
 .mark2 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 600 */
 .mark3 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 250 */
 .mark4 { transform: rotate(-33.5deg); left: 28%; top: 14%; width: 40px; } /* 5000 */
-.mark5 { transform: rotate(-33.5deg); left: 28%; top: 14%; width: 40px;  } /* BANKRUPT */
+.mark5 { transform: rotate(-32.5deg); left: 29%; top: 7%; width: 40px; font-size: 1.6rem; color: white; } /* BANKRUPT */
 .mark6 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 900 */
 .mark7 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 600 */
 .mark8 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 250 */
@@ -362,7 +362,7 @@ h2 {
 .mark11 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 900 */
 .mark12 { transform: rotate(-33.5deg); left: 28%; top: 14%; width: 40px; } /* 3500 */
 .mark13 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 250 */
-.mark14 { transform: rotate(-33.5deg); left: 28%; top: 14%; width: 40px; } /* LOSE A TURN */
+.mark14 { transform: rotate(-32.5deg); left: 29%; top: 7%; width: 40px; font-size: 1.6rem; } /* LOSE A TURN */
 .mark15 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 900 */
 .mark16 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 600 */
 
@@ -370,7 +370,7 @@ h2 {
 .option2 { background: #ff0000; transform: rotate(22.5deg); }
 .option3 { background: #3abaff; transform: rotate(45deg); }
 .option4 { background: #fff200; transform: rotate(67.5deg); }
-.option5 { background: #3bb878; transform: rotate(90deg); }
+.option5 { background: #000000; transform: rotate(90deg); }
 .option6 { background: #ff6a0e; transform: rotate(112.5deg); }
 .option7 { background: #ab79db; transform: rotate(135deg); }
 .option8 { background: #ff0000; transform: rotate(157.5deg); }
@@ -379,7 +379,7 @@ h2 {
 .option11 { background: #3bb878; transform: rotate(225deg); }
 .option12 { background: #ff6a0e; transform: rotate(247.5deg); }
 .option13 { background: #ab79db; transform: rotate(270deg); }
-.option14 { background: #ff0000; transform: rotate(292.5deg); }
+.option14 { background: #000000; transform: rotate(292.5deg); }
 .option15 { background: #3abaff; transform: rotate(315deg); }
 .option16 { background: #fff200; transform: rotate(337.5deg); }
 
