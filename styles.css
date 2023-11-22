@@ -344,31 +344,26 @@ h2 {
 
 .q-mark {
   font-size: 1.8rem;
-  position: absolute;
-  left: 28%; 
-  top: 16%; 
-  width: 40px;
-  rotate(-33.5deg);
   writing-mode: vertical-lr;
   z-index: 7;
 }
 
-.mark1 { position: relative; transform: rotate(+0.5deg); top: -2%; } /* 1000 */
-.mark2 {  } /* 600 */
-.mark3 { } /* 250 */
-.mark4 { transform: rotate(+0.5deg); top: -2%; } /* 5000 */
-.mark5 {  } /* BANKRUPT */
-.mark6 {  } /* 900 */
-.mark7 { } /* 600 */
-.mark8 {  } /* 250 */
-.mark9 { transform: rotate(+0.5deg); top: -2%; } /* 1000 */
-.mark10 {  } /* 600 */
-.mark11 {  } /* 900 */
-.mark12 { transform: rotate(+0.5deg); top: -2%; } /* 3500 */
-.mark13 {  } /* 250 */
-.mark14 {  } /* LOSE A TURN */
-.mark15 {  } /* 900 */
-.mark16 {  } /* 600 */
+.mark1 { transform: rotate(-33.5deg); left: 28%; top: 14%; width: 40px; } /* 1000 */
+.mark2 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 600 */
+.mark3 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 250 */
+.mark4 { transform: rotate(-33.5deg); left: 28%; top: 14%; width: 40px; } /* 5000 */
+.mark5 { transform: rotate(-33.5deg); left: 28%; top: 14%; width: 40px;  } /* BANKRUPT */
+.mark6 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 900 */
+.mark7 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 600 */
+.mark8 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 250 */
+.mark9 { transform: rotate(-33.5deg); left: 28%; top: 14%; width: 40px; } /* 1000 */
+.mark10 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 600 */
+.mark11 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 900 */
+.mark12 { transform: rotate(-33.5deg); left: 28%; top: 14%; width: 40px; } /* 3500 */
+.mark13 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 250 */
+.mark14 { transform: rotate(-33.5deg); left: 28%; top: 14%; width: 40px; } /* LOSE A TURN */
+.mark15 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 900 */
+.mark16 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 600 */
 
 .option1 { background: #ab79db; transform: rotate(0deg); }
 .option2 { background: #ff0000; transform: rotate(22.5deg); }
