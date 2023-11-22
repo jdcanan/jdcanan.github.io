@@ -344,6 +344,7 @@ h2 {
 
 .q-mark {
   font-size: 1.8rem;
+  position: absolute;
   writing-mode: vertical-lr;
   z-index: 7;
 }
