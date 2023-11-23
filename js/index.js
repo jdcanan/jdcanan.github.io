@@ -28,14 +28,6 @@ $('header').on('click', () => {
   theme.volume = 0.7;
 });
 
-$('.wheel-circle').on('click', '.q-mark', function() {
-  const markNumber = $(this).attr('class').match(/mark(\d+)/)[1];
-  // Your logic here based on the clicked mark, for example:
-  console.log(`.mark${markNumber} was clicked!`);
-  //wheel.setManualSpinValue(250);
-  spinhandler(250);
-});
-
 function playLoopingAudio(audioObject)  {
   audioObject.play();
   audioObject.addEventListener('ended', () => {
@@ -141,11 +133,11 @@ function solveBonusHandler(result) {
   }
 }
 
-function spinHandler(spinValue) {
+function spinHandler() {
   spinSound.play();
   domUpdates.spinWheel();
   setTimeout(() => {
-    game.tearDownWheel(wheel, round, spinValue);
+    game.tearDownWheel(wheel, round);
     domUpdates.yellCurrentSpin(wheel.currentValue);
     setTimeout(domUpdates.yellCurrentSpin, 2000);
     badSpinHandler();
