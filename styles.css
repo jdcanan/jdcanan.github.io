@@ -384,6 +384,7 @@ h2 {
 .q-mark {
   font-size: 1.8rem;
   position: absolute;
+  text-orientation: upright;
   writing-mode: vertical-lr;
   cursor: pointer;
   caret-color: transparent;
