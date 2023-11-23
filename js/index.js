@@ -19,7 +19,7 @@ $('.quit').on('click', quitHandler);
 $('.spin-button').on('click', game.setUpWheel);
 $('.solve-button').on('click', domUpdates.displaySolvePopup);
 $('.solve-input-button').on('click', solveHandler);
-$('.spin-text').on('click', spinHandler);
+$('.spin-text').on('click', () => spinHandler("random"));
 $('.vowel-button').on('click', vowelPurchaseHandler);
 $('.start-bonus-round').on('click', startBonusHandler);
 $('.bonus-round-intro').on('click', newGameHandler);
@@ -150,14 +150,24 @@ function solveBonusHandler(result) {
 }
 
 function spinHandler(optionNumber) {
-  spinSound.play();
-  domUpdates.spinWheel();
-  setTimeout(() => {
+
+  if(optionNumber != "random")
+  {
     game.tearDownWheel(wheel, round, wheel.spinValues[optionNumber-1]);
     domUpdates.yellCurrentSpin(wheel.currentValue);
     setTimeout(domUpdates.yellCurrentSpin, 2000);
     badSpinHandler();
-  }, 2000);
+  }
+  else{
+    spinSound.play();
+    domUpdates.spinWheel();
+    setTimeout(() => {
+      game.tearDownWheel(wheel, round, "random");
+      domUpdates.yellCurrentSpin(wheel.currentValue);
+      setTimeout(domUpdates.yellCurrentSpin, 2000);
+      badSpinHandler();
+    }, 2000);
+  }
 }
 
 function badSpinHandler() {
