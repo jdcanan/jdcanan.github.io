@@ -346,6 +346,7 @@ h2 {
   font-size: 1.8rem;
   position: absolute;
   writing-mode: vertical-lr;
+  cursor: pointer;
   z-index: 7;
 }
 
