@@ -174,7 +174,7 @@ function spinHandler(optionNumber) {
 function badSpinHandler() {
   if (wheel.currentValue === 'LOSE TURN') {
     game.endTurn();
-    buzz.play();
+    buzzer.play();
   } else if (wheel.currentValue === 'BANKRUPT') {
     bankrupt.play();
     game.players[game.playerIndex].wallet = 0;
