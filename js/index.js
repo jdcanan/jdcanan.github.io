@@ -27,6 +27,7 @@ $('.keyboard-section').on('click', keyboardHandler);
 $('header').on('click', () => {
   theme.volume = 0.7;
 });
+$('.mark1').on('click', spinHandler(25);
 
 function playLoopingAudio(audioObject)  {
   audioObject.play();
@@ -133,11 +134,11 @@ function solveBonusHandler(result) {
   }
 }
 
-function spinHandler() {
+function spinHandler(spinValue) {
   spinSound.play();
   domUpdates.spinWheel();
   setTimeout(() => {
-    game.tearDownWheel(wheel, round);
+    game.tearDownWheel(wheel, round, spinValue);
     domUpdates.yellCurrentSpin(wheel.currentValue);
     setTimeout(domUpdates.yellCurrentSpin, 2000);
     badSpinHandler();
