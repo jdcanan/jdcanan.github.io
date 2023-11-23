@@ -396,7 +396,7 @@ h2 {
 .mark2 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 600 */
 .mark3 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 250 */
 .mark4 { transform: rotate(-33.5deg); left: 28%; top: 8%; width: 40px; } /* 5000 */
-.mark5 { transform: rotate(-32.5deg); left: 29%; top: 7%; width: 40px; font-size: 1.2rem; color: white; } /* BANKRUPT */
+.mark5 { transform: rotate(-32.5deg); left: 30.5%; top: 9%; width: 40px; font-size: 1.2rem; color: white; } /* BANKRUPT */
 .mark6 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 900 */
 .mark7 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 600 */
 .mark8 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 250 */
@@ -405,7 +405,7 @@ h2 {
 .mark11 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 900 */
 .mark12 { transform: rotate(-33.5deg); left: 28%; top: 8%; width: 40px; } /* 3500 */
 .mark13 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 250 */
-.mark14 { transform: rotate(-32.5deg); left: 29%; top: 6%; width: 40px; font-size: 1.2rem; } /* LOSE TURN */
+.mark14 { transform: rotate(-32.5deg); left: 30.5%; top: 9%; width: 40px; font-size: 1.2rem; } /* LOSE TURN */
 .mark15 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 900 */
 .mark16 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 600 */
 
