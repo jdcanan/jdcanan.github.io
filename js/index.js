@@ -33,7 +33,7 @@ $('.wheel-circle').on('click', '.q-mark', function() {
   // Your logic here based on the clicked mark, for example:
   console.log(`.mark${markNumber} was clicked!`);
   //wheel.setManualSpinValue(250);
-  this.tearDownWheel(wheel, round, 250);
+  spinhandler(250);
 });
 
 function playLoopingAudio(audioObject)  {
@@ -141,11 +141,11 @@ function solveBonusHandler(result) {
   }
 }
 
-function spinHandler() {
+function spinHandler(spinValue) {
   spinSound.play();
   domUpdates.spinWheel();
   setTimeout(() => {
-    game.tearDownWheel(wheel, round, 'manual');
+    game.tearDownWheel(wheel, round, spinValue);
     domUpdates.yellCurrentSpin(wheel.currentValue);
     setTimeout(domUpdates.yellCurrentSpin, 2000);
     badSpinHandler();
