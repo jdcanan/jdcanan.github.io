@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 body {
   background-image: url(./pics/background.png);
   background-size: cover; 
@@ -14,7 +19,6 @@ body {
   letter-spacing: 2px;
   margin: 0 auto; 
   max-width: 1400px;
-  scrollbar-width: none;
 }
 
 body::before {
