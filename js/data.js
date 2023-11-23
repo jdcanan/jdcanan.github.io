@@ -21,7 +21,7 @@ const data = {
     900, /* 3 */
     3500, /* School Helper */
     250, /* 1 */
-    'LOSE A TURN', /* Salty Snack */
+    'LOSE TURN', /* Salty Snack */
     900, /* 3 */
     600 /* 2 */
   ],
