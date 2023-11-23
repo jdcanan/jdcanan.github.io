@@ -28,6 +28,21 @@ $('header').on('click', () => {
   theme.volume = 0.7;
 });
 $('.wheel-option.option1').on('click', () => spinHandler(1));
+$('.wheel-option.option2').on('click', () => spinHandler(2));
+$('.wheel-option.option3').on('click', () => spinHandler(3));
+$('.wheel-option.option4').on('click', () => spinHandler(4));
+$('.wheel-option.option5').on('click', () => spinHandler(5));
+$('.wheel-option.option6').on('click', () => spinHandler(6));
+$('.wheel-option.option7').on('click', () => spinHandler(7));
+$('.wheel-option.option8').on('click', () => spinHandler(8));
+$('.wheel-option.option9').on('click', () => spinHandler(9));
+$('.wheel-option.option10').on('click', () => spinHandler(10));
+$('.wheel-option.option11').on('click', () => spinHandler(11));
+$('.wheel-option.option12').on('click', () => spinHandler(12));
+$('.wheel-option.option13').on('click', () => spinHandler(13));
+$('.wheel-option.option14').on('click', () => spinHandler(14));
+$('.wheel-option.option15').on('click', () => spinHandler(15));
+$('.wheel-option.option16').on('click', () => spinHandler(16));
 
 function playLoopingAudio(audioObject)  {
   audioObject.play();
