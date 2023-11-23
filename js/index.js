@@ -153,6 +153,7 @@ function spinHandler(optionNumber) {
 
   if(optionNumber != "random")
   {
+    domUpdates.spinWheel(); // Need to call this so that it toggles spin state correctly but shouldn't be visible without timeout
     game.tearDownWheel(wheel, round, wheel.spinValues[optionNumber-1]);
     domUpdates.yellCurrentSpin(wheel.currentValue);
     setTimeout(domUpdates.yellCurrentSpin, 2000);
