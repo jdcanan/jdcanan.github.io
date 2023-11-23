@@ -3,9 +3,39 @@
 <head>
   <title>Wheel of Fortune!</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+        body {
+            margin: 0;
+            overflow: auto; /* Allow scrolling by default */
+        }
+
+        body.no-scroll {
+            overflow: hidden; /* Hide scrollbar when in full-screen mode */
+        }
+    </style>
 </head>
 <body>
   <h1 class="title">WHEEL OF FORTUNE</h1>
+  <script>
+    function isFullScreen() {
+        return (
+            document.fullscreenElement ||
+            document.webkitFullscreenElement ||
+            document.mozFullScreenElement ||
+            document.msFullscreenElement
+        );
+    }
+
+    function toggleScroll() {
+        document.body.classList.toggle('no-scroll', isFullScreen());
+    }
+
+    // Listen for full-screen change events
+    document.addEventListener('fullscreenchange', toggleScroll);
+    document.addEventListener('webkitfullscreenchange', toggleScroll);
+    document.addEventListener('mozfullscreenchange', toggleScroll);
+    document.addEventListener('MSFullscreenChange', toggleScroll);
+  </script>
   <header>
       <div class="on-deck">
         <h2 class="on-deck-name">player 2</h2>
