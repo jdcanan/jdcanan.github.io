@@ -94,8 +94,8 @@ class Game {
     // Choose spin value based on the option
     if (option === 'random') {
       wheel.grabSpinValue();
-    } else if (option === 'manual') {
-      wheel.getManualSpinValue(); // Need to implement this method in Wheel class
+    } else {
+      wheel.getManualSpinValue(option); 
     } 
 
     if (this.bonusRound) {
