@@ -27,7 +27,7 @@ $('.keyboard-section').on('click', keyboardHandler);
 $('header').on('click', () => {
   theme.volume = 0.7;
 });
-$('.wheel-option.option1').on('click', () => spinHandler(1);
+$('.wheel-option.option1').on('click', () => spinHandler(1));
 
 function playLoopingAudio(audioObject)  {
   audioObject.play();
