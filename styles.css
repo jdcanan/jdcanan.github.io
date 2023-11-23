@@ -386,11 +386,11 @@ h2 {
 .inner-circle {
     background: #00810C; /* Green color for the new circle */
     border-radius: 50%;
-    height: 25%; /* 50% of the height of the outer circle */
-    width: 25%; /* 50% of the width of the outer circle */
+    height: 30%; /* 50% of the height of the outer circle */
+    width: 30%; /* 50% of the width of the outer circle */
     position: absolute;
-    top: 25%; /* Center vertically */
-    left: 25%; /* Center horizontally */
+    top: 35%; /* Center vertically */
+    left: 35%; /* Center horizontally */
     z-index: 8; /* Place it in front of the wheel-options */
 }
 
