@@ -32,8 +32,8 @@ $('.wheel-circle').on('click', '.q-mark', function() {
   const markNumber = $(this).attr('class').match(/mark(\d+)/)[1];
   // Your logic here based on the clicked mark, for example:
   console.log(`.mark${markNumber} was clicked!`);
-  wheel.setManualSpinValue(250);
-  this.tearDownWheel(wheel, round, 'manual');
+  //wheel.setManualSpinValue(250);
+  this.tearDownWheel(wheel, round, 250);
 });
 
 function playLoopingAudio(audioObject)  {
