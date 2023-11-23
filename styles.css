@@ -357,6 +357,7 @@ h2 {
   writing-mode: vertical-lr;
   cursor: pointer;
   caret-color: transparent;
+  user-select: none;
   z-index: 7;
 }
 
