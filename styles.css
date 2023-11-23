@@ -323,6 +323,8 @@ h2 {
   right: 0;
   top: 60px;
   width: 800px;
+  caret-color: transparent;
+  user-select: none;
   z-index: 6;
 }
 
