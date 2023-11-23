@@ -383,6 +383,17 @@ h2 {
 .option15 { background: #3abaff; transform: rotate(315deg); }
 .option16 { background: #fff200; transform: rotate(337.5deg); }
 
+.inner-circle {
+    background: #00ff00; /* Green color for the new circle */
+    border-radius: 50%;
+    height: 50%; /* 50% of the height of the outer circle */
+    width: 50%; /* 50% of the width of the outer circle */
+    position: absolute;
+    top: 25%; /* Center vertically */
+    left: 25%; /* Center horizontally */
+    z-index: 8; /* Place it in front of the wheel-options */
+}
+
 .slide-in {
   animation: slide 1s ease;
   transform: translateX(0);
