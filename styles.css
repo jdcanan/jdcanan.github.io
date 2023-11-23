@@ -14,6 +14,7 @@ body {
   letter-spacing: 2px;
   margin: 0 auto; 
   max-width: 1400px;
+  scrollbar-width: none;
 }
 
 body::before {
