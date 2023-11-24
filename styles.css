@@ -1,9 +1,7 @@
-/*
 @font-face {
   font-family: 'Fortune';
   src: url('fortune-wheel-font/SF Fortune Wheel Bold.ttf') format('truetype');
 }
-*/
 
 * {
   box-sizing: border-box;
@@ -223,6 +221,21 @@ h2 {
   width: 95%;
   caret-color: transparent;
   user-select: none;
+  font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-variant-alternates: ;
+    font-variant-position: ;
+    font-weight: bold;
+    font-stretch: ;
+    font-size: ;
+    font-family: ;
+    font-optical-sizing: ;
+    font-kerning: ;
+    font-feature-settings: ;
+    font-variation-settings: ;
 }
 
 .keyboard-letters:hover {
