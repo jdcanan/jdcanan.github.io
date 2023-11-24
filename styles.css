@@ -221,21 +221,8 @@ h2 {
   width: 95%;
   caret-color: transparent;
   user-select: none;
-  font-style: ;
-    font-variant-ligatures: ;
-    font-variant-caps: ;
-    font-variant-numeric: ;
-    font-variant-east-asian: ;
-    font-variant-alternates: ;
-    font-variant-position: ;
-    font-weight: bold;
-    font-stretch: ;
-    font-size: ;
-    font-family: ;
-    font-optical-sizing: ;
-    font-kerning: ;
-    font-feature-settings: ;
-    font-variation-settings: ;
+  /*font-weight: bold;*/
+  font-family: "HelveticaNeue-CondensedBold";
 }
 
 .keyboard-letters:hover {
