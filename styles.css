@@ -221,8 +221,11 @@ h2 {
   width: 95%;
   caret-color: transparent;
   user-select: none;
-  /*font-weight: bold;*/
-  font-family: "HelveticaNeue-CondensedBold";
+
+  /* This overrides the global page font but I would need to figure out how to load the right font family, 
+      right now it appears to be failing back to a system font which looks lame */
+  /*font-weight: bold;
+  font-family: "HelveticaNeue-CondensedBold"; */
 }
 
 .keyboard-letters:hover {
