@@ -432,7 +432,7 @@ h2 {
 .option16 { background: #fff200; transform: rotate(337.5deg); }
 
 .inner-circle {
-    background: #00810C; /* Green color for the new circle */
+    background: #1C7455; /* Green color for the new circle */
     border-radius: 50%;
     height: 30%; /* 50% of the height of the outer circle */
     width: 30%; /* 50% of the width of the outer circle */
