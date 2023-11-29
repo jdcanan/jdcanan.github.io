@@ -34,8 +34,6 @@ const data = {
   7000
   ],
   puzzles: {
-    one_word_answers: {
-      date: 'Oct 07 2018',
       puzzle_bank: [
         {  
           category: 'Around The House',
@@ -225,12 +223,7 @@ const data = {
           first_word: 6,
           description: 'Rhyming word(s) or phrase(s).',
           correct_answer: 'Bow-wow',
-        }
-      ]
-    },
-    two_word_answers: {
-      date: 'Oct 07 2018',
-      puzzle_bank: [
+        },
         {  
           category: 'Around The House',
           number_of_words: 2,
@@ -418,12 +411,7 @@ const data = {
           first_word: 3,
           description: 'Rhyming word(s) or phrase(s).',
           correct_answer: 'Fat Cat',
-        }
-      ]
-    },
-    three_word_answers: {
-      date: 'Oct 07 2018',
-      puzzle_bank: [
+        },
         {  
           category: 'Around The House',
           number_of_words: 3,
@@ -611,12 +599,7 @@ const data = {
           first_word: 5,
           description: 'Rhyming word(s) or phrase(s).',
           correct_answer: 'Claim To Fame',
-        }
-      ]
-    },
-    four_word_answers: {
-      date: 'Oct 07 2018',
-      puzzle_bank: [
+        },
         {  
           category: 'Around The House',
           number_of_words: 4,
@@ -806,9 +789,6 @@ const data = {
           correct_answer: 'You Snooze You Lose',
         }
       ]
-    }
-  }
-};
-
+    };
 
 export default data;
