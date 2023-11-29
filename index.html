@@ -238,9 +238,10 @@
       <label for="csv-upload">
        <input type="file" accept=".csv" id="csv-upload" style="display:none;">
         <div>
-          <input type="button" class="file-upload-button" value="UPLOAD 1"/>
+          <input type="button" class="file-upload-button" value="UPLOAD 1" style="pointer-events:none;"/>
         </div>
       </label>
+       
 
       <!-- Works if you click on the text only, but hover doesn't look right -->
       <button class="file-upload-button">
@@ -248,11 +249,9 @@
           UPLOAD PUZZLE CSV
         </label>
       </button>
-      <input type="file" accept=".csv" id="csv-upload2" style="display:none; cursor: pointer;">     
+      <input type="file" accept=".csv" id="csv-upload2" style="display:none;">     
     </div>
 </div>
-
-<-- style="pointer-events:none;" --> 
 
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
