@@ -60,7 +60,11 @@ function init() {
         fileInput.click(); // Trigger the hidden file input
     });
   
-  newRoundHandler();
+  // If no CSV file has been uploaded, proceed with a regular new round
+    if (!data.puzzles.puzzle_bank.length) {
+        newRoundHandler();
+    }
+  
   setTimeout(() => {
     playLoopingAudio(theme);
   }, 1000);
@@ -97,6 +101,9 @@ function handleCSVUpload() {
 
                 // Update the puzzle bank in data with the new puzzles
                 data.puzzles.puzzle_bank = puzzles;
+
+                // Trigger a new round after CSV upload
+                newRoundHandler();
             };
 
             reader.readAsText(file);
