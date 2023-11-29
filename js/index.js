@@ -53,6 +53,13 @@ function playLoopingAudio(audioObject)  {
 
 function init() {
   game.getPlayers();
+  
+  const uploadButton = document.querySelector('.file-upload-button');
+    uploadButton.addEventListener('click', function () {
+        const fileInput = document.getElementById('csv-upload');
+        fileInput.click(); // Trigger the hidden file input
+    });
+  
   newRoundHandler();
   setTimeout(() => {
     playLoopingAudio(theme);
@@ -73,6 +80,55 @@ function newRoundHandler() {
     wheel = round.generateWheelValue();
   }
   setUpRound();
+}
+
+function handleCSVUpload() {
+    const input = document.getElementById('csv-upload');
+
+    input.addEventListener('change', function (event) {
+        const file = event.target.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const csvContent = e.target.result;
+                const puzzles = parseCSV(csvContent);
+
+                // Update the puzzle bank in data with the new puzzles
+                data.puzzles.puzzle_bank = puzzles;
+            };
+
+            reader.readAsText(file);
+        }
+    });
+}
+
+function parseCSV(csvContent) {
+    const lines = csvContent.split('\n');
+    const puzzles = [];
+
+    // Assuming the first line is a header, adjust accordingly if not
+    const headers = lines[0].split(',');
+
+    for (let i = 1; i < lines.length; i++) {
+        const currentLine = lines[i].split(',');
+
+        if (currentLine.length === headers.length) {
+            const puzzle = {
+                category: currentLine[headers.indexOf('Category')].trim(),
+                number_of_words: parseInt(currentLine[headers.indexOf('NumWords')].trim(), 10),
+                total_number_of_letters: parseInt(currentLine[headers.indexOf('TotalLetters')].trim(), 10),
+                first_word: parseInt(currentLine[headers.indexOf('FirstWord')].trim(), 10),
+                correct_answer: currentLine[headers.indexOf('CorrectAnswer')].trim(),
+                description: '', // You can set it to an empty string if not used
+            };
+
+            puzzles.push(puzzle);
+        }
+    }
+
+    return puzzles;
 }
 
 function setUpRound() {
