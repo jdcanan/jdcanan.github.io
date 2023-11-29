@@ -233,22 +233,22 @@
     <input class="name-input player3-name" type="text" name="player3" placeholder="Enter Player 3 Name">  
     <div class="button-container">  
       <button class="start-button">START</button>
+
+      <!-- Styled correctly but clicking doesn't work -->
       <label for="csv-upload">
        <input type="file" accept=".csv" id="csv-upload" style="display:none;">
         <div>
-          <input type="button" class="file-upload-button" value="UPLOAD CSV" />
+          <input type="button" class="file-upload-button" value="UPLOAD 1" style="display:none;"/>
         </div>
       </label>
 
+      <!-- Works if you click on the text only, but hover doesn't look right -->
       <button class="file-upload-button">
         <label for="csv-upload2">
-          UPLOAD CSV2
+          UPLOAD 2
         </label>
       </button>
-      <input type="file" accept=".csv" id="csv-upload2" style="display:none;">
-
-      <input type="file" accept=".csv" id="csv-upload3" class="file-upload-button" value="UPLOAD CSV3"/>
-      
+      <input type="file" accept=".csv" id="csv-upload2" style="display:none;">     
     </div>
 </div>
 
