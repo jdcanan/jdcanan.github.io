@@ -114,7 +114,7 @@ h2 {
 
 .top-buttons,
 .start-button,
-/*.file-upload-button,*/
+.file-upload-button,
 .solve-popup button,
 .start-bonus-round,
 .new-game {
@@ -139,40 +139,9 @@ h2 {
   user-select: none;
 }
 
-.file-upload-button {
-  background: linear-gradient(#eeb32e, #da8b1a);
-  border: 2px solid #c17717;
-  border-left-width: 0;
-  border-radius: 50px;
-  border-right-width: 0;
-  border-top: none;
-  box-shadow: 0px 3px 11px 0 rgba(0, 0, 0, 0.3);
-  color: whitesmoke;
-  font-size: 1rem;
-  font-weight: bold;
-  height: 50px;
-  letter-spacing: 2px;
-  margin-left: 10px; /* Adjust the margin as needed */
-  outline: none;
-  padding-top: 3px;
-  text-shadow: 0 .5px 1px rgba(50, 50, 50, .5);
-  transition: .3s;
-  width: 150px;
-  caret-color: transparent;
-  user-select: none;
-}
-
-.file-upload-button:hover {
-  color: white;
-  cursor: pointer;
-  letter-spacing: 3px;
-  transform: translateY(-1px);
-  transition: .3s;
-}
-
 .top-buttons:hover,
 .start-button:hover,
-/*.file-upload-button:hover,*/
+.file-upload-button:hover,
 .solve-popup button:hover,
 .start-bonus-round:hover,
 .new-game:hover {
@@ -181,6 +150,11 @@ h2 {
   letter-spacing: 3px;
   transform: translateY(-1px);
   transition: .3s;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* You can adjust this property to align the buttons as needed */
 }
 
 .solve-button {
