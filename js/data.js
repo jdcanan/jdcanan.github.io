@@ -789,6 +789,6 @@ const data = {
           correct_answer: 'You Snooze You Lose',
         }
       ]
-    };
-
+    }
+};
 export default data;
