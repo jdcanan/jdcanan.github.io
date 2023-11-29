@@ -139,6 +139,10 @@ h2 {
   user-select: none;
 }
 
+.file-upload-button {
+  margin: 0 5px;
+}
+
 .top-buttons:hover,
 .start-button:hover,
 .file-upload-button:hover,
