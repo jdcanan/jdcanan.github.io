@@ -25,7 +25,7 @@ class Game {
     $('.round-num').text(this.round);
     let roundIndex = this.round - 1;
     let bonusRoundPuzzles = this.puzzleKeys[roundIndex - 1];
-    let puzzleKeyIndex = this.puzzleKeys[roundIndex];
+    //let puzzleKeyIndex = this.puzzleKeys[roundIndex];
     if (this.round === 6) {
       return;
     } else if (this.round === 5) {
@@ -34,7 +34,8 @@ class Game {
       return new BonusRound(data.puzzles[bonusRoundPuzzles].puzzle_bank,
         data.bonusWheel);
     } else {
-      return new Round(data.puzzles[puzzleKeyIndex].puzzle_bank, data.wheel);
+      //return new Round(data.puzzles[puzzleKeyIndex].puzzle_bank, data.wheel);
+      return new Round(data.puzzles.puzzle_bank, data.wheel);
     }
   }
 
