@@ -7,6 +7,15 @@
   box-sizing: border-box;
 }
 
+:root::-webkit-scrollbar{
+  display: none;
+}
+
+:root {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 body {
   background-image: url(./pics/background.png);
   background-size: cover; 
@@ -34,6 +43,8 @@ body::before {
   font-size: 5rem;
   margin: 20px auto 10px;
   text-align: center;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .title:hover,
@@ -61,6 +72,8 @@ header div {
   height: 6rem;
   margin-right: 0px;
   margin-top: 6rem;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .on-deck {
@@ -68,6 +81,8 @@ header div {
   height: 6rem;
   margin-left: 0px;
   margin-top: 6rem;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .at-bat {
@@ -76,6 +91,8 @@ header div {
   height: 10rem;
   margin-bottom: 2rem;
   width: 40rem;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .game-winner {
@@ -117,6 +134,8 @@ h2 {
   text-shadow: 0 .5px 1px rgba(50, 50, 50, .5);
   transition: .3s;
   width: 150px;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .top-buttons:hover,
@@ -133,6 +152,8 @@ h2 {
 
 .solve-button {
   margin: 0 65px;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .puzzle-section {
@@ -142,6 +163,8 @@ h2 {
   height: 250px;
   justify-content: center;
   position: relative;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .puzzle-grid {
@@ -149,6 +172,8 @@ h2 {
   grid-template-columns: repeat(14, 1fr);
   height: 225px;
   width: calc(600px + 6%);
+  caret-color: transparent;
+  user-select: none;
 }
 
 .letter-container {
@@ -160,6 +185,8 @@ h2 {
   height: 56px;
   justify-content: center;
   padding-top: 5px;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .letter-container:hover {
@@ -192,6 +219,13 @@ h2 {
   position: relative;
   text-shadow: 0 1px 1px rgba(50, 50, 50, .5);
   width: 95%;
+  caret-color: transparent;
+  user-select: none;
+
+  /* This overrides the global page font but I would need to figure out how to load the right font family, 
+      right now it appears to be failing back to a system font which looks lame */
+  /*font-weight: bold;
+  font-family: "HelveticaNeue-CondensedBold"; */
 }
 
 .keyboard-letters:hover {
@@ -233,6 +267,8 @@ h2 {
   text-shadow: 0 1px 1px rgba(50, 50, 50, .5);
   transition: .2s;
   width: 95%;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .active-vowel:hover {
@@ -288,6 +324,8 @@ h2 {
   font-size: 1.5rem;
   text-orientation: upright;
   writing-mode: vertical-lr;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .round-text {
@@ -295,11 +333,15 @@ h2 {
   font-size: 1.1rem;
   height: 100px;
   margin-left: 23px;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .round-num {
   font-size: 4rem;
   margin-top: 11px;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .wheel {
@@ -314,6 +356,8 @@ h2 {
   right: 0;
   top: 60px;
   width: 800px;
+  caret-color: transparent;
+  user-select: none;
   z-index: 6;
 }
 
@@ -345,26 +389,30 @@ h2 {
 .q-mark {
   font-size: 1.8rem;
   position: absolute;
+  text-orientation: upright;
   writing-mode: vertical-lr;
+  cursor: pointer;
+  caret-color: transparent;
+  user-select: none;
   z-index: 7;
 }
 
-.mark1 { transform: rotate(-33.5deg); left: 28%; top: 14%; width: 40px; } /* 1000 */
-.mark2 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 600 */
-.mark3 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 250 */
-.mark4 { transform: rotate(-33.5deg); left: 28%; top: 14%; width: 40px; } /* 5000 */
-.mark5 { transform: rotate(-32.5deg); left: 29%; top: 7%; width: 40px; font-size: 1.6rem; color: white; } /* BANKRUPT */
-.mark6 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 900 */
-.mark7 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 600 */
-.mark8 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 250 */
-.mark9 { transform: rotate(-33.5deg); left: 28%; top: 14%; width: 40px; } /* 1000 */
-.mark10 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 600 */
-.mark11 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 900 */
-.mark12 { transform: rotate(-33.5deg); left: 28%; top: 14%; width: 40px; } /* 3500 */
-.mark13 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 250 */
-.mark14 { transform: rotate(-32.5deg); left: 30%; top: 6%; width: 40px; font-size: 1.5rem; } /* LOSE A TURN */
-.mark15 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 900 */
-.mark16 { transform: rotate(-33deg); left: 28%; top: 16%; width: 40px; } /* 600 */
+.mark1 { transform: rotate(-33.5deg); left: 28%; top: 8%; width: 40px; } /* 1000 */
+.mark2 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 600 */
+.mark3 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 250 */
+.mark4 { transform: rotate(-33.5deg); left: 28%; top: 8%; width: 40px; } /* 5000 */
+.mark5 { transform: rotate(-32.5deg); left: 30.5%; top: 8%; width: 40px; font-size: 1.2rem; color: white; } /* BANKRUPT */
+.mark6 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 900 */
+.mark7 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 600 */
+.mark8 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 250 */
+.mark9 { transform: rotate(-33.5deg); left: 28%; top: 8%; width: 40px; } /* 1000 */
+.mark10 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 600 */
+.mark11 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 900 */
+.mark12 { transform: rotate(-33.5deg); left: 28%; top: 8%; width: 40px; } /* 3500 */
+.mark13 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 250 */
+.mark14 { transform: rotate(-32.5deg); left: 30.5%; top: 6%; width: 40px; font-size: 1.2rem; } /* LOSE TURN */
+.mark15 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 900 */
+.mark16 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; } /* 600 */
 
 .option1 { background: #ab79db; transform: rotate(0deg); }
 .option2 { background: #ff0000; transform: rotate(22.5deg); }
@@ -382,6 +430,17 @@ h2 {
 .option14 { background: #ffffff; transform: rotate(292.5deg); }
 .option15 { background: #3abaff; transform: rotate(315deg); }
 .option16 { background: #fff200; transform: rotate(337.5deg); }
+
+.inner-circle {
+    background: #1C7455; /* Green color for the new circle */
+    border-radius: 50%;
+    height: 30%; /* 50% of the height of the outer circle */
+    width: 30%; /* 50% of the width of the outer circle */
+    position: absolute;
+    top: 35%; /* Center vertically */
+    left: 35%; /* Center horizontally */
+    z-index: 8; /* Place it in front of the wheel-options */
+}
 
 .slide-in {
   animation: slide 1s ease;
@@ -421,6 +480,8 @@ h2 {
   position: absolute;
   text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
   transform: rotate(-38deg);
+  caret-color: transparent;
+  user-select: none;
 }
 
 .arrow {
@@ -478,6 +539,8 @@ h2 {
 
 .start-button {
   box-shadow: 0px 3px 11px 2px rgba(0, 0, 0, 0.6);
+  caret-color: transparent;
+  user-select: none;
 }
 
 .current-spin-value, .hint {
@@ -490,6 +553,8 @@ h2 {
   position: absolute;
   text-align: center;
   width: 15%;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .current-spin-value {
@@ -503,23 +568,31 @@ h2 {
 .spin-number-header {
   font-size: calc(.5vw + .65rem);
   text-shadow: 0px 0px 1px #eeb32e;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .spin-number {
   color: #da8b1a;
   font-size: 1.5rem;
   text-shadow: 0px 0px 1px #da8b1a;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .hint-value {
   color: #da8b1a;
   font-size: 1.3rem;
   text-shadow: 0px 0px 1px #da8b1a;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .hint-header{
   font-size: calc(.5vw + .65rem);
   text-shadow: 0px 0px 1px #eeb32e;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .vowel-error {
@@ -533,6 +606,8 @@ h2 {
   text-align: center;
   top: -22px;
   width: 450px;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .yell-box {
@@ -543,6 +618,8 @@ h2 {
   position: absolute;
   text-shadow: 0px 0px 10px tomato;
   top: -22px;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .yell-active {
@@ -601,6 +678,8 @@ h2 {
   position: absolute;
   right: -197px;
   width: 170px;
+  caret-color: transparent;
+  user-select: none;
 }
 
 .bank-accts h3 {

@@ -77,9 +77,27 @@ class Game {
     domUpdates.displayWheel();
   }
 
+  /* Original tearDownWheel()
   tearDownWheel(wheel, round) {
     domUpdates.hideWheel();
     wheel.grabSpinValue();
+    if (this.bonusRound) {
+      round.bonusWheelValue = wheel.currentValue;
+    }
+  }
+  */
+
+  /* Modified tearDownWheel which accepts a parameter to fetch the value manually */
+  tearDownWheel(wheel, round, option = 'random') {
+    domUpdates.hideWheel();
+
+    // Choose spin value based on the option
+    if (option === 'random') {
+      wheel.grabSpinValue();
+    } else {
+      wheel.getManualSpinValue(option); 
+    } 
+
     if (this.bonusRound) {
       round.bonusWheelValue = wheel.currentValue;
     }

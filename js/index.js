@@ -19,7 +19,7 @@ $('.quit').on('click', quitHandler);
 $('.spin-button').on('click', game.setUpWheel);
 $('.solve-button').on('click', domUpdates.displaySolvePopup);
 $('.solve-input-button').on('click', solveHandler);
-$('.spin-text').on('click', spinHandler);
+$('.spin-text').on('click', () => spinHandler("random"));
 $('.vowel-button').on('click', vowelPurchaseHandler);
 $('.start-bonus-round').on('click', startBonusHandler);
 $('.bonus-round-intro').on('click', newGameHandler);
@@ -27,6 +27,22 @@ $('.keyboard-section').on('click', keyboardHandler);
 $('header').on('click', () => {
   theme.volume = 0.7;
 });
+$('.wheel-option.option1').on('click', () => spinHandler(1));
+$('.wheel-option.option2').on('click', () => spinHandler(2));
+$('.wheel-option.option3').on('click', () => spinHandler(3));
+$('.wheel-option.option4').on('click', () => spinHandler(4));
+$('.wheel-option.option5').on('click', () => spinHandler(5));
+$('.wheel-option.option6').on('click', () => spinHandler(6));
+$('.wheel-option.option7').on('click', () => spinHandler(7));
+$('.wheel-option.option8').on('click', () => spinHandler(8));
+$('.wheel-option.option9').on('click', () => spinHandler(9));
+$('.wheel-option.option10').on('click', () => spinHandler(10));
+$('.wheel-option.option11').on('click', () => spinHandler(11));
+$('.wheel-option.option12').on('click', () => spinHandler(12));
+$('.wheel-option.option13').on('click', () => spinHandler(13));
+$('.wheel-option.option14').on('click', () => spinHandler(14));
+$('.wheel-option.option15').on('click', () => spinHandler(15));
+$('.wheel-option.option16').on('click', () => spinHandler(16));
 
 function playLoopingAudio(audioObject)  {
   audioObject.play();
@@ -133,21 +149,32 @@ function solveBonusHandler(result) {
   }
 }
 
-function spinHandler() {
-  spinSound.play();
-  domUpdates.spinWheel();
-  setTimeout(() => {
-    game.tearDownWheel(wheel, round);
+function spinHandler(optionNumber) {
+
+  if(optionNumber != "random")
+  {
+    domUpdates.spinWheel(); // Need to call this so that it toggles spin state correctly but shouldn't be visible without timeout
+    game.tearDownWheel(wheel, round, wheel.spinValues[optionNumber-1]);
     domUpdates.yellCurrentSpin(wheel.currentValue);
     setTimeout(domUpdates.yellCurrentSpin, 2000);
     badSpinHandler();
-  }, 2000);
+  }
+  else{
+    spinSound.play();
+    domUpdates.spinWheel();
+    setTimeout(() => {
+      game.tearDownWheel(wheel, round, "random");
+      domUpdates.yellCurrentSpin(wheel.currentValue);
+      setTimeout(domUpdates.yellCurrentSpin, 2000);
+      badSpinHandler();
+    }, 2000);
+  }
 }
 
 function badSpinHandler() {
-  if (wheel.currentValue === 'LOSE A TURN') {
+  if (wheel.currentValue === 'LOSE TURN') {
     game.endTurn();
-    buzz.play();
+    buzzer.play();
   } else if (wheel.currentValue === 'BANKRUPT') {
     bankrupt.play();
     game.players[game.playerIndex].wallet = 0;
