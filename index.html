@@ -241,6 +241,75 @@
       <input type="file" accept=".csv" id="csv-upload" style="display:none;">     
     </div>
 </div>
+  <script>
+    // Define handleCSVUpload function
+    function handleCSVUpload() {
+    console.log('Handling CSV upload...');
+
+    const label = document.querySelector('.file-upload-button label');
+    console.log('Label found:', label);
+
+    label.addEventListener('click', function () {
+        console.log('Label clicked!');
+        const fileInput = document.getElementById('csv-upload');
+        fileInput.click(); // Trigger the hidden file input
+    });
+
+    const input = document.getElementById('csv-upload');
+    console.log('Input found:', input);
+
+    input.addEventListener('change', function (event) {
+        console.log('File input changed!');
+        const file = event.target.files[0];
+
+        if (file) {
+            console.log('File selected:', file);
+
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                console.log('File loaded successfully!');
+                const csvContent = e.target.result;
+                const puzzles = parseCSV(csvContent);
+
+                // Log the parsed puzzles to check if they are correctly loaded
+                console.log('Parsed Puzzles:', puzzles);
+
+                // Update the puzzle bank in data with the new puzzles
+                data.puzzles.puzzle_bank = puzzles;
+
+                // Log the updated puzzle bank
+                console.log('Updated Puzzle Bank:', data.puzzles.puzzle_bank);
+
+                // Trigger a new round after CSV upload
+                newRoundHandler();
+            };
+
+            reader.readAsText(file);
+        } else {
+            console.log('No file selected.');
+        }
+    });
+}
+
+    // Attach event listener to "UPLOAD CSV" button label
+    const uploadButton = document.querySelector('.file-upload-button label');
+    uploadButton.addEventListener('click', function () {
+        const fileInput = document.getElementById('csv-upload');
+        fileInput.click(); // Trigger the hidden file input
+    });
+
+    // Attach event listener for "Start" button
+    document.querySelector('.start-button').addEventListener('click', function () {
+        // Check the flag and trigger new round accordingly
+        if (csvProcessed) {
+            newRoundHandler();
+        } else {
+            // Proceed with regular new round or handle as needed
+            // ...
+        }
+    });
+</script>
 
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
