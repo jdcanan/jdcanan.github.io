@@ -87,22 +87,31 @@ function newRoundHandler() {
 }
 
 function handleCSVUpload() {
+    console.log('Handling CSV upload...');
+
     const label = document.querySelector('.file-upload-button label');
+    console.log('Label found:', label);
 
     label.addEventListener('click', function () {
+        console.log('Label clicked!');
         const fileInput = document.getElementById('csv-upload');
         fileInput.click(); // Trigger the hidden file input
     });
 
     const input = document.getElementById('csv-upload');
+    console.log('Input found:', input);
 
     input.addEventListener('change', function (event) {
+        console.log('File input changed!');
         const file = event.target.files[0];
 
         if (file) {
+            console.log('File selected:', file);
+
             const reader = new FileReader();
 
             reader.onload = function (e) {
+                console.log('File loaded successfully!');
                 const csvContent = e.target.result;
                 const puzzles = parseCSV(csvContent);
 
@@ -120,6 +129,8 @@ function handleCSVUpload() {
             };
 
             reader.readAsText(file);
+        } else {
+            console.log('No file selected.');
         }
     });
 }
