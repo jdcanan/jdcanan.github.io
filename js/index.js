@@ -89,6 +89,7 @@ function newRoundHandler() {
   setUpRound();
 }
 
+
 function parseCSV(csvContent) {
     const lines = csvContent.split('\n');
     const puzzles = [];
