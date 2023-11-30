@@ -52,16 +52,19 @@ function playLoopingAudio(audioObject)  {
 }
 
 function init() {
+  console.log('Running init...');
   game.getPlayers();
   
   const uploadButton = document.querySelector('.file-upload-button');
     uploadButton.addEventListener('click', function () {
+        console.log('Adding event listener...');
         const fileInput = document.getElementById('csv-upload');
         fileInput.click(); // Trigger the hidden file input
     });
   
   // If no CSV file has been uploaded, proceed with a regular new round
     if (!data.puzzles.puzzle_bank.length) {
+        console.log('No CSV file uploaded, calling NewRoundHandler...');
         newRoundHandler();
     }
   
