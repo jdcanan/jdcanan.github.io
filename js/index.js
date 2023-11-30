@@ -87,6 +87,13 @@ function newRoundHandler() {
 }
 
 function handleCSVUpload() {
+    const label = document.querySelector('.file-upload-button label');
+
+    label.addEventListener('click', function () {
+        const fileInput = document.getElementById('csv-upload');
+        fileInput.click(); // Trigger the hidden file input
+    });
+
     const input = document.getElementById('csv-upload');
 
     input.addEventListener('change', function (event) {
@@ -116,6 +123,7 @@ function handleCSVUpload() {
         }
     });
 }
+
 
 function parseCSV(csvContent) {
     const lines = csvContent.split('\n');
