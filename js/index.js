@@ -89,56 +89,6 @@ function newRoundHandler() {
   setUpRound();
 }
 
-function handleCSVUpload() {
-    console.log('Handling CSV upload...');
-
-    const label = document.querySelector('.file-upload-button label');
-    console.log('Label found:', label);
-
-    label.addEventListener('click', function () {
-        console.log('Label clicked!');
-        const fileInput = document.getElementById('csv-upload');
-        fileInput.click(); // Trigger the hidden file input
-    });
-
-    const input = document.getElementById('csv-upload');
-    console.log('Input found:', input);
-
-    input.addEventListener('change', function (event) {
-        console.log('File input changed!');
-        const file = event.target.files[0];
-
-        if (file) {
-            console.log('File selected:', file);
-
-            const reader = new FileReader();
-
-            reader.onload = function (e) {
-                console.log('File loaded successfully!');
-                const csvContent = e.target.result;
-                const puzzles = parseCSV(csvContent);
-
-                // Log the parsed puzzles to check if they are correctly loaded
-                console.log('Parsed Puzzles:', puzzles);
-
-                // Update the puzzle bank in data with the new puzzles
-                data.puzzles.puzzle_bank = puzzles;
-
-                // Log the updated puzzle bank
-                console.log('Updated Puzzle Bank:', data.puzzles.puzzle_bank);
-
-                // Trigger a new round after CSV upload
-                newRoundHandler();
-            };
-
-            reader.readAsText(file);
-        } else {
-            console.log('No file selected.');
-        }
-    });
-}
-
-
 function parseCSV(csvContent) {
     const lines = csvContent.split('\n');
     const puzzles = [];
