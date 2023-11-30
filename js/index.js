@@ -99,8 +99,14 @@ function handleCSVUpload() {
                 const csvContent = e.target.result;
                 const puzzles = parseCSV(csvContent);
 
+                // Log the parsed puzzles to check if they are correctly loaded
+                console.log('Parsed Puzzles:', puzzles);
+
                 // Update the puzzle bank in data with the new puzzles
                 data.puzzles.puzzle_bank = puzzles;
+
+                // Log the updated puzzle bank
+                console.log('Updated Puzzle Bank:', data.puzzles.puzzle_bank);
 
                 // Trigger a new round after CSV upload
                 newRoundHandler();
