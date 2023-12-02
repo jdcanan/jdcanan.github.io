@@ -171,6 +171,8 @@ function parseCSV(csvContent) {
         return trimmedValue;
     });
 
+        console.log('First word: ', trimmedLine[headers.indexOf('FirstWord')]);
+
     // Check if the trimmed line has the expected number of columns
     if (trimmedLine.length === headers.length) {
         const puzzle = {
