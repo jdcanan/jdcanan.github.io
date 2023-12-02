@@ -102,9 +102,9 @@ postBonusResult() {
         $('.win-message').text(` MISSED THE BONUS!`);
         var winnings = this.bonusPlayer.bankAcct;
     }
-    $('.winner-money-pre-bonus').text(winnings);
+    $('.winner-money-pre-bonus').text(winnings)
     $('.start-bonus-round').remove();
-    $('.bonus-round-intro').append('<button class="new-game">NEW GAME</button>');
+    $('.bonus-round-intro').append('<button class="new-game">NEW GAME</button>')
 }
 
 export default BonusRound;
