@@ -85,20 +85,26 @@ class BonusRound extends Round {
     }
   }
 
-  postBonusResult() {
+postBonusResult() {
     $('.popup-cover').css('display', 'unset');
     $('.bonus-round-intro').css('display', 'flex');
     if (this.didWinBonus) {
-      $('.win-message').text(` WINS THE BONUS!`);
-      var winnings = this.bonusPlayer.bankAcct + this.bonusWheelValue;
+        $('.win-message').text(` WINS THE BONUS!`);
+        var winnings;
+
+        // Check if the bonus wheel value is "1 Million"
+        if (this.bonusWheelValue === "1 Million") {
+            winnings = this.bonusPlayer.bankAcct + 1000000;
+        } else {
+            var winnings = this.bonusPlayer.bankAcct + this.bonusWheelValue;
+        }
     } else {
-      $('.win-message').text(` MISSED THE BONUS!`);
-      var winnings = this.bonusPlayer.bankAcct;
+        $('.win-message').text(` MISSED THE BONUS!`);
+        var winnings = this.bonusPlayer.bankAcct;
     }
-    $('.winner-money-pre-bonus').text(winnings)
+    $('.winner-money-pre-bonus').text(winnings);
     $('.start-bonus-round').remove();
-    $('.bonus-round-intro').append('<button class="new-game">NEW GAME</button>')
-  }
+    $('.bonus-round-intro').append('<button class="new-game">NEW GAME</button>');
 }
 
 export default BonusRound;
