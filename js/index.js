@@ -15,14 +15,6 @@ let round;
 let puzzle;
 let wheel;
 
-/*
-$('.file-upload-button label').on('click', function () {
-    console.log('Label Click');
-    const fileInput = document.getElementById('csv-upload');
-    fileInput.click(); // Trigger the hidden file input
-});
-*/
-
 $('.file-upload-button').on('click', function () {
   console.log('Upload Button Click');
   const fileInput = document.getElementById('csv-upload');
@@ -67,24 +59,8 @@ function playLoopingAudio(audioObject)  {
 }
 
 function init() {
-  console.log('Running init...');
+  //console.log('Running init...');
   game.getPlayers();
-
-  /*
-  const uploadButton = document.querySelector('.file-upload-button');
-    uploadButton.addEventListener('click', function () {
-        console.log('Adding event listener...');
-        const fileInput = document.getElementById('csv-upload');
-        fileInput.click(); // Trigger the hidden file input
-    });
-   
-  
-  // If no CSV file has been uploaded, proceed with a regular new round
-    if (!data.puzzles.puzzle_bank.length) {
-        console.log('No CSV file uploaded, calling NewRoundHandler...');
-        newRoundHandler();
-    }
-     */
   newRoundHandler();
   
   setTimeout(() => {
@@ -114,7 +90,7 @@ function newRoundHandler() {
 }
 
 function handleCSVUpload(event) {
-  console.log('Handling CSV upload...');
+  //console.log('Handling CSV upload...');
 
   const file = event.target.files[0];
 
@@ -129,20 +105,17 @@ function handleCSVUpload(event) {
       const puzzles = parseCSV(csvContent);
 
       // Log the parsed puzzles to check if they are correctly loaded
-      console.log('Parsed Puzzles:', puzzles);
+      //console.log('Parsed Puzzles:', puzzles);
 
       // Update the puzzle bank in data with the new puzzles
       data.puzzles.puzzle_bank = puzzles;
 
       // Log the updated puzzle bank
-      console.log('Updated Puzzle Bank:', data.puzzles.puzzle_bank);
+      //console.log('Updated Puzzle Bank:', data.puzzles.puzzle_bank);
 
       // Show feedback label
       const feedbackLabel = document.getElementById('csv-upload-feedback');
       feedbackLabel.style.display = 'block';
-
-      // Trigger a new round after CSV upload
-      //newRoundHandler();
     };
 
     reader.readAsText(file);
@@ -156,8 +129,6 @@ function parseCSV(csvContent) {
     console.log('CSV Content after split by newline: ', lines);
     const puzzles = [];
 
-    // Assuming the first line is a header, adjust accordingly if not
-    //const headers = lines[0].split(',');
     const headers = lines[0].replace('\r', '').split(',');
     console.log('Found headers: ', headers);
 
@@ -168,7 +139,7 @@ function parseCSV(csvContent) {
     // Trim each value to remove leading and trailing whitespaces
     const trimmedLine = currentLine.map(value => {
         const trimmedValue = value.trim();
-        console.log(`Original: ${value}, Trimmed: ${trimmedValue}`);
+        //console.log(`Original: ${value}, Trimmed: ${trimmedValue}`);
         return trimmedValue;
     });
 
