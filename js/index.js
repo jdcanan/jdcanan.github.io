@@ -151,7 +151,8 @@ function parseCSV(csvContent) {
     console.log('Found headers: ', headers);
 
     for (let i = 1; i < lines.length; i++) {
-        const currentLine = lines[i].split(',');
+        //const currentLine = lines[i].split(',');
+        const currentLine = lines[i].replace('\r', '').split(',');
         console.log('Processing line: ', currentLine);
 
         if (currentLine.length === headers.length) {
