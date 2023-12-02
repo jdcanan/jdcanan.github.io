@@ -48,7 +48,7 @@ class BonusRound extends Round {
     const mark15Element = document.querySelector('.mark15');
     const mark16Element = document.querySelector('.mark16');
     const option5Element = document.querySelector('.option5');
-    const option14Element = document.querySelector('.option5');    
+    const option14Element = document.querySelector('.option14');    
     mark1Element.style.top = '5%';
     mark2Element.style.top = '5%';
     mark3Element.style.top = '5%';
