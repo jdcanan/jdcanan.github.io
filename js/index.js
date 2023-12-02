@@ -143,13 +143,16 @@ function handleCSVUpload(event) {
 
 function parseCSV(csvContent) {
     const lines = csvContent.split('\n');
+    console.log('CSV Content after split by newline: ', lines);
     const puzzles = [];
 
     // Assuming the first line is a header, adjust accordingly if not
     const headers = lines[0].split(',');
+    console.log('Found headers: ', headers);
 
     for (let i = 1; i < lines.length; i++) {
         const currentLine = lines[i].split(',');
+        console.log('Processing line: ', currentLine);
 
         if (currentLine.length === headers.length) {
             const puzzle = {
