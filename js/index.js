@@ -157,7 +157,8 @@ function parseCSV(csvContent) {
     const puzzles = [];
 
     // Assuming the first line is a header, adjust accordingly if not
-    const headers = lines[0].split(',');
+    //const headers = lines[0].split(',');
+    const headers = lines[0].replace('\r', '').split(',');
     console.log('Found headers: ', headers);
 
     for (let i = 1; i < lines.length; i++) {
