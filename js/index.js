@@ -151,24 +151,32 @@ function parseCSV(csvContent) {
     console.log('Found headers: ', headers);
 
     for (let i = 1; i < lines.length; i++) {
-        //const currentLine = lines[i].split(',');
-        const currentLine = lines[i].replace('\r', '').split(',');
-        console.log('Processing line: ', currentLine);
+    // Remove any '\r' characters from the line
+    const currentLine = lines[i].replace('\r', '').split(',');
 
-        if (currentLine.length === headers.length) {
-            const puzzle = {
-                category: currentLine[headers.indexOf('Category')].trim(),
-                number_of_words: parseInt(currentLine[headers.indexOf('NumWords')].trim(), 10),
-                total_number_of_letters: parseInt(currentLine[headers.indexOf('TotalLetters')].trim(), 10),
-                first_word: parseInt(currentLine[headers.indexOf('FirstWord')].trim(), 10),
-                correct_answer: currentLine[headers.indexOf('CorrectAnswer')].trim(),
-                description: '', // You can set it to an empty string if not used
-            };
+    // Trim each value to remove leading and trailing whitespaces
+    const trimmedLine = currentLine.map(value => {
+        const trimmedValue = value.trim();
+        console.log(`Original: ${value}, Trimmed: ${trimmedValue}`);
+        return trimmedValue;
+    });
 
-            puzzles.push(puzzle);
-        }
+    // Check if the trimmed line has the expected number of columns
+    if (trimmedLine.length === headers.length) {
+        const puzzle = {
+            category: trimmedLine[headers.indexOf('Category')],
+            number_of_words: parseInt(trimmedLine[headers.indexOf('NumWords')], 10),
+            total_number_of_letters: parseInt(trimmedLine[headers.indexOf('TotalLetters')], 10),
+            first_word: parseInt(trimmedLine[headers.indexOf('FirstWord')], 10),
+            correct_answer: trimmedLine[headers.indexOf('CorrectAnswer')],
+            description: '', // You can set it to an empty string if not used
+        };
+
+        puzzles.push(puzzle);
+    } else {
+        console.error(`Line ${i + 1} does not have the expected number of columns after trimming.`);
     }
-
+}
     return puzzles;
 }
 
