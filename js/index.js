@@ -132,8 +132,12 @@ function handleCSVUpload(event) {
       // Log the updated puzzle bank
       console.log('Updated Puzzle Bank:', data.puzzles.puzzle_bank);
 
+      // Show feedback label
+      const feedbackLabel = document.getElementById('csv-upload-feedback');
+      feedbackLabel.style.display = 'block';
+
       // Trigger a new round after CSV upload
-      newRoundHandler();
+      //newRoundHandler();
     };
 
     reader.readAsText(file);
