@@ -96,15 +96,15 @@ postBonusResult() {
         if (this.bonusWheelValue === "1 Million") {
             winnings = this.bonusPlayer.bankAcct + 1000000;
         } else {
-            var winnings = this.bonusPlayer.bankAcct + this.bonusWheelValue;
+            winnings = this.bonusPlayer.bankAcct + this.bonusWheelValue;
         }
     } else {
         $('.win-message').text(` MISSED THE BONUS!`);
         var winnings = this.bonusPlayer.bankAcct;
     }
-    $('.winner-money-pre-bonus').text(winnings)
+    $('.winner-money-pre-bonus').text(winnings);
     $('.start-bonus-round').remove();
-    $('.bonus-round-intro').append('<button class="new-game">NEW GAME</button>')
+    $('.bonus-round-intro').append('<button class="new-game">NEW GAME</button>');
 }
 }
 
