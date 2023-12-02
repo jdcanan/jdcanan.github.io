@@ -1,5 +1,6 @@
 import Game from './Game.js';
 import domUpdates from './DOM.js';
+import data from './data.js';
 
 let buzzer = new Audio('./audio/Buzzer.mp3');
 let chooseSound = new Audio('./audio/choose.mp3');
