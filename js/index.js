@@ -93,6 +93,11 @@ function init() {
 }
 
 function newRoundHandler() {
+
+  // Hide feedback label
+  const feedbackLabel = document.getElementById('csv-upload-feedback');
+  feedbackLabel.style.display = 'none';
+
   round = game.startRound();
   domUpdates.displayNames(game.players, game.playerIndex);
   if (game.bonusRound) {
