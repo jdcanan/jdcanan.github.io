@@ -15,7 +15,7 @@ class BonusRound extends Round {
 
   generateBonusWheel() {
     let wheelVals = [];
-    for (var i = 0; i < data.bonuswheel.length; i++) {
+    for (var i = 0; i < data.bonusWheel.length; i++) {
       wheelVals.push(data.bonusWheel[i]);
     }
     
