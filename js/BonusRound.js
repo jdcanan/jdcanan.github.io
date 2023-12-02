@@ -54,7 +54,7 @@ class BonusRound extends Round {
     mark3Element.style.top = '5%';
     mark4Element.style.top = '5%';
     mark5Element.style.top = '5%';
-    mark5Element.style.font-size = '1.5rem';
+    mark5Element.style.fontSize = '1.5rem';
     mark5Element.style.left = '28.5%';
     mark5Element.style.color = 'black';
     mark6Element.style.top = '5%';
