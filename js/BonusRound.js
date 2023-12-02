@@ -106,5 +106,6 @@ postBonusResult() {
     $('.start-bonus-round').remove();
     $('.bonus-round-intro').append('<button class="new-game">NEW GAME</button>')
 }
+}
 
 export default BonusRound;
