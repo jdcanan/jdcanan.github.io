@@ -182,7 +182,16 @@ function parseCSV(csvContent) {
             description: '', // You can set it to an empty string if not used
         };
 
-        puzzles.push(puzzle);
+        /* Puzzle board currently only supports the 2nd and 3rd lines which are 14 characters each, and it's
+         not smart enough to wrap words without splitting them across lines. Therefore max puzzle length is 28
+         In the future, need to update this logic once we have better word wrapping logic so that it discards
+         puzzles that don't fit on the board */
+        if (puzzle.correct_answer.length <= 28) {
+                puzzles.push(puzzle);
+            } else {
+                console.warn(`Puzzle at line ${i + 1} has correct_answer length greater than 28 characters and will be skipped.`);
+            }
+        
     } else {
         console.error(`Line ${i + 1} does not have the expected number of columns after trimming.`);
     }
