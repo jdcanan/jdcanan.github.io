@@ -135,7 +135,7 @@ function handleCSVUpload() {
         } else {
             console.log('No file selected.');
         }
-    }
+    });
 }
 
 function parseCSV(csvContent) {
