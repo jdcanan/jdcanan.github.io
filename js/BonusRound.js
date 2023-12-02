@@ -47,11 +47,16 @@ class BonusRound extends Round {
     const mark14Element = document.querySelector('.mark14');
     const mark15Element = document.querySelector('.mark15');
     const mark16Element = document.querySelector('.mark16');
+    const option5Element = document.querySelector('.option5');
+    const option14Element = document.querySelector('.option5');    
     mark1Element.style.top = '5%';
     mark2Element.style.top = '5%';
     mark3Element.style.top = '5%';
     mark4Element.style.top = '5%';
     mark5Element.style.top = '5%';
+    mark5Element.style.font-size = '1.5rem';
+    mark5Element.style.left = '28.5%';
+    mark5Element.style.color = 'black';
     mark6Element.style.top = '5%';
     mark7Element.style.top = '5%';
     mark8Element.style.top = '5%';
@@ -61,8 +66,11 @@ class BonusRound extends Round {
     mark12Element.style.top = '5%';
     mark13Element.style.top = '5%';
     mark14Element.style.top = '5%';
+    mark14Element.style.left = '29.5%';
     mark15Element.style.top = '5%';
     mark16Element.style.top = '5%';
+    option5Element.style.background = '#FF33DA';
+    option14Element.style.background = '#39FF33';
     
     return new Wheel(wheelVals);
 }
