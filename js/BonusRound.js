@@ -13,6 +13,7 @@ class BonusRound extends Round {
     this.bonusPlayer = null;
   }
 
+  /*
   generateBonusWheel() {
     let wheelVals = [];
     for (var i = 0; i < data.bonusWheel.length; i++) {
@@ -21,6 +22,28 @@ class BonusRound extends Round {
     
     return new Wheel(wheelVals);
   }
+  */
+
+  generateBonusWheel() {
+    let wheelVals = [];
+    for (var i = 0; i < data.bonusWheel.length; i++) {
+        wheelVals.push(data.bonusWheel[i]);
+    }
+
+    // Assuming you have an element with the class .mark1
+    const mark1Element = document.querySelector('.mark1');
+
+    // Check if the element exists before modifying its style
+    if (mark1Element) {
+        // Update the left value to 30%
+        mark1Element.style.left = '30%';
+    } else {
+        console.warn('.mark1 element not found.');
+    }
+
+    return new Wheel(wheelVals);
+}
+
 
   generateBonusPuzzle(lastPuzzle) {
     let randomIndex = Math.floor(Math.random() * this.puzzleBank.length);
