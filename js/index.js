@@ -14,6 +14,11 @@ let round;
 let puzzle;
 let wheel;
 
+$('.file-upload-button label').on('click', function () {
+    console.log('Label Click');
+    const fileInput = document.getElementById('csv-upload');
+    fileInput.click(); // Trigger the hidden file input
+});
 $('.start-button').on('click', init);
 $('.quit').on('click', quitHandler);
 $('.spin-button').on('click', game.setUpWheel);
@@ -54,19 +59,23 @@ function playLoopingAudio(audioObject)  {
 function init() {
   console.log('Running init...');
   game.getPlayers();
-  
+
+  /*
   const uploadButton = document.querySelector('.file-upload-button');
     uploadButton.addEventListener('click', function () {
         console.log('Adding event listener...');
         const fileInput = document.getElementById('csv-upload');
         fileInput.click(); // Trigger the hidden file input
     });
+   
   
   // If no CSV file has been uploaded, proceed with a regular new round
     if (!data.puzzles.puzzle_bank.length) {
         console.log('No CSV file uploaded, calling NewRoundHandler...');
         newRoundHandler();
     }
+     */
+  newRoundHandler();
   
   setTimeout(() => {
     playLoopingAudio(theme);
@@ -89,6 +98,45 @@ function newRoundHandler() {
   setUpRound();
 }
 
+function handleCSVUpload() {
+    console.log('Handling CSV upload...');
+
+    const input = document.getElementById('csv-upload');
+    console.log('Input found:', input);
+
+    input.addEventListener('change', function (event) {
+        console.log('File input changed!');
+        const file = event.target.files[0];
+
+        if (file) {
+            console.log('File selected:', file);
+
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                console.log('File loaded successfully!');
+                const csvContent = e.target.result;
+                const puzzles = parseCSV(csvContent);
+
+                // Log the parsed puzzles to check if they are correctly loaded
+                console.log('Parsed Puzzles:', puzzles);
+
+                // Update the puzzle bank in data with the new puzzles
+                data.puzzles.puzzle_bank = puzzles;
+
+                // Log the updated puzzle bank
+                console.log('Updated Puzzle Bank:', data.puzzles.puzzle_bank);
+
+                // Trigger a new round after CSV upload
+                newRoundHandler();
+            };
+
+            reader.readAsText(file);
+        } else {
+            console.log('No file selected.');
+        }
+    }
+}
 
 function parseCSV(csvContent) {
     const lines = csvContent.split('\n');
