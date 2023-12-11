@@ -89,32 +89,20 @@ postBonusResult() {
     $('.popup-cover').css('display', 'unset');
     $('.bonus-round-intro').css('display', 'flex');
 
-
     if (this.didWinBonus) {
       $('.win-message').text(` WINS THE BONUS!`);
-      var winnings = this.bonusPlayer.bankAcct + this.bonusWheelValue;
-    } else {
-      $('.win-message').text(` MISSED THE BONUS!`);
-      var winnings = this.bonusPlayer.bankAcct;
-    }
-    $('.winner-money-pre-bonus').text(winnings)
-
-  /* NEW CODE
-    if (this.didWinBonus) {
-        $('.win-message').text(` WINS THE BONUS!`);
-
-        // Check if the bonus wheel value is "1 Million"
-        if (this.bonusWheelValue === "1 Million") {
-            var winnings = this.bonusPlayer.bankAcct + 1000000;
-        } else {
-            var winnings = this.bonusPlayer.bankAcct + this.bonusWheelValue;
-        }
+  
+      // Check if the bonus wheel value is "1 Million"
+      if (this.bonusWheelValue === "1 Million") {
+          var winnings = parseFloat(this.bonusPlayer.bankAcct) + 1000000;
+      } else {
+          var winnings = parseFloat(this.bonusPlayer.bankAcct) + parseFloat(this.bonusWheelValue);
+      }
     } else {
         $('.win-message').text(` MISSED THE BONUS!`);
-        var winnings = this.bonusPlayer.bankAcct;
+        var winnings = parseFloat(this.bonusPlayer.bankAcct);
     }
-    */
-  
+    
     $('.winner-money-pre-bonus').text(winnings);
     $('.start-bonus-round').remove();
     $('.bonus-round-intro').append('<button class="new-game">NEW GAME</button>');
