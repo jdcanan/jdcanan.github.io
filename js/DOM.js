@@ -346,6 +346,10 @@ displayWheelValues(wheel) {
           <h2 class="in-the-hole-score">2,000</h2>
         </div>
       </header>`);
+    
+    $('.spin-button').on('click', game.setUpWheel);
+    $('.solve-button').on('click', domUpdates.displaySolvePopup);
+    $('.vowel-button').on('click', vowelPurchaseHandler);
   },
 
   resetOnQuit() {
