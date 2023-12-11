@@ -89,7 +89,7 @@ postBonusResult() {
     $('.popup-cover').css('display', 'unset');
     $('.bonus-round-intro').css('display', 'flex');
 
-/*  OLD CODE  
+
     if (this.didWinBonus) {
       $('.win-message').text(` WINS THE BONUS!`);
       var winnings = this.bonusPlayer.bankAcct + this.bonusWheelValue;
@@ -98,8 +98,8 @@ postBonusResult() {
       var winnings = this.bonusPlayer.bankAcct;
     }
     $('.winner-money-pre-bonus').text(winnings)
-*/
-  
+
+  /* NEW CODE
     if (this.didWinBonus) {
         $('.win-message').text(` WINS THE BONUS!`);
 
@@ -113,6 +113,7 @@ postBonusResult() {
         $('.win-message').text(` MISSED THE BONUS!`);
         var winnings = this.bonusPlayer.bankAcct;
     }
+    */
   
     $('.winner-money-pre-bonus').text(winnings);
     $('.start-bonus-round').remove();
