@@ -215,6 +215,11 @@ function startBonusHandler() {
 function newGameHandler(e) {
   if ($(e.target).hasClass('new-game')) {
     domUpdates.resetGameDisplay();
+    
+    $('.spin-button').on('click', game.setUpWheel);
+    $('.solve-button').on('click', domUpdates.displaySolvePopup);
+    $('.vowel-button').on('click', vowelPurchaseHandler);
+    
     game.quitGame();
   }
 }
