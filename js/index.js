@@ -129,49 +129,56 @@ function parseCSV(csvContent) {
     console.log('CSV Content after split by newline: ', lines);
     const puzzles = [];
 
-    const headers = lines[0].replace('\r', '').split(',');
-    console.log('Found headers: ', headers);
+    const headers = ['CorrectAnswer', 'Category']; // Updated headers
 
     for (let i = 1; i < lines.length; i++) {
-    // Remove any '\r' characters from the line
-    const currentLine = lines[i].replace('\r', '').split(',');
+        // Remove any '\r' characters from the line
+        const currentLine = lines[i].replace('\r', '').split(',');
 
-    // Trim each value to remove leading and trailing whitespaces
-    const trimmedLine = currentLine.map(value => {
-        const trimmedValue = value.trim();
-        //console.log(`Original: ${value}, Trimmed: ${trimmedValue}`);
-        return trimmedValue;
-    });
+        // Trim each value to remove leading and trailing whitespaces
+        const trimmedLine = currentLine.map(value => {
+            const trimmedValue = value.trim();
+            return trimmedValue;
+        });
 
-        console.log('First word: ', trimmedLine[headers.indexOf('FirstWord')]);
+        // Check if the trimmed line has the expected number of columns
+        if (trimmedLine.length === headers.length) {
+            const correctAnswer = trimmedLine[headers.indexOf('CorrectAnswer')];
 
-    // Check if the trimmed line has the expected number of columns
-    if (trimmedLine.length === headers.length) {
-        const puzzle = {
-            category: trimmedLine[headers.indexOf('Category')],
-            number_of_words: parseInt(trimmedLine[headers.indexOf('NumWords')], 10),
-            total_number_of_letters: parseInt(trimmedLine[headers.indexOf('TotalLetters')], 10),
-            first_word: parseInt(trimmedLine[headers.indexOf('FirstWord')], 10),
-            correct_answer: trimmedLine[headers.indexOf('CorrectAnswer')],
-            description: '', // You can set it to an empty string if not used
-        };
+            const numWords = correctAnswer.split(' ').length;
+            const totalLetters = correctAnswer.length;
+            const firstWord = correctAnswer.split(' ')[0].length;
 
-        /* Puzzle board currently only supports the 2nd and 3rd lines which are 14 characters each, and it's
-         not smart enough to wrap words without splitting them across lines. Therefore max puzzle length is 28
-         In the future, need to update this logic once we have better word wrapping logic so that it discards
-         puzzles that don't fit on the board */
-        if (puzzle.correct_answer.length <= 28) {
+            console.log('NumWords:', numWords);
+            console.log('TotalLetters:', totalLetters);
+            console.log('FirstWord:', firstWord);
+
+            const puzzle = {
+                category: trimmedLine[headers.indexOf('Category')],
+                numWords: numWords,
+                totalLetters: totalLetters,
+                firstWord: firstWord,
+                correctAnswer: correctAnswer,
+                description: '', // You can set it to an empty string if not used
+            };
+
+            /* Puzzle board currently only supports the 2nd and 3rd lines which are 14 characters each, and it's
+             not smart enough to wrap words without splitting them across lines. Therefore max puzzle length is 28
+             In the future, need to update this logic once we have better word wrapping logic so that it discards
+             puzzles that don't fit on the board */
+            if (totalLetters <= 28) {
                 puzzles.push(puzzle);
             } else {
                 console.warn(`Puzzle at line ${i + 1} has correct_answer length greater than 28 characters and will be skipped.`);
             }
-        
-    } else {
-        console.error(`Line ${i + 1} does not have the expected number of columns after trimming.`);
+
+        } else {
+            console.error(`Line ${i + 1} does not have the expected number of columns after trimming.`);
+        }
     }
-}
     return puzzles;
 }
+
 
 function setUpRound() {
   domUpdates.resetPuzzleSquares();
