@@ -229,25 +229,6 @@ const domUpdates = {
     });
   },
 
-    highlightVowelsForBonus() {
-    let keyboardLetters = Array.from($('.keyboard-letters'));
-    keyboardLetters.forEach(letter => {
-      if ($(letter).hasClass('vowel') && !$(letter).hasClass('vowel-disabled')) {
-
-        console.log('Current Letter:', $(letter).text().trim().toUpperCase());
-
-        // Disable 'E' for the bonus round
-        if ($(letter).text().trim().toUpperCase() !== 'E') {
-          $(letter).toggleClass('active-vowel');
-        }
-      } else {
-        if (!$(letter).hasClass('disabled')) {
-          $(letter).addClass('temp-disabled');
-        }
-      }
-    });
-  },
-
   disableGuessedVowel(event) {
     if ($(event.target).hasClass('vowel')) {
       $(event.target).toggleClass('vowel-disabled');
