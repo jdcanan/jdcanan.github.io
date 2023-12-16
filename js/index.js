@@ -80,15 +80,20 @@ function newRoundHandler() {
     round.bonusPlayer = game.endGame();
     puzzle = round.generateBonusPuzzle(game.lastPuzzle);
     wheel = round.generateBonusWheel();
-    //domUpdates.highlightVowels();
-    console.log('Bonus Round: calling highlightVowelsForBonus()');
-    domUpdates.highlightVowelsForBonus();
+    domUpdates.highlightVowels();
+    //console.log('Bonus Round: calling highlightVowelsForBonus()');
+    //domUpdates.highlightVowelsForBonus();
   } else {
     puzzle = round.generatePuzzle();
     game.lastPuzzle = puzzle;
     wheel = round.generateWheelValue();
   }
   setUpRound();
+
+  if (game.bonusRound) {
+      // Disable the 'E' key
+      $('.keyboard-letters:contains("E")').addClass('temp-disabled');
+    }
 }
 
 function handleCSVUpload(event) {
