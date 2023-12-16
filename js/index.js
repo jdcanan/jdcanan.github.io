@@ -129,8 +129,9 @@ function parseCSV(csvContent) {
     console.log('CSV Content after split by newline: ', lines);
     const puzzles = [];
 
-    const headers = ['CorrectAnswer', 'Category']; // Updated headers
-
+    const headers = lines[0].replace('\r', '').split(',');
+    console.log('Found headers: ', headers);
+  
     for (let i = 1; i < lines.length; i++) {
         // Remove any '\r' characters from the line
         const currentLine = lines[i].replace('\r', '').split(',');
