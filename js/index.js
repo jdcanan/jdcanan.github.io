@@ -81,6 +81,7 @@ function newRoundHandler() {
     puzzle = round.generateBonusPuzzle(game.lastPuzzle);
     wheel = round.generateBonusWheel();
     //domUpdates.highlightVowels();
+    console.log('Bonus Round: calling highlightVowelsForBonus()');
     domUpdates.highlightVowelsForBonus();
   } else {
     puzzle = round.generatePuzzle();
