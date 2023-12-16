@@ -218,8 +218,6 @@ const domUpdates = {
   highlightVowels() {
     let keyboardLetters = Array.from($('.keyboard-letters'));
     keyboardLetters.forEach(letter => {
-      if (!(game.bonusRound && $(letter).text().trim().toUpperCase() === 'E'))
-      {
         if ($(letter).hasClass('vowel') &&
          !$(letter).hasClass('vowel-disabled')) {
           $(letter).toggleClass('active-vowel');
@@ -227,6 +225,21 @@ const domUpdates = {
           if (!$(letter).hasClass('disabled')) {
             $(letter).addClass('temp-disabled');
           }
+        }
+    });
+  },
+
+    highlightVowelsForBonus() {
+    let keyboardLetters = Array.from($('.keyboard-letters'));
+    keyboardLetters.forEach(letter => {
+      if ($(letter).hasClass('vowel') && !$(letter).hasClass('vowel-disabled')) {
+        // Disable 'E' for the bonus round
+        if ($(letter).text().trim().toUpperCase() !== 'E') {
+          $(letter).toggleClass('active-vowel');
+        }
+      } else {
+        if (!$(letter).hasClass('disabled')) {
+          $(letter).addClass('temp-disabled');
         }
       }
     });
