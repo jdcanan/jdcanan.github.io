@@ -168,7 +168,7 @@ function parseCSV(csvContent) {
                 description: '', // You can set it to an empty string if not used
             };
 
-          console.log('Puzzle: ': puzzle);
+          console.log('Puzzle: ', puzzle);
 
             /* Puzzle board currently only supports the 2nd and 3rd lines which are 14 characters each, and it's
              not smart enough to wrap words without splitting them across lines. Therefore max puzzle length is 28
