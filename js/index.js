@@ -135,16 +135,21 @@ function parseCSV(csvContent) {
     for (let i = 1; i < lines.length; i++) {
         // Remove any '\r' characters from the line
         const currentLine = lines[i].replace('\r', '').split(',');
+        console.log('currentLine: ', currentLine);
 
         // Trim each value to remove leading and trailing whitespaces
         const trimmedLine = currentLine.map(value => {
             const trimmedValue = value.trim();
             return trimmedValue;
         });
+        console.log('trimmedLine: ', trimmedLine);
+        console.log('trimmedLine.length: ', trimmedLine.length);
+        console.log('headers.length: ', headers.length);
 
         // Check if the trimmed line has the expected number of columns
         if (trimmedLine.length === headers.length) {
             const correctAnswer = trimmedLine[headers.indexOf('CorrectAnswer')];
+            console.log('correctAnswer: ', correctAnswer);
 
             const numWords = correctAnswer.split(' ').length;
             const totalLetters = correctAnswer.length;
