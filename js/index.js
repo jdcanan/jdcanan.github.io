@@ -242,7 +242,16 @@ function startBonusHandler() {
 function newGameHandler(e) {
   if ($(e.target).hasClass('new-game')) {
     domUpdates.resetGameDisplay();
+
+    const bonusRoundIntro = document.querySelector('.bonus-round-intro');
+    bonusRoundIntro.innerHTML = `
+      <h2 class="winner-name"><span class="name-of-bonus-player"></span> <span class="win-message"> MoVES To THE BONUS RoUND!</span></h2>
+      <h2>ToTAL SCoRE: <span class="winner-money-pre-bonus"></span></h2>
+      <button class="start-bonus-round">LET'S GO!</button>
+    `;
     
+    $('.start-bonus-round').on('click', startBonusHandler);
+
     $('.spin-button').on('click', game.setUpWheel);
     $('.solve-button').on('click', domUpdates.displaySolvePopup);
     $('.vowel-button').on('click', vowelPurchaseHandler);
