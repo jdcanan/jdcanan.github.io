@@ -155,10 +155,10 @@ function parseCSV(csvContent) {
 
             const puzzle = {
                 category: trimmedLine[headers.indexOf('Category')],
-                numWords: numWords,
-                totalLetters: totalLetters,
-                firstWord: firstWord,
-                correctAnswer: correctAnswer,
+                number_of_words: numWords,
+                total_number_of_letters: totalLetters,
+                first_word: firstWord,
+                correct_answer: correctAnswer,
                 description: '', // You can set it to an empty string if not used
             };
 
