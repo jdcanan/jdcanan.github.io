@@ -92,7 +92,10 @@ function newRoundHandler() {
 
   if (game.bonusRound) {
       // Disable the 'E' key
+      console.log('Disabling E');
+      $('.keyboard-letters:contains("E")').removeClass('active-vowel');
       $('.keyboard-letters:contains("E")').addClass('temp-disabled');
+      $('.keyboard-letters:contains("E")').addClass('vowel-disabled');
     }
 }
 
