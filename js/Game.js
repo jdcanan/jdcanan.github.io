@@ -23,6 +23,8 @@ class Game {
   startRound() {
     this.round++;
     $('.round-num').text(this.round);
+    this.didWinBonus = null;
+    
     let roundIndex = this.round - 1;
     //let bonusRoundPuzzles = this.puzzleKeys[roundIndex - 1];
     //let puzzleKeyIndex = this.puzzleKeys[roundIndex];
@@ -67,7 +69,6 @@ class Game {
   quitGame() {
     this.round = 0;
     this.bonusRound = false;
-    this.winner = null;
     domUpdates.goToHomeScreen();
     domUpdates.resetPuzzleSquares();
     domUpdates.resetKeyboard();
