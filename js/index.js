@@ -80,7 +80,8 @@ function newRoundHandler() {
     round.bonusPlayer = game.endGame();
     puzzle = round.generateBonusPuzzle(game.lastPuzzle);
     wheel = round.generateBonusWheel();
-    domUpdates.highlightVowels();
+    //domUpdates.highlightVowels();
+    domUpdates.highlightVowelsForBonus();
   } else {
     puzzle = round.generatePuzzle();
     game.lastPuzzle = puzzle;
