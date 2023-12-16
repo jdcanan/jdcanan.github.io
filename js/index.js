@@ -91,11 +91,15 @@ function newRoundHandler() {
   setUpRound();
 
   if (game.bonusRound) {
-      // Disable the 'E' key
-      console.log('Disabling E');
       $('.keyboard-letters:contains("E")').removeClass('active-vowel');
       $('.keyboard-letters:contains("E")').addClass('temp-disabled');
       $('.keyboard-letters:contains("E")').addClass('vowel-disabled');
+    
+      $('.keyboard-letters:contains("R")').addClass('temp-disabled');
+      $('.keyboard-letters:contains("S")').addClass('temp-disabled');
+      $('.keyboard-letters:contains("T")').addClass('temp-disabled');
+      $('.keyboard-letters:contains("L")').addClass('temp-disabled');
+      $('.keyboard-letters:contains("N")').addClass('temp-disabled');
     }
 }
 
