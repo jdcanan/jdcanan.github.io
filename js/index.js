@@ -81,8 +81,6 @@ function newRoundHandler() {
     puzzle = round.generateBonusPuzzle(game.lastPuzzle);
     wheel = round.generateBonusWheel();
     domUpdates.highlightVowels();
-    //console.log('Bonus Round: calling highlightVowelsForBonus()');
-    //domUpdates.highlightVowelsForBonus();
   } else {
     puzzle = round.generatePuzzle();
     game.lastPuzzle = puzzle;
@@ -92,7 +90,6 @@ function newRoundHandler() {
 
   if (game.bonusRound) {
       $('.keyboard-letters:contains("E")').removeClass('active-vowel');
-      //$('.keyboard-letters:contains("E")').addClass('temp-disabled');
       $('.keyboard-letters:contains("E")').addClass('vowel-disabled');
     
       $('.keyboard-letters:contains("R")').addClass('disabled');
@@ -144,34 +141,34 @@ function parseCSV(csvContent) {
     const puzzles = [];
 
     const headers = lines[0].replace('\r', '').split(',');
-    console.log('Found headers: ', headers);
+    //console.log('Found headers: ', headers);
   
     for (let i = 1; i < lines.length; i++) {
         // Remove any '\r' characters from the line
         const currentLine = lines[i].replace('\r', '').split(',');
-        console.log('currentLine: ', currentLine);
+        //console.log('currentLine: ', currentLine);
 
         // Trim each value to remove leading and trailing whitespaces
         const trimmedLine = currentLine.map(value => {
             const trimmedValue = value.trim();
             return trimmedValue;
         });
-        console.log('trimmedLine: ', trimmedLine);
-        console.log('trimmedLine.length: ', trimmedLine.length);
-        console.log('headers.length: ', headers.length);
+        //console.log('trimmedLine: ', trimmedLine);
+        //console.log('trimmedLine.length: ', trimmedLine.length);
+        //console.log('headers.length: ', headers.length);
 
         // Check if the trimmed line has the expected number of columns
         if (trimmedLine.length === headers.length) {
             const correctAnswer = trimmedLine[headers.indexOf('CorrectAnswer')];
-            console.log('correctAnswer: ', correctAnswer);
+            //console.log('correctAnswer: ', correctAnswer);
 
             const numWords = correctAnswer.split(' ').length;
             const totalLetters = correctAnswer.length;
             const firstWord = correctAnswer.split(' ')[0].length;
 
-            console.log('NumWords:', numWords);
-            console.log('TotalLetters:', totalLetters);
-            console.log('FirstWord:', firstWord);
+            //console.log('NumWords:', numWords);
+            //console.log('TotalLetters:', totalLetters);
+            //console.log('FirstWord:', firstWord);
 
             const puzzle = {
                 category: trimmedLine[headers.indexOf('Category')],
@@ -182,14 +179,14 @@ function parseCSV(csvContent) {
                 description: '', // You can set it to an empty string if not used
             };
 
-          console.log('Puzzle: ', puzzle);
+          //console.log('Puzzle: ', puzzle);
 
             /* Puzzle board currently only supports the 2nd and 3rd lines which are 14 characters each, and it's
              not smart enough to wrap words without splitting them across lines. Therefore max puzzle length is 28
              In the future, need to update this logic once we have better word wrapping logic so that it discards
              puzzles that don't fit on the board */
             if (totalLetters <= 28) {
-              console.log('Pushing Puzzle: ', puzzle);
+              //console.log('Pushing Puzzle: ', puzzle);
                 puzzles.push(puzzle);
             } else {
                 console.warn(`Puzzle at line ${i + 1} has correct_answer length greater than 28 characters and will be skipped.`);
