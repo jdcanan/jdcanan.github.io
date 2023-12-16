@@ -67,6 +67,7 @@ class Game {
   quitGame() {
     this.round = 0;
     this.bonusRound = false;
+    this.winner = null;
     domUpdates.goToHomeScreen();
     domUpdates.resetPuzzleSquares();
     domUpdates.resetKeyboard();
