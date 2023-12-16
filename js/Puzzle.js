@@ -10,7 +10,7 @@ class Puzzle {
   }
 
   populateBoard() {
-    console.log("Puzzle: ", this.curentPuzzle.correct_answer);
+    console.log("Puzzle: ", this.currentPuzzle.correct_answer);
     let puzzleArray = this.currentPuzzle.correct_answer.split('');
     domUpdates.populatePuzzleSquares(puzzleArray);
   }
