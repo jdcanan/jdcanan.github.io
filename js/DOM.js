@@ -218,12 +218,15 @@ const domUpdates = {
   highlightVowels() {
     let keyboardLetters = Array.from($('.keyboard-letters'));
     keyboardLetters.forEach(letter => {
-      if ($(letter).hasClass('vowel') &&
-       !$(letter).hasClass('vowel-disabled')) {
-        $(letter).toggleClass('active-vowel');
-      } else {
-        if (!$(letter).hasClass('disabled')) {
-          $(letter).addClass('temp-disabled');
+      if (!(game.bonusRound && $(letter).text().trim().toUpperCase() === 'E'))
+      {
+        if ($(letter).hasClass('vowel') &&
+         !$(letter).hasClass('vowel-disabled')) {
+          $(letter).toggleClass('active-vowel');
+        } else {
+          if (!$(letter).hasClass('disabled')) {
+            $(letter).addClass('temp-disabled');
+          }
         }
       }
     });
