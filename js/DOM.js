@@ -130,7 +130,7 @@ const domUpdates = {
   */
 
   // Instead we want to show any character matching R, S, T, L, N, or E 
-  showBonusLetters() {
+  showBonusLetters(length) {
     let letterBoxArray = Array.from($('.letter-content'));
     letterBoxArray.forEach(letterBox => {
       // Get the text content of the current element
