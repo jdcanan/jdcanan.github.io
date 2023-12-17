@@ -105,7 +105,7 @@ const domUpdates = {
     let revealSound = new Audio('./audio/reveal.mp3');
     revealSound.play();
     puzzle.forEach((letter, i) => {
-      if (letter === '-' || letter === '&' || letter === '\'') {
+      if (letter === '-' || letter === '&' || letter === '\'' || letter === '.' || letter === ':' || letter === '?' || letter === '!') {
         $(letterBoxArray[i]).text(letter);
         $(letterBoxArray[i]).parent().css('background', 'white');
       } else if (letter !== ' ') {
