@@ -105,7 +105,7 @@ postBonusResult() {
     
     $('.winner-money-pre-bonus').text(winnings);
     $('.start-bonus-round').remove();
-    $('.bonus-round-intro').append('<button class="new-game">NEW GAME</button>');
+    $('.bonus-round-intro').append('<h2 class="correct-bonus"><span class="bonus-answer">Bonus Answer</span></h2><button class="new-game">NEW GAME</button>');
 }
 }
 
