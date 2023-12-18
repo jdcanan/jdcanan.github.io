@@ -336,7 +336,12 @@ function solveHandler() {
       solveBonusHandler(result);
       
       //set the variable here to display the correct puzzle result in the bonus popup
-      $('.bonus-answer').text(puzzle.currentPuzzle.correct_answer);
+      //$('.bonus-answer').text(puzzle.currentPuzzle.correct_answer);
+      console.log("Correct Answer:", puzzle.currentPuzzle.correct_answer);
+      $(document).ready(function() {
+        console.log("Updating variable for popup");
+        $('.bonus-answer').text(puzzle.currentPuzzle.correct_answer);
+      });
     }
         
     game.endTurn();
