@@ -105,7 +105,7 @@ const domUpdates = {
     let revealSound = new Audio('./audio/reveal.mp3');
     revealSound.play();
     puzzle.forEach((letter, i) => {
-      if (letter === '-' || letter === '&' || letter === '\'') {
+      if (letter === '-' || letter === '&' || letter === '\'' || letter === '.' || letter === ':' || letter === '?' || letter === '!') {
         $(letterBoxArray[i]).text(letter);
         $(letterBoxArray[i]).parent().css('background', 'white');
       } else if (letter !== ' ') {
@@ -119,6 +119,7 @@ const domUpdates = {
     });
   },
 
+/* Previous showBonusLetters() displayed 7 random characters 
   showBonusLetters(length) {
     let letterBoxArray = Array.from($('.letter-content'));
     for (let i = 0; i < 7; i++) {
@@ -126,6 +127,22 @@ const domUpdates = {
       $(letterBoxArray[rand]).css('opacity', 1);
     }
   },
+  */
+
+  // Instead we want to show any character matching R, S, T, L, N, or E 
+  showBonusLetters(length) {
+    let letterBoxArray = Array.from($('.letter-content'));
+    letterBoxArray.forEach(letterBox => {
+      // Get the text content of the current element
+      let letter = $(letterBox).text().trim().toUpperCase();
+  
+      // Check if the letter is 'R', 'S', 'T', 'L', 'N', or 'E'
+      if (['R', 'S', 'T', 'L', 'N', 'E'].includes(letter)) {
+        $(letterBox).css('opacity', 1);
+      }
+    });
+  },
+
 
   newRoundKeyboard() {
     let keyboardLetters = Array.from($('.keyboard-letters'));
@@ -201,14 +218,14 @@ const domUpdates = {
   highlightVowels() {
     let keyboardLetters = Array.from($('.keyboard-letters'));
     keyboardLetters.forEach(letter => {
-      if ($(letter).hasClass('vowel') &&
-       !$(letter).hasClass('vowel-disabled')) {
-        $(letter).toggleClass('active-vowel');
-      } else {
-        if (!$(letter).hasClass('disabled')) {
-          $(letter).addClass('temp-disabled');
+        if ($(letter).hasClass('vowel') &&
+         !$(letter).hasClass('vowel-disabled')) {
+          $(letter).toggleClass('active-vowel');
+        } else {
+          if (!$(letter).hasClass('disabled')) {
+            $(letter).addClass('temp-disabled');
+          }
         }
-      }
     });
   },
 

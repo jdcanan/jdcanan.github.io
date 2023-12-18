@@ -226,12 +226,23 @@
     <button class="start-bonus-round">LET'S GO!</button>
   </div>
   <div class="popup-cover"></div>
-  <div class="home-screen">
+<div class="popup-cover"></div>
+<div class="home-screen">
     <input class="name-input player1-name" type="text" name="player1" placeholder="Enter Player 1 Name" autofocus>
     <input class="name-input player2-name" type="text" name="player2" placeholder="Enter Player 2 Name">
-    <input class="name-input player3-name" type="text" name="player3" placeholder="Enter Player 3 Name">
-    <button class="start-button">START</button>
-  </div>
+    <input class="name-input player3-name" type="text" name="player3" placeholder="Enter Player 3 Name">  
+    <div class="button-container"> 
+      <button class="start-button">START</button>
+      <button class="file-upload-button">
+        <label>
+          UPLOAD PUZZLE CSV
+        </label>
+      </button>
+      <input type="file" accept=".csv" id="csv-upload" style="display:none;">
+    </div>
+  <label id="csv-upload-feedback" style="display:none; color: white;">Puzzles Uploaded Successfully!</label>
+</div>
+
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>

@@ -26,16 +26,24 @@ const data = {
     600 /* 2 */
   ],
   bonusWheel: [
-  20000,
-  3000,
-  4000,
-  5000,
-  6000,
-  7000
+    10000, 
+    60000, 
+    25000, 
+    50000, 
+    100000, 
+    90000,
+    60000, 
+    25000, 
+    10000, 
+    60000, 
+    90000, 
+    35000, 
+    25000, 
+    '1 Million', 
+    90000, 
+    60000 
   ],
   puzzles: {
-    one_word_answers: {
-      date: 'Oct 07 2018',
       puzzle_bank: [
         {  
           category: 'Around The House',
@@ -225,12 +233,7 @@ const data = {
           first_word: 6,
           description: 'Rhyming word(s) or phrase(s).',
           correct_answer: 'Bow-wow',
-        }
-      ]
-    },
-    two_word_answers: {
-      date: 'Oct 07 2018',
-      puzzle_bank: [
+        },
         {  
           category: 'Around The House',
           number_of_words: 2,
@@ -418,12 +421,7 @@ const data = {
           first_word: 3,
           description: 'Rhyming word(s) or phrase(s).',
           correct_answer: 'Fat Cat',
-        }
-      ]
-    },
-    three_word_answers: {
-      date: 'Oct 07 2018',
-      puzzle_bank: [
+        },
         {  
           category: 'Around The House',
           number_of_words: 3,
@@ -611,12 +609,7 @@ const data = {
           first_word: 5,
           description: 'Rhyming word(s) or phrase(s).',
           correct_answer: 'Claim To Fame',
-        }
-      ]
-    },
-    four_word_answers: {
-      date: 'Oct 07 2018',
-      puzzle_bank: [
+        },
         {  
           category: 'Around The House',
           number_of_words: 4,
@@ -807,8 +800,5 @@ const data = {
         }
       ]
     }
-  }
 };
-
-
 export default data;

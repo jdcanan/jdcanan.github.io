@@ -1,5 +1,6 @@
 import Game from './Game.js';
 import domUpdates from './DOM.js';
+import data from './data.js';
 
 let buzzer = new Audio('./audio/Buzzer.mp3');
 let chooseSound = new Audio('./audio/choose.mp3');
@@ -14,6 +15,12 @@ let round;
 let puzzle;
 let wheel;
 
+$('.file-upload-button').on('click', function () {
+  console.log('Upload Button Click');
+  const fileInput = document.getElementById('csv-upload');
+  fileInput.click(); // Trigger the hidden file input
+});
+$('#csv-upload').on('change', handleCSVUpload);
 $('.start-button').on('click', init);
 $('.quit').on('click', quitHandler);
 $('.spin-button').on('click', game.setUpWheel);
@@ -52,14 +59,21 @@ function playLoopingAudio(audioObject)  {
 }
 
 function init() {
+  //console.log('Running init...');
   game.getPlayers();
   newRoundHandler();
+  
   setTimeout(() => {
     playLoopingAudio(theme);
   }, 1000);
 }
 
 function newRoundHandler() {
+
+  // Hide feedback label
+  const feedbackLabel = document.getElementById('csv-upload-feedback');
+  feedbackLabel.style.display = 'none';
+
   round = game.startRound();
   domUpdates.displayNames(game.players, game.playerIndex);
   if (game.bonusRound) {
@@ -73,7 +87,118 @@ function newRoundHandler() {
     wheel = round.generateWheelValue();
   }
   setUpRound();
+
+  if (game.bonusRound) {
+      $('.keyboard-letters:contains("E")').removeClass('active-vowel');
+      $('.keyboard-letters:contains("E")').addClass('vowel-disabled');
+    
+      $('.keyboard-letters:contains("R")').addClass('disabled');
+      $('.keyboard-letters:contains("S")').addClass('disabled');
+      $('.keyboard-letters:contains("T")').addClass('disabled');
+      $('.keyboard-letters:contains("L")').addClass('disabled');
+      $('.keyboard-letters:contains("N")').addClass('disabled');
+    }
 }
+
+function handleCSVUpload(event) {
+  //console.log('Handling CSV upload...');
+
+  const file = event.target.files[0];
+
+  if (file) {
+    console.log('File selected:', file);
+
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      console.log('File loaded successfully!');
+      const csvContent = e.target.result;
+      const puzzles = parseCSV(csvContent);
+
+      // Log the parsed puzzles to check if they are correctly loaded
+      //console.log('Parsed Puzzles:', puzzles);
+
+      // Update the puzzle bank in data with the new puzzles
+      data.puzzles.puzzle_bank = puzzles;
+
+      // Log the updated puzzle bank
+      //console.log('Updated Puzzle Bank:', data.puzzles.puzzle_bank);
+
+      // Show feedback label
+      const feedbackLabel = document.getElementById('csv-upload-feedback');
+      feedbackLabel.style.display = 'block';
+    };
+
+    reader.readAsText(file);
+  } else {
+    console.log('No file selected.');
+  }
+}
+
+function parseCSV(csvContent) {
+    const lines = csvContent.split('\n');
+    console.log('CSV Content after split by newline: ', lines);
+    const puzzles = [];
+
+    const headers = lines[0].replace('\r', '').split(',');
+    //console.log('Found headers: ', headers);
+  
+    for (let i = 1; i < lines.length; i++) {
+        // Remove any '\r' characters from the line
+        const currentLine = lines[i].replace('\r', '').split(',');
+        //console.log('currentLine: ', currentLine);
+
+        // Trim each value to remove leading and trailing whitespaces
+        const trimmedLine = currentLine.map(value => {
+            const trimmedValue = value.trim();
+            return trimmedValue;
+        });
+        //console.log('trimmedLine: ', trimmedLine);
+        //console.log('trimmedLine.length: ', trimmedLine.length);
+        //console.log('headers.length: ', headers.length);
+
+        // Check if the trimmed line has the expected number of columns
+        if (trimmedLine.length === headers.length) {
+            const correctAnswer = trimmedLine[headers.indexOf('CorrectAnswer')];
+            //console.log('correctAnswer: ', correctAnswer);
+
+            const numWords = correctAnswer.split(' ').length;
+            const totalLetters = correctAnswer.length;
+            const firstWord = correctAnswer.split(' ')[0].length;
+
+            //console.log('NumWords:', numWords);
+            //console.log('TotalLetters:', totalLetters);
+            //console.log('FirstWord:', firstWord);
+
+            const puzzle = {
+                category: trimmedLine[headers.indexOf('Category')],
+                number_of_words: numWords,
+                total_number_of_letters: totalLetters,
+                first_word: firstWord,
+                correct_answer: correctAnswer,
+                description: '', // You can set it to an empty string if not used
+            };
+
+          //console.log('Puzzle: ', puzzle);
+
+            /* Puzzle board currently only supports the 2nd and 3rd lines which are 14 characters each, and it's
+             not smart enough to wrap words without splitting them across lines. Therefore max puzzle length is 28
+             In the future, need to update this logic once we have better word wrapping logic so that it discards
+             puzzles that don't fit on the board */
+            if (totalLetters <= 28) {
+              //console.log('Pushing Puzzle: ', puzzle);
+                puzzles.push(puzzle);
+            } else {
+                console.warn(`Puzzle at line ${i + 1} has correct_answer length greater than 28 characters and will be skipped.`);
+            }
+
+        } else {
+            console.error(`Line ${i + 1} does not have the expected number of columns after trimming.`);
+        }
+    }
+    return puzzles;
+}
+
 
 function setUpRound() {
   domUpdates.resetPuzzleSquares();
@@ -117,6 +242,62 @@ function startBonusHandler() {
 function newGameHandler(e) {
   if ($(e.target).hasClass('new-game')) {
     domUpdates.resetGameDisplay();
+
+    const bonusRoundIntro = document.querySelector('.bonus-round-intro');
+    bonusRoundIntro.innerHTML = `
+      <h2 class="winner-name"><span class="name-of-bonus-player"></span> <span class="win-message"> MoVES To THE BONUS RoUND!</span></h2>
+      <h2>ToTAL SCoRE: <span class="winner-money-pre-bonus"></span></h2>
+      <button class="start-bonus-round">LET'S GO!</button>
+    `;
+    
+    $('.start-bonus-round').on('click', startBonusHandler);
+
+    $('.spin-button').on('click', game.setUpWheel);
+    $('.solve-button').on('click', domUpdates.displaySolvePopup);
+    $('.vowel-button').on('click', vowelPurchaseHandler);
+
+    //Need to reset placement of wheel labels so they align properly for regular wheel values
+    const mark1Element = document.querySelector('.mark1');
+    const mark2Element = document.querySelector('.mark2');
+    const mark3Element = document.querySelector('.mark3');
+    const mark4Element = document.querySelector('.mark4');
+    const mark5Element = document.querySelector('.mark5');
+    const mark6Element = document.querySelector('.mark6');
+    const mark7Element = document.querySelector('.mark7');
+    const mark8Element = document.querySelector('.mark8');
+    const mark9Element = document.querySelector('.mark9');
+    const mark10Element = document.querySelector('.mark10');
+    const mark11Element = document.querySelector('.mark11');
+    const mark12Element = document.querySelector('.mark12');
+    const mark13Element = document.querySelector('.mark13');
+    const mark14Element = document.querySelector('.mark14');
+    const mark15Element = document.querySelector('.mark15');
+    const mark16Element = document.querySelector('.mark16');
+    const option5Element = document.querySelector('.option5');
+    const option14Element = document.querySelector('.option14');    
+    mark1Element.style.top = '8%';
+    mark2Element.style.top = '10%';
+    mark3Element.style.top = '10%';
+    mark4Element.style.top = '8%';
+    mark5Element.style.top = '8%';
+    mark5Element.style.fontSize = '1.2rem';
+    mark5Element.style.left = '30.5%';
+    mark5Element.style.color = 'white';
+    mark6Element.style.top = '10%';
+    mark7Element.style.top = '10%';
+    mark8Element.style.top = '10%';
+    mark9Element.style.top = '8%';
+    mark10Element.style.top = '10%';
+    mark11Element.style.top = '10%';
+    mark12Element.style.top = '8%';
+    mark13Element.style.top = '10%';
+    mark14Element.style.top = '6%';
+    mark14Element.style.left = '30.5%';
+    mark15Element.style.top = '10%';
+    mark16Element.style.top = '10%';
+    option5Element.style.background = '#000000';
+    option14Element.style.background = '#ffffff';
+
     game.quitGame();
   }
 }
