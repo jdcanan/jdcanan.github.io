@@ -102,8 +102,16 @@ postBonusResult() {
         $('.win-message').text(` MISSED THE BONUS!`);
         var winnings = parseFloat(this.bonusPlayer.bankAcct);
     }
-    
-    $('.winner-money-pre-bonus').text(winnings);
+
+    // Format the winnings as a dollar value with commas as thousands separators
+    let formattedWinnings = winnings.toLocaleString('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+  
+    $('.winner-money-pre-bonus').text(formattedWinnings);
+  
+    //$('.winner-money-pre-bonus').text(winnings);
     $('.start-bonus-round').remove();
     $('.bonus-round-intro').append('<h2 class="correct-bonus"><span class="bonus-answer">Bonus Answer</span></h2><button class="new-game">NEW GAME</button>');
 }
