@@ -327,7 +327,16 @@ displayWheelValues(wheel) {
     $('.popup-cover').css('display', 'unset');
     $('.bonus-round-intro').css('display', 'flex');
     $('.name-of-bonus-player').text(winner);
-    $('.winner-money-pre-bonus').text(score);
+
+    // Format the winnings as a dollar value with commas as thousands separators
+    let formattedScore = score.toLocaleString('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    });
+    $('.winner-money-pre-bonus').text(formattedScore);
+    //$('.winner-money-pre-bonus').text(score);
   },
 
   startBonusRound() {

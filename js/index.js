@@ -241,6 +241,10 @@ function startBonusHandler() {
 
 function newGameHandler(e) {
   if ($(e.target).hasClass('new-game')) {
+
+    game.endRound();
+    setTimeout(newRoundHandler, 2500);
+    
     domUpdates.resetGameDisplay();
 
     const bonusRoundIntro = document.querySelector('.bonus-round-intro');
@@ -310,12 +314,30 @@ function solveHandler() {
     chooseSound.pause();
     playLoopingAudio(theme);
     solveSound.play();
+    /*
     game.bonusRound ? solveBonusHandler(result) : null;
     game.endRound();
     setTimeout(newRoundHandler, 2500);
+    */
+
+    if(game.bonusRound){
+      solveBonusHandler(result);
+      $('.correct-bonus').remove();
+    }
+    else{
+      game.endRound();
+      setTimeout(newRoundHandler, 2500);
+    }
+    
   } else {
     buzzer.play();
-    game.bonusRound ? solveBonusHandler(result) : null;
+    
+    //game.bonusRound ? solveBonusHandler(result) : null;
+    if(game.bonusRound){
+      solveBonusHandler(result);
+      $('.bonus-answer').text("Answer: " + puzzle.currentPuzzle.correct_answer);
+    }
+        
     game.endTurn();
   }
 };
