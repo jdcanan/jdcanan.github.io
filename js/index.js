@@ -250,7 +250,6 @@ function newGameHandler(e) {
     const bonusRoundIntro = document.querySelector('.bonus-round-intro');
     bonusRoundIntro.innerHTML = `
       <h2 class="winner-name"><span class="name-of-bonus-player"></span> <span class="win-message"> MoVES To THE BONUS RoUND!</span></h2>
-      <h2 class="correct-bonus"><span class="bonus-answer">Bonus Answer</span></h2>
       <h2>ToTAL SCoRE: <span class="winner-money-pre-bonus"></span></h2>
       <button class="start-bonus-round">LET'S GO!</button>
     `;
