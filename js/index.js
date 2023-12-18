@@ -322,6 +322,8 @@ function solveHandler() {
 
     if(game.bonusRound){
       solveBonusHandler(result);
+      console.log("Correct Answer:", puzzle.currentPuzzle.correct_answer);
+      $('.bonus-answer').text(puzzle.currentPuzzle.correct_answer);
     }
     else{
       game.endRound();
