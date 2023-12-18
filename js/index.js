@@ -330,7 +330,15 @@ function solveHandler() {
     
   } else {
     buzzer.play();
-    game.bonusRound ? solveBonusHandler(result) : null;
+    
+    //game.bonusRound ? solveBonusHandler(result) : null;
+    if(game.bonusRound){
+      solveBonusHandler(result);
+      
+      //set the variable here to display the correct puzzle result in the bonus popup
+      $('.bonus-answer') = puzzle.currentPuzzle.correct_answer;
+    }
+        
     game.endTurn();
   }
 };
