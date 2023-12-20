@@ -77,6 +77,37 @@ class BonusRound extends Round {
 
 
   generateBonusPuzzle(lastPuzzle) {
+    let puzzle;
+    let attempts = 0; //Failsafe so that it doesn't go into an infinite loop if there are no valid puzzles in the puzzle bank
+      
+    while (!puzzle && attempts < 1000) {
+      let randomIndex = Math.floor(Math.random() * this.puzzleBank.length);
+      if (this.puzzleBank[randomIndex] === lastPuzzle) {
+          //this.generateBonusPuzzle(lastPuzzle);
+          puzzle = null;
+        } else {
+            try {
+              puzzle = new Puzzle(this.puzzleBank[randomIndex]);
+            } catch (error) {
+              console.error(error.message);
+              puzzle = null; // Set puzzle to null to indicate an error
+              attempts++;
+            }
+        }
+      }
+
+      if (!puzzle) {
+        throw new Error("Unable to generate a valid puzzle.");
+      }
+    
+      return puzzle;
+    }
+  
+    
+
+
+
+    
     let randomIndex = Math.floor(Math.random() * this.puzzleBank.length);
     if (this.puzzleBank[randomIndex] === lastPuzzle) {
       this.generateBonusPuzzle(lastPuzzle);
@@ -84,6 +115,11 @@ class BonusRound extends Round {
       return new Puzzle(this.puzzleBank[randomIndex]);
     }
   }
+
+
+  generatePuzzle() {
+  
+}
 
 postBonusResult() {
     $('.popup-cover').css('display', 'unset');
