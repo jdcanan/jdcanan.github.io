@@ -8,10 +8,36 @@ class Round {
     this.wheelValue = wheelValue;
   }
 
+  /*
   generatePuzzle() {
     let randomIndex = Math.floor(Math.random() * this.puzzleBank.length);
     return new Puzzle(this.puzzleBank[randomIndex]);
   }
+  */
+
+  generatePuzzle() {
+  let puzzle;
+  let attempts = 0; //Failsafe so that it doesn't go into an infinite loop if there are no valid puzzles in the puzzle bank
+    
+  while (!puzzle && attempts < 1000) {
+    let randomIndex = Math.floor(Math.random() * this.puzzleBank.length);
+    
+    try {
+      puzzle = new Puzzle(this.puzzleBank[randomIndex]);
+    } catch (error) {
+      console.error(error.message);
+      puzzle = null; // Set puzzle to null to indicate an error
+      attempts++;
+    }
+  }
+
+  if (!puzzle) {
+    throw new Error("Unable to generate a valid puzzle.");
+  }
+
+  return puzzle;
+}
+
 
   generateWheelValue() {
     let wheelVals = [];
