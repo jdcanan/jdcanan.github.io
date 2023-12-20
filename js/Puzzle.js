@@ -20,7 +20,7 @@ class Puzzle {
 
 generatePuzzleGridLines(puzzleAnswer) {
   const words = puzzleAnswer.split(" ");
-  const puzzleLines = ["", "", "", ""];
+  const puzzleGridLines = ["", "", "", ""];
   console.log("Splitting puzzle: ", puzzleAnswer);
   //console.log("Words Array: ", words);
 
@@ -31,10 +31,10 @@ generatePuzzleGridLines(puzzleAnswer) {
     const word = words[i];
 
     while (currentLine < 4) {
-      const currentLineLength = puzzleLines[currentLine].length;
+      const currentLineLength = puzzleGridLines[currentLine].length;
 
       if (currentLineLength + word.length <= (currentLine === 0 || currentLine === 3 ? 12 : 14)) {
-        puzzleLines[currentLine] += word + (currentLineLength + word.length < (currentLine === 0 || currentLine === 3 ? 12 : 14) ? " " : "");
+        puzzleGridLines[currentLine] += word + (currentLineLength + word.length < (currentLine === 0 || currentLine === 3 ? 12 : 14) ? " " : "");
         //console.log("First Pass adding word: ", word);
         break;
       } else {
@@ -47,8 +47,8 @@ generatePuzzleGridLines(puzzleAnswer) {
     if (currentLine === 3) {
       retry = true;
       currentLine = 0;
-      puzzleLines.fill("");
-      //console.log("Reached 3rd line, starting over at line 0: ", puzzleLines);
+      puzzleGridLines.fill("");
+      //console.log("Reached 3rd line, starting over at line 0: ", puzzleGridLines);
       break;
     }
   }
@@ -59,10 +59,10 @@ generatePuzzleGridLines(puzzleAnswer) {
       const word = words[i];
 
       while (currentLine < 4) {
-        const currentLineLength = puzzleLines[currentLine].length;
+        const currentLineLength = puzzleGridLines[currentLine].length;
 
         if (currentLineLength + word.length <= (currentLine === 0 || currentLine === 3 ? 12 : 14)) {
-          puzzleLines[currentLine] += word + (currentLineLength + word.length < (currentLine === 0 || currentLine === 3 ? 12 : 14) ? " " : "");
+          puzzleGridLines[currentLine] += word + (currentLineLength + word.length < (currentLine === 0 || currentLine === 3 ? 12 : 14) ? " " : "");
           //console.log("2nd Pass adding word: ", word);
           break;
         } else {
@@ -79,11 +79,11 @@ generatePuzzleGridLines(puzzleAnswer) {
   }
 
   // Trim spaces at the beginning of each line
-  puzzleLines.forEach((line, index) => {
-    puzzleLines[index] = line.trimLeft();
+  puzzleGridLines.forEach((line, index) => {
+    puzzleGridLines[index] = line.trimLeft();
   });
 
-  return puzzleLines;
+  return puzzleGridLines;
 }
   
 
