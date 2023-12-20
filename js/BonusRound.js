@@ -102,25 +102,17 @@ class BonusRound extends Round {
       }
     
       return puzzle;
-    }
-  
+
+    /* Previous function  
+      let randomIndex = Math.floor(Math.random() * this.puzzleBank.length);
+      if (this.puzzleBank[randomIndex] === lastPuzzle) {
+        this.generateBonusPuzzle(lastPuzzle);
+      } else {
+        return new Puzzle(this.puzzleBank[randomIndex]);
+      }
+    */
     
-
-
-
-    
-    let randomIndex = Math.floor(Math.random() * this.puzzleBank.length);
-    if (this.puzzleBank[randomIndex] === lastPuzzle) {
-      this.generateBonusPuzzle(lastPuzzle);
-    } else {
-      return new Puzzle(this.puzzleBank[randomIndex]);
     }
-  }
-
-
-  generatePuzzle() {
-  
-}
 
 postBonusResult() {
     $('.popup-cover').css('display', 'unset');
