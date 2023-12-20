@@ -11,7 +11,7 @@ class Puzzle {
     
     try {
       this.puzzleLines = this.generatePuzzleGridLines(currentPuzzle.correct_answer);
-      console.log(puzzleLines);
+      console.log(this.puzzleLines);
     } catch (error) {
       //console.error(error.message);
       throw error;
