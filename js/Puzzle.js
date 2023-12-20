@@ -15,7 +15,7 @@ class Puzzle {
     }
   }
 
-function generatePuzzleGridLines(puzzleAnswer) {
+generatePuzzleGridLines(puzzleAnswer) {
   const words = puzzleAnswer.split(" ");
   const puzzleLines = ["", "", "", ""];
 
