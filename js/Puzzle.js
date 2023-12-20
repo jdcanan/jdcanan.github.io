@@ -7,8 +7,10 @@ class Puzzle {
     this.correctCount = 0;
     this.numberCorrect = 0;
     this.completed = false;
+    this.puzzleLines = null;
+    
     try {
-      const puzzleLines = this.generatePuzzleGridLines(currentPuzzle.correct_answer);
+      this.puzzleLines = this.generatePuzzleGridLines(currentPuzzle.correct_answer);
       console.log(puzzleLines);
     } catch (error) {
       //console.error(error.message);
