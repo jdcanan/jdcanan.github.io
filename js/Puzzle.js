@@ -89,13 +89,19 @@ generatePuzzleGridLines(puzzleAnswer) {
 
   populateBoard() {
     console.log("Puzzle: ", this.currentPuzzle.correct_answer);
-    let puzzleArray = this.currentPuzzle.correct_answer.split('');
-    domUpdates.populatePuzzleSquares(puzzleArray);
+    //let puzzleArray = this.currentPuzzle.correct_answer.split('');
+    //domUpdates.populatePuzzleSquares(puzzleArray);
+
+    console.log("Populate PuzzleGrid: ", this.puzzleLines);
+    domUpdates.populatePuzzleSquares(this.puzzleLines);
   }
 
   populateBonus(puzzleLength) {
-    let puzzleArray = this.currentPuzzle.correct_answer.split('');
-    domUpdates.populatePuzzleSquares(puzzleArray);
+    //let puzzleArray = this.currentPuzzle.correct_answer.split('');
+    //domUpdates.populatePuzzleSquares(puzzleArray);
+    console.log("Populate BonusPuzzleGrid: ", this.puzzleLines);
+    domUpdates.populatePuzzleSquares(this.puzzleLines);
+    
     domUpdates.showBonusLetters(puzzleLength);
   }
 
