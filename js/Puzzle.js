@@ -8,7 +8,7 @@ class Puzzle {
     this.numberCorrect = 0;
     this.completed = false;
     try {
-      const puzzleLines = this.generatePuzzleGridLines(puzzleAnswer);
+      const puzzleLines = this.generatePuzzleGridLines(currentPuzzle);
       console.log(puzzleLines);
     } catch (error) {
       console.error(error.message);
