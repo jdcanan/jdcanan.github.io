@@ -11,7 +11,8 @@ class Puzzle {
       const puzzleLines = this.generatePuzzleGridLines(currentPuzzle.correct_answer);
       console.log(puzzleLines);
     } catch (error) {
-      console.error(error.message);
+      //console.error(error.message);
+      throw error;
     }
   }
 
