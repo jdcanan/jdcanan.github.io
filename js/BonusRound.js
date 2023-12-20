@@ -84,6 +84,7 @@ class BonusRound extends Round {
       let randomIndex = Math.floor(Math.random() * this.puzzleBank.length);
       if (this.puzzleBank[randomIndex] === lastPuzzle) {
           //this.generateBonusPuzzle(lastPuzzle);
+          Console.log("Chose same bonus puzzle as last puzzle, picking again");
           puzzle = null;
         } else {
             try {
