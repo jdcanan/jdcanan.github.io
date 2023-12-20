@@ -18,6 +18,7 @@ class Puzzle {
 generatePuzzleGridLines(puzzleAnswer) {
   const words = puzzleAnswer.split(" ");
   const puzzleLines = ["", "", "", ""];
+  console.log("Words Array: ", words);
 
   let currentLine = 1;
   let retry = false;
@@ -30,9 +31,11 @@ generatePuzzleGridLines(puzzleAnswer) {
 
       if (currentLineLength + word.length <= (currentLine === 0 || currentLine === 3 ? 12 : 14)) {
         puzzleLines[currentLine] += word + (currentLineLength + word.length < (currentLine === 0 || currentLine === 3 ? 12 : 14) ? " " : "");
+        console.log("First Pass adding word: ", word);
         break;
       } else {
         currentLine++;
+        console.log("First Pass moving to line: ", currentLine);
       }
     }
 
@@ -55,9 +58,11 @@ generatePuzzleGridLines(puzzleAnswer) {
 
         if (currentLineLength + word.length <= (currentLine === 0 || currentLine === 3 ? 12 : 14)) {
           puzzleLines[currentLine] += word + (currentLineLength + word.length < (currentLine === 0 || currentLine === 3 ? 12 : 14) ? " " : "");
+          console.log("2nd Pass adding word: ", word);
           break;
         } else {
           currentLine++;
+          console.log("2nd Pass moving to line: ", currentLine);
         }
       }
 
