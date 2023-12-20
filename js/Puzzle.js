@@ -45,6 +45,7 @@ generatePuzzleGridLines(puzzleAnswer) {
       currentLine = 0;
       puzzleLines.fill("");
       console.log("Reached 3rd line, starting over at line 0: ", puzzleLines);
+      break;
     }
   }
 
