@@ -7,7 +7,85 @@ class Puzzle {
     this.correctCount = 0;
     this.numberCorrect = 0;
     this.completed = false;
+    try {
+      const puzzleLines = generatePuzzleGridLines(puzzleAnswer);
+      console.log(puzzleLines);
+    } catch (error) {
+      console.error(error.message);
+    }
   }
+
+function generatePuzzleGridLines(puzzleAnswer) {
+  const words = puzzleAnswer.split(" ");
+  const puzzleLines = ["", "", "", ""];
+
+  let currentLine = 1;
+  let retry = false;
+
+  for (let i = 0; i < words.length; i++) {
+    const word = words[i];
+
+    while (currentLine < 4) {
+      const currentLineLength = puzzleLines[currentLine].length;
+
+      if (currentLineLength + word.length <= (currentLine === 0 || currentLine === 3 ? 12 : 14)) {
+        puzzleLines[currentLine] += word + (currentLineLength + word.length < (currentLine === 0 || currentLine === 3 ? 12 : 14) ? " " : "");
+        break;
+      } else {
+        currentLine++;
+      }
+    }
+
+    // If we reach line 3 (index 2) and still have words to add, start over at line 0
+    if (currentLine === 3) {
+      retry = true;
+      currentLine = 0;
+      puzzleLines.fill("");
+    }
+  }
+
+  if (retry) {
+    // If we still have words to add after completing line 3, start over at line 0
+    for (let i = 0; i < words.length; i++) {
+      const word = words[i];
+
+      while (currentLine < 4) {
+        const currentLineLength = puzzleLines[currentLine].length;
+
+        if (currentLineLength + word.length <= (currentLine === 0 || currentLine === 3 ? 12 : 14)) {
+          puzzleLines[currentLine] += word + (currentLineLength + word.length < (currentLine === 0 || currentLine === 3 ? 12 : 14) ? " " : "");
+          break;
+        } else {
+          currentLine++;
+        }
+      }
+
+      // If we reach line 5 (index 4) and still have words to add, return an error
+      if (currentLine === 4) {
+        throw new Error("Input too long for puzzle grid");
+      }
+    }
+  }
+
+  // Trim spaces at the beginning of each line
+  puzzleLines.forEach((line, index) => {
+    puzzleLines[index] = line.trimLeft();
+  });
+
+  return puzzleLines;
+}
+
+/* //Example usage:
+const puzzleAnswer = "An eye for an eye and a tooth for a tooth";
+try {
+  const puzzleLines = generatePuzzleGridLines(puzzleAnswer);
+  console.log(puzzleLines);
+} catch (error) {
+  console.error(error.message);
+}
+*/
+
+  
 
   populateBoard() {
     console.log("Puzzle: ", this.currentPuzzle.correct_answer);
