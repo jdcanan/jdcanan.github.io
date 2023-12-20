@@ -36,11 +36,12 @@ generatePuzzleGridLines(puzzleAnswer) {
       }
     }
 
-    // If we reach line 3 (index 2) and still have words to add, start over at line 0
+    // If we reach line 4 (index 3) and still have words to add, start over at line 0
     if (currentLine === 3) {
       retry = true;
       currentLine = 0;
       puzzleLines.fill("");
+      console.log("Reached 3rd line, starting over at line 0: ", puzzleLines);
     }
   }
 
