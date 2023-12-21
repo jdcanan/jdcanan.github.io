@@ -100,7 +100,9 @@ const domUpdates = {
     $('.wheel-circle').toggleClass('wheel-spin');
   },
 
+  /* old function without wrapping support
   populatePuzzleSquares(puzzle) {
+    
     let letterBoxArray = Array.from($('.letter-content'));
     let revealSound = new Audio('./audio/reveal.mp3');
     revealSound.play();
@@ -118,6 +120,46 @@ const domUpdates = {
       }
     });
   },
+  */
+
+  populatePuzzleSquares(puzzle) {
+  let letterBoxArray = Array.from($('.letter-content'));
+  let revealSound = new Audio('./audio/reveal.mp3');
+  revealSound.play();
+
+  for (let i = 0; i < puzzle.length; i++) {
+    let line = puzzle[i];
+    let lineArray = line.split(''); // Convert the line string to an array of characters
+    let startIndex;
+
+    if (i === 0) {
+      startIndex = 0;
+    } else if (i === 1) {
+      startIndex = 12;
+    } else if (i === 2) {
+      startIndex = 26;
+    } else if (i === 3) {
+      startIndex = 40;
+    }
+
+    for (let j = 0; j < lineArray.length; j++) {
+      let index = startIndex + j;
+      // Now use the 'index' to update the corresponding element in letterBoxArray
+      if (lineArray[j] === '-' || lineArray[j] === '&' || lineArray[j] === '\'' || lineArray[j] === '.' || lineArray[j] === ':' || lineArray[j] === '?' || lineArray[j] === '!') {
+        $(letterBoxArray[index]).text(lineArray[j]);
+        $(letterBoxArray[index]).parent().css('background', 'white');
+      } else if (lineArray[j] !== ' ') {
+        $(letterBoxArray[index]).text(lineArray[j]);
+        $(letterBoxArray[index]).css('opacity', 0);
+        $(letterBoxArray[index]).parent().css('background', 'white');
+      } else if (lineArray[j] === ' ') {
+        $(letterBoxArray[index]).text(' ');
+        $(letterBoxArray[index]).parent().css('background', '#1c7455');
+      }
+    }
+  }
+},
+
 
 /* Previous showBonusLetters() displayed 7 random characters 
   showBonusLetters(length) {

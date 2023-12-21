@@ -7,17 +7,108 @@ class Puzzle {
     this.correctCount = 0;
     this.numberCorrect = 0;
     this.completed = false;
+    this.puzzleLines = null;
+    
+    try {
+      this.puzzleLines = this.generatePuzzleGridLines(currentPuzzle.correct_answer);
+      console.log(this.puzzleLines);
+    } catch (error) {
+      //console.error(error.message);
+      throw error;
+    }
   }
+
+generatePuzzleGridLines(puzzleAnswer) {
+  const words = puzzleAnswer.split(" ");
+  const puzzleGridLines = ["", "", "", ""];
+  console.log("Splitting puzzle: ", puzzleAnswer);
+  //console.log("Words Array: ", words);
+
+  let currentLine = 1;
+  let retry = false;
+
+  for (let i = 0; i < words.length; i++) {
+    const word = words[i];
+
+    while (currentLine < 4) {
+      const currentLineLength = puzzleGridLines[currentLine].length;
+
+      if (currentLineLength + word.length <= (currentLine === 0 || currentLine === 3 ? 12 : 14)) {
+        puzzleGridLines[currentLine] += word + (currentLineLength + word.length < (currentLine === 0 || currentLine === 3 ? 12 : 14) ? " " : "");
+        //console.log("First Pass adding word: ", word);
+        break;
+      } else {
+        currentLine++;
+        //console.log("First Pass moving to line: ", currentLine);
+      }
+    }
+
+    // If we reach line 4 (index 3) and still have words to add, start over at line 0
+    if (currentLine === 3) {
+      retry = true;
+      currentLine = 0;
+      puzzleGridLines.fill("");
+      //console.log("Reached 3rd line, starting over at line 0: ", puzzleGridLines);
+      break;
+    }
+  }
+
+  if (retry) {
+    // If we still have words to add after completing line 3, start over at line 0
+    for (let i = 0; i < words.length; i++) {
+      const word = words[i];
+
+      while (currentLine < 4) {
+        const currentLineLength = puzzleGridLines[currentLine].length;
+
+        if (currentLineLength + word.length <= (currentLine === 0 || currentLine === 3 ? 12 : 14)) {
+          puzzleGridLines[currentLine] += word + (currentLineLength + word.length < (currentLine === 0 || currentLine === 3 ? 12 : 14) ? " " : "");
+          //console.log("2nd Pass adding word: ", word);
+          break;
+        } else {
+          currentLine++;
+          //console.log("2nd Pass moving to line: ", currentLine);
+        }
+      }
+
+      // If we reach line 5 (index 4) and still have words to add, return an error
+      if (currentLine === 4) {
+        throw new Error("Input too long for puzzle grid");
+      }
+    }
+  }
+
+  // Trim spaces at the beginning and end of each line
+  puzzleGridLines.forEach((line, index) => {
+    puzzleGridLines[index] = line.trim();
+  });
+
+  // Center the remaining portions by inserting spaces at the beginning
+  puzzleGridLines.forEach((line, index) => {
+    const maxLength = (index === 0 || index === 3) ? 12 : 14;
+    const padding = Math.max(0, Math.floor((maxLength - line.length) / 2));
+    puzzleGridLines[index] = " ".repeat(padding) + line;
+  });
+
+  return puzzleGridLines;
+}
+  
 
   populateBoard() {
     console.log("Puzzle: ", this.currentPuzzle.correct_answer);
-    let puzzleArray = this.currentPuzzle.correct_answer.split('');
-    domUpdates.populatePuzzleSquares(puzzleArray);
+    //let puzzleArray = this.currentPuzzle.correct_answer.split('');
+    //domUpdates.populatePuzzleSquares(puzzleArray);
+
+    console.log("Populate PuzzleGrid: ", this.puzzleLines);
+    domUpdates.populatePuzzleSquares(this.puzzleLines);
   }
 
   populateBonus(puzzleLength) {
-    let puzzleArray = this.currentPuzzle.correct_answer.split('');
-    domUpdates.populatePuzzleSquares(puzzleArray);
+    //let puzzleArray = this.currentPuzzle.correct_answer.split('');
+    //domUpdates.populatePuzzleSquares(puzzleArray);
+    console.log("Populate BonusPuzzleGrid: ", this.puzzleLines);
+    domUpdates.populatePuzzleSquares(this.puzzleLines);
+    
     domUpdates.showBonusLetters(puzzleLength);
   }
 
