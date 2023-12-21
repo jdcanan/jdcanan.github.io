@@ -158,7 +158,7 @@ const domUpdates = {
       }
     }
   }
-}
+},
 
 
 /* Previous showBonusLetters() displayed 7 random characters 
