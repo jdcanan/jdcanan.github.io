@@ -78,9 +78,16 @@ generatePuzzleGridLines(puzzleAnswer) {
     }
   }
 
-  // Trim spaces at the beginning of each line
+  // Trim spaces at the beginning and end of each line
   puzzleGridLines.forEach((line, index) => {
-    puzzleGridLines[index] = line.trimLeft();
+    puzzleGridLines[index] = line.trim();
+  });
+
+  // Center the remaining portions by inserting spaces at the beginning
+  puzzleGridLines.forEach((line, index) => {
+    const maxLength = (index === 0 || index === 3) ? 12 : 14;
+    const padding = Math.max(0, Math.ceil((maxLength - line.length) / 2));
+    puzzleGridLines[index] = " ".repeat(padding) + line;
   });
 
   return puzzleGridLines;
