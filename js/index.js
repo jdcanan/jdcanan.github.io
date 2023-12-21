@@ -245,7 +245,7 @@ function newGameHandler(e) {
   if ($(e.target).hasClass('new-game')) {
 
     game.endRound();
-    setTimeout(newRoundHandler, 2500);
+    //setTimeout(newRoundHandler, 2500);
     
     domUpdates.resetGameDisplay();
 
