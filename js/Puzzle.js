@@ -86,7 +86,7 @@ generatePuzzleGridLines(puzzleAnswer) {
   // Center the remaining portions by inserting spaces at the beginning
   puzzleGridLines.forEach((line, index) => {
     const maxLength = (index === 0 || index === 3) ? 12 : 14;
-    const padding = Math.max(0, Math.ceil((maxLength - line.length) / 2));
+    const padding = Math.max(0, Math.floor((maxLength - line.length) / 2));
     puzzleGridLines[index] = " ".repeat(padding) + line;
   });
 
