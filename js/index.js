@@ -181,17 +181,6 @@ function parseCSV(csvContent) {
 
           //console.log('Puzzle: ', puzzle);
 
-            /* Puzzle board currently only supports the 2nd and 3rd lines which are 14 characters each, and it's
-             not smart enough to wrap words without splitting them across lines. Therefore max puzzle length is 28
-             In the future, need to update this logic once we have better word wrapping logic so that it discards
-             puzzles that don't fit on the board 
-            if (totalLetters <= 28) {
-              //console.log('Pushing Puzzle: ', puzzle);
-                puzzles.push(puzzle);
-            } else {
-                console.warn(`Puzzle at line ${i + 1} has correct_answer length greater than 28 characters and will be skipped.`);
-            }
-            */
           puzzles.push(puzzle); //Remove error checking here, we'll handle it as part of the section where we split into lines
 
         } else {
@@ -229,7 +218,7 @@ function checkIfPuzzleSolved() {
 }
 
 function vowelPurchaseHandler() {
-  if (game.players[game.playerIndex].wallet < 100) {
+  if (game.players[game.playerIndex].wallet < 250) {
     return $('.vowel-error').css('display', 'unset');
   }
   domUpdates.highlightVowels();

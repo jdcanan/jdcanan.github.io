@@ -14,7 +14,7 @@ class Player {
   }
 
   buyVowel() {
-    this.wallet -= 100;
+    this.wallet -= 250;
     domUpdates.highlightVowels();
     domUpdates.updateWallet(this);
   }
