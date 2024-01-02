@@ -392,6 +392,7 @@ displayWheelValues(wheel) {
   },
 
   resetGameDisplay() {
+    $('.vowel-button').prop('disabled', false);
     $('.spin-number').text('--');
     $('.bonus-round-intro').css('display', 'none');
     $('.popup-cover').css('display', 'none');
@@ -421,6 +422,7 @@ displayWheelValues(wheel) {
     $('.solve-popup').css('display', 'none');
     $('.solve-input').val('');
     $('.spin-number').text('--');
+    $('.vowel-button').prop('disabled', false);
   }
 
 }
