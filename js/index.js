@@ -198,6 +198,7 @@ function setUpRound() {
   domUpdates.updateCategory(puzzle);
   domUpdates.displayWheelValues(wheel);
   domUpdates.newRoundKeyboard();
+  $('.vowel-button').prop('disabled', false);
 }
 
 function quitHandler() {
