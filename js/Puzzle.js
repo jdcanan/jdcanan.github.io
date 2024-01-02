@@ -142,8 +142,8 @@ generatePuzzleGridLines(puzzleAnswer) {
     const vowels = ['A', 'E', 'I', 'O', 'U'];
     const guessedVowels = Array.from($('.vowel-disabled')).map(vowel => $(vowel).text());
 
-    const remainingVowels = vowels.filter(vowel => !guessedVowels.includes(vowel));
-    
+    const remainingVowels = vowels.filter(vowel => !guessedVowels.includes(vowel) && this.checkGuess(vowel));
+
     console.log('Remaining Vowels:', remainingVowels.join(', '));
 
     if (remainingVowels.length === 0) {
