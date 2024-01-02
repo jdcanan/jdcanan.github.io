@@ -149,6 +149,7 @@ generatePuzzleGridLines(puzzleAnswer) {
     if (remainingVowels.length === 0) {
       console.log('No more vowels');
       domUpdates.yellCurrentSpin('NO MORE VOWELS');
+      $('.vowel-button').prop('disabled', true);
     }
   }
 
