@@ -138,6 +138,19 @@ generatePuzzleGridLines(puzzleAnswer) {
     }
   }
 
+  checkRemainingVowels() {
+    const vowels = ['A', 'E', 'I', 'O', 'U'];
+    const guessedVowels = Array.from($('.vowel-disabled')).map(vowel => $(vowel).text());
+
+    const remainingVowels = vowels.filter(vowel => !guessedVowels.includes(vowel));
+    
+    console.log('Remaining Vowels:', remainingVowels.join(', '));
+
+    if (remainingVowels.length === 0) {
+      console.log('No more vowels');
+    }
+  }
+
   countCorrectLetters(guess) {
     let numLetters = 0;
     let letterBoxArray = Array.from($('.letter-content'));
