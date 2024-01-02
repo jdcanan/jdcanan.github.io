@@ -396,7 +396,8 @@ function vowelGuessHandler(currentGuess, currentTurn, e) {
   if (!$(e.target).hasClass('active-vowel')) {
     return;
   } else {
-    guessActiveVowel(currentGuess, currentTurn, e); 
+    guessActiveVowel(currentGuess, currentTurn, e);
+    puzzle.checkRemainingVowels();
   }
 }
 
