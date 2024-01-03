@@ -199,6 +199,7 @@ function setUpRound() {
   domUpdates.displayWheelValues(wheel);
   domUpdates.newRoundKeyboard();
   $('.vowel-button').prop('disabled', false);
+  $('.spin-button').prop('disabled', false);
 }
 
 function quitHandler() {
