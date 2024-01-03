@@ -638,6 +638,7 @@ h2 {
   color: tomato;
   font-size: 0rem;
   justify-content: center;
+  display: flex;
   position: absolute;
   text-shadow: 0px 0px 10px tomato;
   top: -22px;
