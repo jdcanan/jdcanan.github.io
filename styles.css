@@ -179,6 +179,18 @@ h2 {
   letter-spacing: 2px;
 }
 
+.spin-button:disabled {
+  background: gray;
+  border: gray;
+}
+
+.spin-button:disabled:hover {
+  cursor: default;
+  transform: none;
+  transition: none;
+  letter-spacing: 2px;
+}
+
 .puzzle-section {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.65);
