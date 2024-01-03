@@ -176,6 +176,7 @@ h2 {
   cursor: default;
   transform: none;
   transition: none;
+  letter-spacing: 2px;
 }
 
 .puzzle-section {
