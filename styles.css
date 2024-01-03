@@ -168,7 +168,7 @@ h2 {
 }
 
 .vowel-button:disabled {
-  background-color: gray;
+  background: gray;
 }
 
 .puzzle-section {
