@@ -285,6 +285,7 @@ const domUpdates = {
     $('.spin-number').text(value)
   },
 
+  /*
   yellCurrentSpin(value) {
     if (value) {
       //$('.yell-box').text(value);
@@ -292,6 +293,15 @@ const domUpdates = {
     }
     $('.yell-box').toggleClass('yell-active');
   },
+  */
+
+  yellCurrentSpin(value) {
+  if (value) {
+    const formattedValue = value.replace(/\n/g, '<br>');
+    $('.yell-box').html(formattedValue);
+  }
+  $('.yell-box').toggleClass('yell-active');
+},
 
   updateCategory(puzzle) {
     $('.hint-value').text(puzzle.currentPuzzle.category)
