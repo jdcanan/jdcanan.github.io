@@ -424,6 +424,7 @@ function consonantGuessHandler(currentGuess, currentTurn, e) {
     puzzle.countCorrectLetters(currentGuess);
     currentTurn.guessCorrectLetter(puzzle.numberCorrect, wheel.currentValue);
     checkIfPuzzleSolved();
+    puzzle.checkRemainingConsonants();
     ding.play();
   } else if (isEnabled && !isGuessCorrect) {
     game.endTurn();
