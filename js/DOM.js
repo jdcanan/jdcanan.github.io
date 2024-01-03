@@ -287,7 +287,8 @@ const domUpdates = {
 
   yellCurrentSpin(value) {
     if (value) {
-      $('.yell-box').text(value);
+      //$('.yell-box').text(value);
+      $('.yell-box').html(value);
     }
     $('.yell-box').toggleClass('yell-active');
   },
