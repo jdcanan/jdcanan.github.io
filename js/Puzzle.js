@@ -191,6 +191,7 @@ generatePuzzleGridLines(puzzleAnswer) {
     }
   }
 
+  /* Old function that had an issue with puzzles containing apostrophes on iPad
   solvePuzzle(guess) {
     if (guess === this.currentPuzzle.correct_answer.toLowerCase()) {
       domUpdates.hideSolvePopup();
@@ -208,6 +209,28 @@ generatePuzzleGridLines(puzzleAnswer) {
     }
   }
 }
+*/
+
+solvePuzzle(guess) {
+    const normalizedGuess = guess.toLowerCase().normalize('NFC');
+    const normalizedAnswer = this.currentPuzzle.correct_answer.toLowerCase().normalize('NFC');
+
+    if (normalizedGuess === normalizedAnswer) {
+        domUpdates.hideSolvePopup();
+        domUpdates.yellCurrentSpin('CORRECT');
+        setTimeout(domUpdates.yellCurrentSpin, 2000);
+        this.completed = true;
+        let letterBoxArray = Array.from($('.letter-content'));
+        letterBoxArray.forEach(box => domUpdates.revealCorrectLetters(box));
+        return true;
+    } else {
+        domUpdates.hideSolvePopup();
+        domUpdates.yellCurrentSpin('INCORRECT');
+        setTimeout(domUpdates.yellCurrentSpin, 2000);
+        return false;
+    }
+}
+
 
 
 export default Puzzle;
