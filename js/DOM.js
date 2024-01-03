@@ -404,6 +404,7 @@ displayWheelValues(wheel) {
 
   resetGameDisplay() {
     $('.vowel-button').prop('disabled', false);
+    $('.spin-button').prop('disabled', false);
     $('.spin-number').text('--');
     $('.bonus-round-intro').css('display', 'none');
     $('.popup-cover').css('display', 'none');
@@ -434,6 +435,7 @@ displayWheelValues(wheel) {
     $('.solve-input').val('');
     $('.spin-number').text('--');
     $('.vowel-button').prop('disabled', false);
+    $('.spin-button').prop('disabled', false);
   }
 
 }
