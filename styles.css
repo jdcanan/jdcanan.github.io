@@ -169,6 +169,13 @@ h2 {
 
 .vowel-button:disabled {
   background: gray;
+  border: gray;
+}
+
+.vowel-button:disabled:hover {
+  cursor: default;
+  transform: none;
+  transition: none;
 }
 
 .puzzle-section {
