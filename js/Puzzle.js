@@ -154,6 +154,23 @@ generatePuzzleGridLines(puzzleAnswer) {
     }
   }
 
+  checkRemainingConsonants() {
+    const consonants = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'];
+    const guessedConsonants = Array.from($('.disabled')).map(consonant => $(consonant).text());
+
+    const remainingConsonants = consonants.filter(consonant => !guessedConsonants.includes(consonant) && this.checkGuess(consonant));
+
+    console.log('Remaining Consonants:', remainingConsonants.join(', '));
+
+    if (remainingConsonants.length === 0) {
+        console.log('No more consonants');
+        domUpdates.yellCurrentSpin('NO MORE\nCONSONANTS');
+        setTimeout(domUpdates.yellCurrentSpin, 2000);
+        $('.spin-button').prop('disabled', true);
+    }
+}
+
+
   countCorrectLetters(guess) {
     let numLetters = 0;
     let letterBoxArray = Array.from($('.letter-content'));
