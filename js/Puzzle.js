@@ -144,11 +144,11 @@ generatePuzzleGridLines(puzzleAnswer) {
 
     const remainingVowels = vowels.filter(vowel => !guessedVowels.includes(vowel) && this.checkGuess(vowel));
 
-    console.log('Remaining Vowels:', remainingVowels.join(', '));
+    //console.log('Remaining Vowels:', remainingVowels.join(', '));
 
     if (remainingVowels.length === 0) {
-      console.log('No more vowels');
-      domUpdates.yellCurrentSpin('NO MORE VOWELS');
+      //console.log('No more vowels');
+      domUpdates.yellCurrentSpin('NO MORE\nVOWELS');
       setTimeout(domUpdates.yellCurrentSpin, 2000);
       $('.vowel-button').prop('disabled', true);
     }
