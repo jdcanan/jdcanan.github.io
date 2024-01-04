@@ -88,7 +88,8 @@ const domUpdates = {
 
   displayWinner(winner, score) {
     $('.game-winner').text(`${winner} WINS!!`);
-    $('.winning-score').text(score);
+    //$('.winning-score').text(score);
+    $('.winning-score').text('$' score.toLocaleString('en-US', { maximumFractionDigits: 0 }));
   },
 
   goToHomeScreen() {
@@ -250,22 +251,29 @@ const domUpdates = {
 
   newPlayerTurn(array, index) {
     $('.game-winner').text(array[index].name);
-    $('.winning-score').text(array[index].wallet);
+    //$('.winning-score').text(array[index].wallet);
+    $('.winning-score').text('$' + array[index].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
     if (index === 2) {
       $('.on-deck-name').text(array[0].name);
-      $('.on-deck-score').text(array[0].wallet);
+      //$('.on-deck-score').text(array[0].wallet);
+      $('.on-deck-score').text('$' + array[0].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));      
       $('.in-the-hole-name').text(array[1].name)
-      $('.in-the-hole-score').text(array[1].wallet)
+      //$('.in-the-hole-score').text(array[1].wallet)
+      $('.in-the-hole-score').text('$' + array[1].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
     } else if (index === 1) {
       $('.on-deck-name').text(array[2].name);
-      $('.on-deck-score').text(array[2].wallet);
+      //$('.on-deck-score').text(array[2].wallet);
+      $('.on-deck-score').text('$' + array[2].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
       $('.in-the-hole-name').text(array[0].name)
-      $('.in-the-hole-score').text(array[0].wallet)
+      //$('.in-the-hole-score').text(array[0].wallet)
+      $('.in-the-hole-score').text('$' + array[0].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
     } else {
       $('.on-deck-name').text(array[1].name);
-      $('.on-deck-score').text(array[1].wallet);
+      //$('.on-deck-score').text(array[1].wallet);
+      $('.on-deck-score').text('$' + array[1].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
       $('.in-the-hole-name').text(array[2].name)
-      $('.in-the-hole-score').text(array[2].wallet)
+      //$('.in-the-hole-score').text(array[2].wallet)
+      $('.in-the-hole-score').text('$' + array[2].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
     }
   },
 
@@ -290,7 +298,8 @@ const domUpdates = {
   },
 
   updateWallet(player) {
-    $('.winning-score').text(player.wallet);
+    //$('.winning-score').text(player.wallet);
+    $('.winning-score').text('$' + player.wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
   },
 
   updateCurrentSpin(value) {
