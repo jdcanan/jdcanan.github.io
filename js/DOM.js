@@ -296,14 +296,13 @@ const domUpdates = {
   */
 
   yellCurrentSpin(value) {
-    console.log("Yell Value: ", value);
-  if (value) {
-    const formattedValue = value.replace(/\n/g, '<br>');
-    console.log("Yell Formatted Value: ", formattedValue);
-    $('.yell-box').html(formattedValue);
-  }
-  $('.yell-box').toggleClass('yell-active');
-},
+    if (value) {
+      const stringValue = String(value);
+      const formattedValue = stringValue.replace(/\n/g, '<br>');
+      $('.yell-box').html(formattedValue);
+    }
+    $('.yell-box').toggleClass('yell-active');
+  },
 
   updateCategory(puzzle) {
     $('.hint-value').text(puzzle.currentPuzzle.category)
