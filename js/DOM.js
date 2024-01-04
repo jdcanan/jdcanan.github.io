@@ -387,7 +387,7 @@ displayWheelValues(wheel) {
   },
 
   updateBankAccts(winner, i) {
-    $(`.player${i + 1}-ba-num`).text(winner.bankAcct);
+    $(`.player${i + 1}-ba-num`).text(winner.bankAcct.toLocaleString('en-US', { maximumFractionDigits: 0 }));
   },
 
   clearBankAccts() {
