@@ -89,7 +89,7 @@ const domUpdates = {
   displayWinner(winner, score) {
     $('.game-winner').text(`${winner} WINS!!`);
     //$('.winning-score').text(score);
-    $('.winning-score').text('$' score.toLocaleString('en-US', { maximumFractionDigits: 0 }));
+    $('.winning-score').text('$' + score.toLocaleString('en-US', { maximumFractionDigits: 0 }));
   },
 
   goToHomeScreen() {
