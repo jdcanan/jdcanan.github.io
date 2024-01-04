@@ -1,6 +1,9 @@
 @font-face {
+  //font-family: 'Fortune';
+  //src: url('fortune-wheel-font/SF Fortune Wheel Bold.ttf') format('truetype');
+
   font-family: 'Fortune';
-  src: url('fortune-wheel-font/SF Fortune Wheel Bold.ttf') format('truetype');
+  src: url('fortune-wheel-font/HelveticaBlackCondensedSE.ttf') format('truetype');
 }
 
 * {
