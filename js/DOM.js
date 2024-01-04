@@ -296,8 +296,10 @@ const domUpdates = {
   */
 
   yellCurrentSpin(value) {
+    console.log("Yell Value: ", value);
   if (value) {
     const formattedValue = value.replace(/\n/g, '<br>');
+    console.log("Yell Formatted Value: ", formattedValue);
     $('.yell-box').html(formattedValue);
   }
   $('.yell-box').toggleClass('yell-active');
