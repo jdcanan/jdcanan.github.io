@@ -282,7 +282,8 @@ const domUpdates = {
   },
 
   updateCurrentSpin(value) {
-    $('.spin-number').text(value)
+    const displayValue = (!isNaN(value)) ? ('$' + value) : value;
+    $('.spin-number').text(displayValue)
   },
 
   /*
