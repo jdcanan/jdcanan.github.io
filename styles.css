@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: 'Helvetica-Condensed-Black-Se';
-  src: url('https://jdcanan.github.io/fortune-wheel-font/HelveticaBlackCondensedSE.ttf') format('truetype');
+  src: url('https://jdcanan.github.io/fortune-wheel-font/HelveticaBlackCondensedSE.woff') format('woff');
   font-display: swap;
 }
 
@@ -26,8 +26,8 @@
 body {
   background-image: url(./pics/background.png);
   background-size: cover; 
-  font-family: 'Fortune';
-  //font-family: 'Helvetica-Condensed-Black-Se';
+  //font-family: 'Fortune';
+  font-family: 'Helvetica-Condensed-Black-Se';
   letter-spacing: 2px;
   margin: 0 auto; 
   max-width: 1400px;
