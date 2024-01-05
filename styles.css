@@ -28,6 +28,7 @@ body {
   background-size: cover; 
   //font-family: 'Fortune';
   font-family: 'Helvetica-Condensed-Black-Se';
+  text-transform: uppercase;
   letter-spacing: 2px;
   margin: 0 auto; 
   max-width: 1400px;
