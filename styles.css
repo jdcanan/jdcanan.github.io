@@ -1,10 +1,14 @@
 @font-face {
   font-family: 'Fortune';
   src: url('fortune-wheel-font/SF Fortune Wheel Bold.ttf') format('truetype');
-
-  //font-family: 'Fortune';
-  //src: url('fortune-wheel-font/HelveticaBlackCondensedSE.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'Helvetica-Condensed-Black-Se';
+  src: url('https://jdcanan.github.io/fortune-wheel-font/HelveticaBlackCondensedSE.ttf') format('truetype');
+  font-display: swap;
+}
+
 
 * {
   box-sizing: border-box;
@@ -22,7 +26,8 @@
 body {
   background-image: url(./pics/background.png);
   background-size: cover; 
-  font-family: 'Fortune';
+  //font-family: 'Fortune';
+  font-family: 'Helvetica-Condensed-Black-Se';
   letter-spacing: 2px;
   margin: 0 auto; 
   max-width: 1400px;
