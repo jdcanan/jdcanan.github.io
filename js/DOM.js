@@ -53,22 +53,34 @@ const domUpdates = {
 
   displayNames(playerArray, index) {
     $('.game-winner').text(playerArray[index].name);
-    $('.winning-score').text(playerArray[index].wallet);
+    
+    //$('.winning-score').text(playerArray[index].wallet);
+    $('.winning-score').text('$' + playerArray[index].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
+    
     if (index === 2) {
       $('.on-deck-name').text(playerArray[0].name);
-      $('.on-deck-score').text(playerArray[0].wallet);
+      //$('.on-deck-score').text(playerArray[0].wallet);
+      $('.on-deck-score').text('$' + playerArray[0].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
+      
       $('.in-the-hole-name').text(playerArray[1].name);
-      $('.in-the-hole-score').text(playerArray[1].wallet);
+      //$('.in-the-hole-score').text(playerArray[1].wallet);
+      $('.in-the-hole-score').text('$' + playerArray[1].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
     } else if (index === 1) {
-      $('.on-deck-name').text(playerArray[2].name);
-      $('.on-deck-score').text(playerArray[2].wallet);
+      $('.on-deck-name').text(playerArray[2].name);      
+      //$('.on-deck-score').text(playerArray[2].wallet);
+      $('.on-deck-score').text('$' + playerArray[2].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
+      
       $('.in-the-hole-name').text(playerArray[0].name);
-      $('.in-the-hole-score').text(playerArray[0].wallet);
+      //$('.in-the-hole-score').text(playerArray[0].wallet);
+      $('.in-the-hole-score').text('$' + playerArray[0].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
     } else {
-      $('.on-deck-name').text(playerArray[1].name);
-      $('.on-deck-score').text(playerArray[1].wallet);
+      $('.on-deck-name').text(playerArray[1].name);      
+      //$('.on-deck-score').text(playerArray[1].wallet);
+      $('.on-deck-score').text('$' + playerArray[1].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
+      
       $('.in-the-hole-name').text(playerArray[2].name);
-      $('.in-the-hole-score').text(playerArray[2].wallet);
+      //$('.in-the-hole-score').text(playerArray[2].wallet);
+      $('.in-the-hole-score').text('$' + playerArray[2].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
     }
     
       
@@ -76,7 +88,8 @@ const domUpdates = {
 
   displayWinner(winner, score) {
     $('.game-winner').text(`${winner} WINS!!`);
-    $('.winning-score').text(score);
+    //$('.winning-score').text(score);
+    $('.winning-score').text('$' + score.toLocaleString('en-US', { maximumFractionDigits: 0 }));
   },
 
   goToHomeScreen() {
@@ -238,22 +251,29 @@ const domUpdates = {
 
   newPlayerTurn(array, index) {
     $('.game-winner').text(array[index].name);
-    $('.winning-score').text(array[index].wallet);
+    //$('.winning-score').text(array[index].wallet);
+    $('.winning-score').text('$' + array[index].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
     if (index === 2) {
       $('.on-deck-name').text(array[0].name);
-      $('.on-deck-score').text(array[0].wallet);
+      //$('.on-deck-score').text(array[0].wallet);
+      $('.on-deck-score').text('$' + array[0].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));      
       $('.in-the-hole-name').text(array[1].name)
-      $('.in-the-hole-score').text(array[1].wallet)
+      //$('.in-the-hole-score').text(array[1].wallet)
+      $('.in-the-hole-score').text('$' + array[1].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
     } else if (index === 1) {
       $('.on-deck-name').text(array[2].name);
-      $('.on-deck-score').text(array[2].wallet);
+      //$('.on-deck-score').text(array[2].wallet);
+      $('.on-deck-score').text('$' + array[2].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
       $('.in-the-hole-name').text(array[0].name)
-      $('.in-the-hole-score').text(array[0].wallet)
+      //$('.in-the-hole-score').text(array[0].wallet)
+      $('.in-the-hole-score').text('$' + array[0].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
     } else {
       $('.on-deck-name').text(array[1].name);
-      $('.on-deck-score').text(array[1].wallet);
+      //$('.on-deck-score').text(array[1].wallet);
+      $('.on-deck-score').text('$' + array[1].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
       $('.in-the-hole-name').text(array[2].name)
-      $('.in-the-hole-score').text(array[2].wallet)
+      //$('.in-the-hole-score').text(array[2].wallet)
+      $('.in-the-hole-score').text('$' + array[2].wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
     }
   },
 
@@ -278,16 +298,30 @@ const domUpdates = {
   },
 
   updateWallet(player) {
-    $('.winning-score').text(player.wallet);
+    //$('.winning-score').text(player.wallet);
+    $('.winning-score').text('$' + player.wallet.toLocaleString('en-US', { maximumFractionDigits: 0 }));
   },
 
   updateCurrentSpin(value) {
-    $('.spin-number').text(value)
+    const displayValue = (!isNaN(value)) ? ('$' + value) : value;
+    $('.spin-number').text(displayValue)
   },
+
+  /*
+  yellCurrentSpin(value) {
+    if (value) {
+      //$('.yell-box').text(value);
+      $('.yell-box').html(value);
+    }
+    $('.yell-box').toggleClass('yell-active');
+  },
+  */
 
   yellCurrentSpin(value) {
     if (value) {
-      $('.yell-box').text(value);
+      const stringValue = String(value);
+      const formattedValue = stringValue.replace(/\n/g, '<br>');
+      $('.yell-box').html(formattedValue);
     }
     $('.yell-box').toggleClass('yell-active');
   },
@@ -353,7 +387,7 @@ displayWheelValues(wheel) {
   },
 
   updateBankAccts(winner, i) {
-    $(`.player${i + 1}-ba-num`).text(winner.bankAcct);
+    $(`.player${i + 1}-ba-num`).text(winner.bankAcct.toLocaleString('en-US', { maximumFractionDigits: 0 }));
   },
 
   clearBankAccts() {
@@ -392,6 +426,8 @@ displayWheelValues(wheel) {
   },
 
   resetGameDisplay() {
+    $('.vowel-button').prop('disabled', false);
+    $('.spin-button').prop('disabled', false);
     $('.spin-number').text('--');
     $('.bonus-round-intro').css('display', 'none');
     $('.popup-cover').css('display', 'none');
@@ -421,6 +457,8 @@ displayWheelValues(wheel) {
     $('.solve-popup').css('display', 'none');
     $('.solve-input').val('');
     $('.spin-number').text('--');
+    $('.vowel-button').prop('disabled', false);
+    $('.spin-button').prop('disabled', false);
   }
 
 }

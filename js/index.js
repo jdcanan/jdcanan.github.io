@@ -198,6 +198,8 @@ function setUpRound() {
   domUpdates.updateCategory(puzzle);
   domUpdates.displayWheelValues(wheel);
   domUpdates.newRoundKeyboard();
+  $('.vowel-button').prop('disabled', false);
+  $('.spin-button').prop('disabled', false);
 }
 
 function quitHandler() {
@@ -349,7 +351,8 @@ function spinHandler(optionNumber) {
   {
     domUpdates.spinWheel(); // Need to call this so that it toggles spin state correctly but shouldn't be visible without timeout
     game.tearDownWheel(wheel, round, wheel.spinValues[optionNumber-1]);
-    domUpdates.yellCurrentSpin(wheel.currentValue);
+    const displayValue = (!isNaN(wheel.currentValue)) ? ('$' + wheel.currentValue) : wheel.currentValue;
+    domUpdates.yellCurrentSpin(displayValue);
     setTimeout(domUpdates.yellCurrentSpin, 2000);
     badSpinHandler();
   }
@@ -358,7 +361,8 @@ function spinHandler(optionNumber) {
     domUpdates.spinWheel();
     setTimeout(() => {
       game.tearDownWheel(wheel, round, "random");
-      domUpdates.yellCurrentSpin(wheel.currentValue);
+      const displayValue = (!isNaN(wheel.currentValue)) ? ('$' + wheel.currentValue) : wheel.currentValue;
+      domUpdates.yellCurrentSpin(displayValue);
       setTimeout(domUpdates.yellCurrentSpin, 2000);
       badSpinHandler();
     }, 2000);
@@ -396,7 +400,8 @@ function vowelGuessHandler(currentGuess, currentTurn, e) {
   if (!$(e.target).hasClass('active-vowel')) {
     return;
   } else {
-    guessActiveVowel(currentGuess, currentTurn, e); 
+    guessActiveVowel(currentGuess, currentTurn, e);
+    puzzle.checkRemainingVowels();
   }
 }
 
@@ -422,6 +427,7 @@ function consonantGuessHandler(currentGuess, currentTurn, e) {
     puzzle.countCorrectLetters(currentGuess);
     currentTurn.guessCorrectLetter(puzzle.numberCorrect, wheel.currentValue);
     checkIfPuzzleSolved();
+    puzzle.checkRemainingConsonants();
     ding.play();
   } else if (isEnabled && !isGuessCorrect) {
     game.endTurn();

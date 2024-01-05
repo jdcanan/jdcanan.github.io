@@ -138,6 +138,39 @@ generatePuzzleGridLines(puzzleAnswer) {
     }
   }
 
+  checkRemainingVowels() {
+    const vowels = ['A', 'E', 'I', 'O', 'U'];
+    const guessedVowels = Array.from($('.vowel-disabled')).map(vowel => $(vowel).text());
+
+    const remainingVowels = vowels.filter(vowel => !guessedVowels.includes(vowel) && this.checkGuess(vowel));
+
+    //console.log('Remaining Vowels:', remainingVowels.join(', '));
+
+    if (remainingVowels.length === 0) {
+      //console.log('No more vowels');
+      domUpdates.yellCurrentSpin('NO MORE\nVOWELS');
+      setTimeout(domUpdates.yellCurrentSpin, 2000);
+      $('.vowel-button').prop('disabled', true);
+    }
+  }
+
+  checkRemainingConsonants() {
+    const consonants = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'];
+    const guessedConsonants = Array.from($('.disabled')).map(consonant => $(consonant).text());
+
+    const remainingConsonants = consonants.filter(consonant => !guessedConsonants.includes(consonant) && this.checkGuess(consonant));
+
+    console.log('Remaining Consonants:', remainingConsonants.join(', '));
+
+    if (remainingConsonants.length === 0) {
+        console.log('No more consonants');
+        domUpdates.yellCurrentSpin('NO MORE\nCONSONANTS');
+        setTimeout(domUpdates.yellCurrentSpin, 2000);
+        $('.spin-button').prop('disabled', true);
+    }
+}
+
+
   countCorrectLetters(guess) {
     let numLetters = 0;
     let letterBoxArray = Array.from($('.letter-content'));
@@ -158,6 +191,7 @@ generatePuzzleGridLines(puzzleAnswer) {
     }
   }
 
+  /* Old function that had an issue with puzzles containing apostrophes on iPad
   solvePuzzle(guess) {
     if (guess === this.currentPuzzle.correct_answer.toLowerCase()) {
       domUpdates.hideSolvePopup();
@@ -174,7 +208,33 @@ generatePuzzleGridLines(puzzleAnswer) {
       return false;
     }
   }
+  */
+
+  solvePuzzle(guess) {
+    // Replace curly apostrophes with straight apostrophes in the guess
+    const normalizedGuess = guess.replace(/[\u2018\u2019]/g, "'").toLowerCase();
+    
+    // Replace curly apostrophes with straight apostrophes in the puzzle
+    const normalizedPuzzle = this.currentPuzzle.correct_answer.replace(/[\u2018\u2019]/g, "'").toLowerCase();
+
+    if (normalizedGuess === normalizedPuzzle) {
+        domUpdates.hideSolvePopup();
+        domUpdates.yellCurrentSpin('CORRECT');
+        setTimeout(domUpdates.yellCurrentSpin, 2000);
+        this.completed = true;
+        let letterBoxArray = Array.from($('.letter-content'));
+        letterBoxArray.forEach(box => domUpdates.revealCorrectLetters(box));
+        return true;
+    } else {
+        domUpdates.hideSolvePopup();
+        domUpdates.yellCurrentSpin('INCORRECT');
+        setTimeout(domUpdates.yellCurrentSpin, 2000);
+        return false;
+    }
 }
 
+
+  
+}
 
 export default Puzzle;
