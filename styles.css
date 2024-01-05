@@ -9,6 +9,10 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Primavera';
+  src: url('https://github.com/jdcanan/jdcanan.github.io/blob/Modify-Puzzle/fortune-wheel-font/wheel_of_fortune_wheel_font_by_puzzylpiece_ddw6u9b.woff') format('woff');
+}
 
 * {
   box-sizing: border-box;
@@ -404,7 +408,7 @@ h2 {
   caret-color: transparent;
   user-select: none;
   z-index: 6;
-  font-family: 'Fortune';
+  font-family: 'Primavera';
 }
 
 .wheel-circle {
