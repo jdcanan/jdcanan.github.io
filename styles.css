@@ -469,7 +469,7 @@ h2 {
 .mark14 { transform: rotate(-32.5deg); left: 29%; top: 6%; width: 40px; font-size: 1.2rem; font-weight: bolder; letter-spacing: -5px; } /* LOSE TURN */
 .mark15 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; text-shadow: 1px 1px 0 white,-1px -1px 0 white,1px -1px 0 white,-1px 1px 0 white; } /* 900 */
 .mark16 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; text-shadow: 1px 1px 0 white,-1px -1px 0 white,1px -1px 0 white,-1px 1px 0 white; } /* 600 */
-
+ 
 .option1 { background: #ab79db; transform: rotate(0deg); }
 .option2 { background: #ff0000; transform: rotate(22.5deg); }
 .option3 { background: #3abaff; transform: rotate(45deg); }
