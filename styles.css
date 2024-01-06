@@ -497,7 +497,8 @@ h2 {
     z-index: 8; /* Place it in front of the wheel-options */
 }
 
-/* Variable font sizes per character for BANKRUPT and LOSE TURN wedges */
+/*
+// Variable font sizes per character for BANKRUPT and LOSE TURN wedges
 .mark5 .char5-1 { font-size: 1.8rem; } //B
 .mark5 .char5-2 { font-size: 1.7rem; } //A
 .mark5 .char5-3 { font-size: 1.6rem; } //N
@@ -516,6 +517,7 @@ h2 {
 .mark14 .char14-7 { font-size: 1.2rem; } //U
 .mark14 .char14-8 { font-size: 1.1rem; } //R
 .mark14 .char14-9 { font-size: 1.0rem; } //N
+*/
 
 .slide-in {
   animation: slide 1s ease;
