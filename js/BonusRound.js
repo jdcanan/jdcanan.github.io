@@ -56,15 +56,15 @@ class BonusRound extends Round {
     const option5Element = document.querySelector('.option5');
     const option14Element = document.querySelector('.option14');
 
-    const mark14char1Element = document.querySelector('.mark14 .char5-1');
-    const mark14char2Element = document.querySelector('.mark14 .char5-2');
-    const mark14char3Element = document.querySelector('.mark14 .char5-3');
-    const mark14char4Element = document.querySelector('.mark14 .char5-4');
-    const mark14char5Element = document.querySelector('.mark14 .char5-5');
-    const mark14char6Element = document.querySelector('.mark14 .char5-6');
-    const mark14char7Element = document.querySelector('.mark14 .char5-7');
-    const mark14char8Element = document.querySelector('.mark14 .char5-8');
-    const mark14char9Element = document.querySelector('.mark14 .char5-9');
+    const mark14char1Element = document.querySelector('.mark14 .char14-1');
+    const mark14char2Element = document.querySelector('.mark14 .char14-2');
+    const mark14char3Element = document.querySelector('.mark14 .char14-3');
+    const mark14char4Element = document.querySelector('.mark14 .char14-4');
+    const mark14char5Element = document.querySelector('.mark14 .char14-5');
+    const mark14char6Element = document.querySelector('.mark14 .char14-6');
+    const mark14char7Element = document.querySelector('.mark14 .char14-7');
+    const mark14char8Element = document.querySelector('.mark14 .char14-8');
+    const mark14char9Element = document.querySelector('.mark14 .char14-9');
     
     //qmarkElement.style.letterSpacing = '-5px';   
     qmarkElements.forEach(qmarkElement => {
