@@ -526,12 +526,12 @@ h2 {
   -webkit-background-clip: text;
   background-clip: text;
   background-color: #666666;
-  bottom: 65px;
+  bottom: 75px;
   color: lightgrey;
   color: transparent;
   cursor: pointer;
-  font-size: 2rem;
-  left: 101px;
+  font-size: 1.6rem;
+  left: 97px;
   position: absolute;
   text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
   transform: rotate(-38deg);
