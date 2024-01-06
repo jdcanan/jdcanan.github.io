@@ -293,6 +293,7 @@ function newGameHandler(e) {
     mark5Element.style.left = '30.5%';
     mark5Element.style.color = 'white';
     mark5Element.style.textShadow = '';
+    mark5Element.style.letterSpacing = '-5px';
     
     mark6Element.style.top = '10%';
     mark6Element.style.left = '28%';
@@ -314,6 +315,7 @@ function newGameHandler(e) {
     mark14Element.style.top = '6%';
     mark14Element.style.left = '30.5%';
     mark14Element.style.textShadow = '';
+    mark14Element.style.letterSpacing = '-5px';
     
     mark15Element.style.top = '10%';
     mark15Element.style.left = '28%';
