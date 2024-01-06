@@ -56,6 +56,7 @@ class BonusRound extends Round {
     const option5Element = document.querySelector('.option5');
     const option14Element = document.querySelector('.option14');
 
+    /*
     const mark14char1Element = document.querySelector('.mark14 .char14-1');
     const mark14char2Element = document.querySelector('.mark14 .char14-2');
     const mark14char3Element = document.querySelector('.mark14 .char14-3');
@@ -65,6 +66,7 @@ class BonusRound extends Round {
     const mark14char7Element = document.querySelector('.mark14 .char14-7');
     const mark14char8Element = document.querySelector('.mark14 .char14-8');
     const mark14char9Element = document.querySelector('.mark14 .char14-9');
+    */
     
     //qmarkElement.style.letterSpacing = '-5px';   
     qmarkElements.forEach(qmarkElement => {
@@ -115,6 +117,7 @@ class BonusRound extends Round {
     option5Element.style.background = '#FF33DA';
     option14Element.style.background = '#39FF33';
 
+    /*
     mark14char1Element.style.fontSize = '2.5rem';
     mark14char2Element.style.fontSize = '0.7rem';
     mark14char3Element.style.fontSize = '1.6rem';
@@ -124,6 +127,7 @@ class BonusRound extends Round {
     mark14char7Element.style.fontSize = '1.2rem';
     mark14char8Element.style.fontSize = '1.1rem';
     mark14char9Element.style.fontSize = '1.0rem';
+    */
     
     return bonusWheel;
 }
