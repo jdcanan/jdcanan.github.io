@@ -31,7 +31,8 @@ class BonusRound extends Round {
     }
 
     //Need to modify placement of wheel labels so they align properly for bonus wheel values
-    const qmarkElement = document.querySelector('q-mark');
+    //const qmarkElement = document.querySelector('q-mark');
+    const qmarkElements = document.querySelectorAll('.q-mark');
     
     const mark1Element = document.querySelector('.mark1');
     const mark2Element = document.querySelector('.mark2');
@@ -63,7 +64,10 @@ class BonusRound extends Round {
     const mark14char8Element = document.querySelector('.mark5 .char5-8');
     const mark14char9Element = document.querySelector('.mark5 .char5-9');
     
-    qmarkElement.style.letterSpacing = '-5px';
+    //qmarkElement.style.letterSpacing = '-5px';   
+    qmarkElements.forEach(qmarkElement => {
+        qmarkElement.style.letterSpacing = '-5px';
+    });
     
     mark1Element.style.top = '6%';
     mark1Element.style.left = '29%';
