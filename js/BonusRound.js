@@ -174,8 +174,8 @@ postBonusResult() {
     if (this.didWinBonus) {
       $('.win-message').text(` WINS THE BONUS!`);
   
-      // Check if the bonus wheel value is "1 Million"
-      if (this.bonusWheelValue === "1 Million") {
+      // Check if the bonus wheel value is "$1 Million"
+      if (this.bonusWheelValue === "$1 Million") {
           var winnings = parseFloat(this.bonusPlayer.bankAcct) + 1000000;
       } else {
           var winnings = parseFloat(this.bonusPlayer.bankAcct) + parseFloat(this.bonusWheelValue);
