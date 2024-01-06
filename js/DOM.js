@@ -337,14 +337,7 @@ const domUpdates = {
   //  }
   //},
 
-  /* This works for 16 wedges but I want to replace it with one that prepends a $ to numeric values
-  displayWheelValues(wheel) {
-  for (let i = 0; i < wheel.spinValues.length; i++) {
-    $(`.mark${i + 1}`).text(wheel.spinValues[i]);
-  }
-  },
-  */
-  
+  /* WORKS: COMMENTING TEMPORARILY TO EXPERIMENT WITH VARIABLE SIZING FOR BANKRUPT & LOSE TURN WEDGES
 // Supports any number of wedges and prepends a $ to numeric values
 displayWheelValues(wheel) {
   for (let i = 0; i < wheel.spinValues.length; i++) {
@@ -358,6 +351,20 @@ displayWheelValues(wheel) {
     }
   }
 },
+*/
+
+  displayWheelValues(wheel) {
+    for (let i = 0; i < wheel.spinValues.length; i++) {
+      const value = wheel.spinValues[i];
+  
+      if (typeof value === 'number') {
+        $(`.mark${i + 1}`).text('$' + value);
+      } else {
+        const chars = value.split('').map((char, index) => `<span class="char${i + 1}-${index + 1}">${char}</span>`);
+        $(`.mark${i + 1}`).html(chars.join(''));
+      }
+    }
+  },
 
   enableLetters() {
     let keyboardLetters = Array.from($('.keyboard-letters'));
