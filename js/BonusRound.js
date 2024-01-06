@@ -105,8 +105,8 @@ class BonusRound extends Round {
     mark13Element.style.top = '6%';
     mark13Element.style.left = '29%';
     
-    mark14Element.style.top = '5%';
-    mark14Element.style.left = '27.5%';
+    mark14Element.style.top = '4.5%';
+    mark14Element.style.left = '29%';
     mark14Element.style.textShadow = '1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white';
     
     mark15Element.style.top = '6%';
