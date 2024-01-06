@@ -288,9 +288,9 @@ function newGameHandler(e) {
     mark4Element.style.top = '7%';
     mark4Element.style.left = '28%';
     
-    mark5Element.style.top = '7%';
+    mark5Element.style.top = '6%';
     mark5Element.style.fontSize = '1.2rem';
-    mark5Element.style.left = '30.5%';
+    mark5Element.style.left = '29%';
     mark5Element.style.color = 'white';
     mark5Element.style.textShadow = '';
     mark5Element.style.letterSpacing = '-5px';
@@ -313,7 +313,7 @@ function newGameHandler(e) {
     mark13Element.style.left = '28%';
     
     mark14Element.style.top = '6%';
-    mark14Element.style.left = '30.5%';
+    mark14Element.style.left = '29%';
     mark14Element.style.textShadow = '';
     mark14Element.style.letterSpacing = '-5px';
     
