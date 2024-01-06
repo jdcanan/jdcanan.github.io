@@ -35,7 +35,7 @@
 body {
   background-image: url(./pics/background.png);
   background-size: cover; 
-  //font-family: 'Fortune';
+  /* font-family: 'Fortune'; */
   font-family: 'Helvetica-Condensed-Black-Se';
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -499,7 +499,7 @@ h2 {
 }
 
 
-// Variable font sizes per character for BANKRUPT and LOSE TURN wedges
+/* Variable font sizes per character for BANKRUPT and LOSE TURN wedges */
 .mark5 .char5-1 { font-size: 1.8rem; } /* B */
 .mark5 .char5-2 { font-size: 1.7rem; } /* A */
 .mark5 .char5-3 { font-size: 1.6rem; } /* N */
