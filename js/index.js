@@ -254,6 +254,8 @@ function newGameHandler(e) {
     $('.vowel-button').on('click', vowelPurchaseHandler);
 
     //Need to reset placement of wheel labels so they align properly for regular wheel values
+    const qmarkElements = document.querySelectorAll('.q-mark');
+    
     const mark1Element = document.querySelector('.mark1');
     const mark2Element = document.querySelector('.mark2');
     const mark3Element = document.querySelector('.mark3');
@@ -271,27 +273,53 @@ function newGameHandler(e) {
     const mark15Element = document.querySelector('.mark15');
     const mark16Element = document.querySelector('.mark16');
     const option5Element = document.querySelector('.option5');
-    const option14Element = document.querySelector('.option14');    
-    mark1Element.style.top = '8%';
+    const option14Element = document.querySelector('.option14'); 
+
+    qmarkElements.forEach(qmarkElement => {
+        qmarkElement.style.letterSpacing = '-2px';
+    });
+
+    mark1Element.style.top = '7%';
+    mark1Element.style.left = '28%';
     mark2Element.style.top = '10%';
+    mark2Element.style.left = '28%';
     mark3Element.style.top = '10%';
-    mark4Element.style.top = '8%';
-    mark5Element.style.top = '8%';
+    mark3Element.style.left = '28%';
+    mark4Element.style.top = '7%';
+    mark4Element.style.left = '28%';
+    
+    mark5Element.style.top = '7%';
     mark5Element.style.fontSize = '1.2rem';
     mark5Element.style.left = '30.5%';
     mark5Element.style.color = 'white';
+    mark5Element.style.textShadow = '';
+    
     mark6Element.style.top = '10%';
+    mark6Element.style.left = '28%';
     mark7Element.style.top = '10%';
+    mark7Element.style.left = '28%';
     mark8Element.style.top = '10%';
-    mark9Element.style.top = '8%';
+    mark8Element.style.left = '28%';
+    mark9Element.style.top = '7%';
+    mark9Element.style.left = '28%';
     mark10Element.style.top = '10%';
+    mark10Element.style.left = '28%';
     mark11Element.style.top = '10%';
-    mark12Element.style.top = '8%';
+    mark11Element.style.left = '28%';
+    mark12Element.style.top = '7%';
+    mark12Element.style.left = '28%';
     mark13Element.style.top = '10%';
+    mark13Element.style.left = '28%';
+    
     mark14Element.style.top = '6%';
     mark14Element.style.left = '30.5%';
+    mark14Element.style.textShadow = '';
+    
     mark15Element.style.top = '10%';
+    mark15Element.style.left = '28%';
     mark16Element.style.top = '10%';
+    mark16Element.style.left = '28%';
+    
     option5Element.style.background = '#000000';
     option14Element.style.background = '#ffffff';
 
