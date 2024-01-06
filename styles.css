@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: 'Chesterfield';
-  src: url('https://github.com/jdcanan/jdcanan.github.io/blob/Modify-Puzzle/fortune-wheel-font/chesterfieldregular.woff');
+  src: url('https://github.com/jdcanan/jdcanan.github.io/blob/Modify-Puzzle/fortune-wheel-font/chesterfieldregular.woff') format('woff');
 }
 
 * {
