@@ -381,7 +381,7 @@ function spinHandler(optionNumber) {
   {
     domUpdates.spinWheel(); // Need to call this so that it toggles spin state correctly but shouldn't be visible without timeout
     game.tearDownWheel(wheel, round, wheel.spinValues[optionNumber-1]);
-    const displayValue = (!isNaN(wheel.currentValue)) ? ('$' + wheel.currentValue.toLocaleString('en-US', { maximumFractionDigits: 0 })) : wheel.currentValue;
+    const displayValue = (!isNaN(wheel.currentValue)) ? ('$' + String(wheel.currentValue).toLocaleString('en-US', { maximumFractionDigits: 0 })) : wheel.currentValue;
     domUpdates.yellCurrentSpin(displayValue);
     setTimeout(domUpdates.yellCurrentSpin, 2000);
     badSpinHandler();
@@ -391,7 +391,7 @@ function spinHandler(optionNumber) {
     domUpdates.spinWheel();
     setTimeout(() => {
       game.tearDownWheel(wheel, round, "random");
-      const displayValue = (!isNaN(wheel.currentValue)) ? ('$' + wheel.currentValue.toLocaleString('en-US', { maximumFractionDigits: 0 })) : wheel.currentValue;
+      const displayValue = (!isNaN(wheel.currentValue)) ? ('$' + String(wheel.currentValue).toLocaleString('en-US', { maximumFractionDigits: 0 })) : wheel.currentValue;
       domUpdates.yellCurrentSpin(displayValue);
       setTimeout(domUpdates.yellCurrentSpin, 2000);
       badSpinHandler();
