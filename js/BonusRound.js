@@ -30,6 +30,8 @@ class BonusRound extends Round {
         wheelVals.push(data.bonusWheel[i]);
     }
 
+    let bonusWheel = new Wheel(wheelVals);
+
     //Need to modify placement of wheel labels so they align properly for bonus wheel values
     //const qmarkElement = document.querySelector('q-mark');
     const qmarkElements = document.querySelectorAll('.q-mark');
@@ -123,7 +125,7 @@ class BonusRound extends Round {
     mark14char8Element.style.fontSize = '1.1rem';
     mark14char9Element.style.fontSize = '1.0rem';
     
-    return new Wheel(wheelVals);
+    return bonusWheel;
 }
 
 
