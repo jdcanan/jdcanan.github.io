@@ -485,9 +485,9 @@ const domUpdates = {
         const mark14char4Element = document.querySelector('.mark14 .char14-4');
         const mark14char5Element = document.querySelector('.mark14 .char14-5');
         const mark14char6Element = document.querySelector('.mark14 .char14-6');
-        const mark14char7Element = document.querySelector('.mark14 .char14-7');
-        const mark14char8Element = document.querySelector('.mark14 .char14-8');
-        const mark14char9Element = document.querySelector('.mark14 .char14-9');
+        //const mark14char7Element = document.querySelector('.mark14 .char14-7');
+        //const mark14char8Element = document.querySelector('.mark14 .char14-8');
+        //const mark14char9Element = document.querySelector('.mark14 .char14-9');
   
         mark14char1Element.style.fontSize = '1.8rem';
         mark14char2Element.style.fontSize = '1.7rem';
@@ -495,9 +495,9 @@ const domUpdates = {
         mark14char4Element.style.fontSize = '1.5rem';
         mark14char5Element.style.fontSize = '0.7rem';
         mark14char6Element.style.fontSize = '1.3rem';
-        mark14char7Element.style.fontSize = '1.2rem';
-        mark14char8Element.style.fontSize = '1.1rem';
-        mark14char9Element.style.fontSize = '1.0rem';
+        //mark14char7Element.style.fontSize = '1.2rem';
+        //mark14char8Element.style.fontSize = '1.1rem';
+        //mark14char9Element.style.fontSize = '1.0rem';
       }
     }
 },
