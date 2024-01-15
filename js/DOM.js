@@ -424,8 +424,8 @@ const domUpdates = {
 
         if (value === 'LOSE TURN') {
             const chars = [
-                `<span class="char${i + 1}-1">LOSE</span>`,
-                ...value.split('').slice(5).map((char, index) => `<span class="char${i + 1}-${index + 2}">${char}</span>`)
+              `<span class="char${i + 1}-1">LOSE</span>`,
+              ...value.slice(4).split('').map((char, index) => `<span class="char${i + 1}-${index + 2}">${char}</span>`)
             ];
             $(`.mark${i + 1}`).html(chars.join(''));
         } else if (typeof value === 'number') {
