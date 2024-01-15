@@ -421,7 +421,7 @@ const domUpdates = {
     for (let i = 0; i < wheel.spinValues.length; i++) {
         const value = wheel.spinValues[i];
 
-        if (value === 'LOSE TURN') {
+        if (value === 'LOSE A TURN') {
             const chars = [
               `<span class="char${i + 1}-1">LOSE</span>`,
               ...value.slice(4).split('').map((char, index) => `<span class="char${i + 1}-${index + 2}">${char}</span>`)
@@ -477,26 +477,26 @@ const domUpdates = {
         mark5char7Element.style.fontSize = '1.2rem';
         mark5char8Element.style.fontSize = '1.1rem';
       }
-      else if (value === 'LOSE TURN'){
+      else if (value === 'LOSE A TURN'){
         const mark14char1Element = document.querySelector('.mark14 .char14-1');
         const mark14char2Element = document.querySelector('.mark14 .char14-2');
         const mark14char3Element = document.querySelector('.mark14 .char14-3');
         const mark14char4Element = document.querySelector('.mark14 .char14-4');
         const mark14char5Element = document.querySelector('.mark14 .char14-5');
         const mark14char6Element = document.querySelector('.mark14 .char14-6');
-        //const mark14char7Element = document.querySelector('.mark14 .char14-7');
-        //const mark14char8Element = document.querySelector('.mark14 .char14-8');
+        const mark14char7Element = document.querySelector('.mark14 .char14-7');
+        const mark14char8Element = document.querySelector('.mark14 .char14-8');
         //const mark14char9Element = document.querySelector('.mark14 .char14-9');
   
         mark14char1Element.style.writingMode = 'horizontal-tb';
-        mark14char1Element.style.fontSize = '1.8rem';
-        mark14char2Element.style.fontSize = '1.7rem';
-        mark14char3Element.style.fontSize = '1.6rem';
-        mark14char4Element.style.fontSize = '1.5rem';
-        mark14char5Element.style.fontSize = '0.7rem';
-        mark14char6Element.style.fontSize = '1.3rem';
-        //mark14char7Element.style.fontSize = '1.2rem';
-        //mark14char8Element.style.fontSize = '1.1rem';
+        mark14char1Element.style.fontSize = '1.4rem';
+        mark14char2Element.style.fontSize = '0.7rem';
+        mark14char3Element.style.fontSize = '1.3rem';
+        mark14char4Element.style.fontSize = '0.7rem';
+        mark14char5Element.style.fontSize = '1.2rem';
+        mark14char6Element.style.fontSize = '1.1rem';
+        mark14char7Element.style.fontSize = '1.0rem';
+        mark14char8Element.style.fontSize = '0.9rem';
         //mark14char9Element.style.fontSize = '1.0rem';
       }
     }
