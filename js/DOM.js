@@ -446,7 +446,12 @@ const domUpdates = {
         const mark14char8Element = document.querySelector('.mark14 .char14-8');
         const mark14char9Element = document.querySelector('.mark14 .char14-9');
         const mark14char10Element = document.querySelector('.mark14 .char14-10');
-  
+
+        const mark14Element = document.querySelector('.mark14');
+        mark14Element.style.left = '29%';
+        mark14Element.style.top = '6%';
+        //mark14char1Element.style.writingMode = 'vertical-lr';
+                                    
         mark14char1Element.style.fontSize = '1.7rem';
         mark14char2Element.style.fontSize = '1.6rem';
         mark14char3Element.style.fontSize = '0.7rem';
