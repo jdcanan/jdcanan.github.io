@@ -403,7 +403,6 @@ const domUpdates = {
         const mark14char8Element = document.querySelector('.mark14 .char14-8');
         const mark14char9Element = document.querySelector('.mark14 .char14-9');
 
-        mark14char1Element.style.writingMode = 'horizontal-tb';
         mark14char1Element.style.fontSize = '1.8rem';
         mark14char2Element.style.fontSize = '1.7rem';
         mark14char3Element.style.fontSize = '1.6rem';
@@ -489,6 +488,7 @@ const domUpdates = {
         //const mark14char8Element = document.querySelector('.mark14 .char14-8');
         //const mark14char9Element = document.querySelector('.mark14 .char14-9');
   
+        mark14char1Element.style.writingMode = horizontal-tb;
         mark14char1Element.style.fontSize = '1.8rem';
         mark14char2Element.style.fontSize = '1.7rem';
         mark14char3Element.style.fontSize = '1.6rem';
