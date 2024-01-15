@@ -337,22 +337,7 @@ const domUpdates = {
   //  }
   //},
 
-  /* WORKS: COMMENTING TEMPORARILY TO EXPERIMENT WITH VARIABLE SIZING FOR BANKRUPT & LOSE TURN WEDGES
-// Supports any number of wedges and prepends a $ to numeric values
-displayWheelValues(wheel) {
-  for (let i = 0; i < wheel.spinValues.length; i++) {
-    // Check if wheel.spinValues[i] is a number
-    if (typeof wheel.spinValues[i] === 'number') {
-      // Prepend a dollar sign ($) only if it's a number
-      $(`.mark${i + 1}`).text('$' + wheel.spinValues[i]);
-    } else {
-      // If it's not a number, just set the text without modifying it
-      $(`.mark${i + 1}`).text(wheel.spinValues[i]);
-    }
-  }
-},
-*/
-
+  /* WORKS: COMMENTING TEMPORARILY TO MODIFY LOSE TURN WEDGE
   displayWheelValues(wheel) {
     for (let i = 0; i < wheel.spinValues.length; i++) {
       const value = wheel.spinValues[i];
@@ -430,6 +415,92 @@ displayWheelValues(wheel) {
       }
     }
   },
+  */
+
+  displayWheelValues(wheel) {
+    for (let i = 0; i < wheel.spinValues.length; i++) {
+        const value = wheel.spinValues[i];
+
+        if (value === 'LOSE TURN') {
+            const chars = [
+                `<span class="char${i + 1}-1">LOSE</span>`,
+                ...value.split('').slice(5).map((char, index) => `<span class="char${i + 1}-${index + 2}">${char}</span>`)
+            ];
+            $(`.mark${i + 1}`).html(chars.join(''));
+        } else if (typeof value === 'number') {
+            $(`.mark${i + 1}`).text('$' + value);
+        } else {
+            const chars = value.split('').map((char, index) => `<span class="char${i + 1}-${index + 1}">${char}</span>`);
+            $(`.mark${i + 1}`).html(chars.join(''));
+        }
+
+      //If this is a special wedge, need to adjust the css styles for it here once the spans have been created
+      if (value === "$1 Million"){
+        const mark14char1Element = document.querySelector('.mark14 .char14-1');
+        const mark14char2Element = document.querySelector('.mark14 .char14-2');
+        const mark14char3Element = document.querySelector('.mark14 .char14-3');
+        const mark14char4Element = document.querySelector('.mark14 .char14-4');
+        const mark14char5Element = document.querySelector('.mark14 .char14-5');
+        const mark14char6Element = document.querySelector('.mark14 .char14-6');
+        const mark14char7Element = document.querySelector('.mark14 .char14-7');
+        const mark14char8Element = document.querySelector('.mark14 .char14-8');
+        const mark14char9Element = document.querySelector('.mark14 .char14-9');
+        const mark14char10Element = document.querySelector('.mark14 .char14-10');
+  
+        mark14char1Element.style.fontSize = '1.7rem';
+        mark14char2Element.style.fontSize = '1.6rem';
+        mark14char3Element.style.fontSize = '0.7rem';
+        mark14char4Element.style.fontSize = '1.5rem';
+        mark14char5Element.style.fontSize = '1.4rem';
+        mark14char6Element.style.fontSize = '1.3rem';
+        mark14char7Element.style.fontSize = '1.2rem';
+        mark14char8Element.style.fontSize = '1.1rem';
+        mark14char9Element.style.fontSize = '1.0rem';
+        mark14char10Element.style.fontSize = '0.9rem';
+      }
+      else if (value === 'BANKRUPT'){
+        const mark5char1Element = document.querySelector('.mark5 .char5-1');
+        const mark5char2Element = document.querySelector('.mark5 .char5-2');
+        const mark5char3Element = document.querySelector('.mark5 .char5-3');
+        const mark5char4Element = document.querySelector('.mark5 .char5-4');
+        const mark5char5Element = document.querySelector('.mark5 .char5-5');
+        const mark5char6Element = document.querySelector('.mark5 .char5-6');
+        const mark5char7Element = document.querySelector('.mark5 .char5-7');
+        const mark5char8Element = document.querySelector('.mark5 .char5-8');
+  
+        mark5char1Element.style.fontSize = '1.8rem';
+        mark5char2Element.style.fontSize = '1.7rem';
+        mark5char3Element.style.fontSize = '1.6rem';
+        mark5char4Element.style.fontSize = '1.5rem';
+        mark5char5Element.style.fontSize = '1.4rem';
+        mark5char6Element.style.fontSize = '1.3rem';
+        mark5char7Element.style.fontSize = '1.2rem';
+        mark5char8Element.style.fontSize = '1.1rem';
+      }
+      else if (value === 'LOSE TURN'){
+        const mark14char1Element = document.querySelector('.mark14 .char14-1');
+        const mark14char2Element = document.querySelector('.mark14 .char14-2');
+        const mark14char3Element = document.querySelector('.mark14 .char14-3');
+        const mark14char4Element = document.querySelector('.mark14 .char14-4');
+        const mark14char5Element = document.querySelector('.mark14 .char14-5');
+        const mark14char6Element = document.querySelector('.mark14 .char14-6');
+        const mark14char7Element = document.querySelector('.mark14 .char14-7');
+        const mark14char8Element = document.querySelector('.mark14 .char14-8');
+        const mark14char9Element = document.querySelector('.mark14 .char14-9');
+  
+        mark14char1Element.style.fontSize = '1.8rem';
+        mark14char2Element.style.fontSize = '1.7rem';
+        mark14char3Element.style.fontSize = '1.6rem';
+        mark14char4Element.style.fontSize = '1.5rem';
+        mark14char5Element.style.fontSize = '0.7rem';
+        mark14char6Element.style.fontSize = '1.3rem';
+        mark14char7Element.style.fontSize = '1.2rem';
+        mark14char8Element.style.fontSize = '1.1rem';
+        mark14char9Element.style.fontSize = '1.0rem';
+      }
+    }
+},
+
 
   enableLetters() {
     let keyboardLetters = Array.from($('.keyboard-letters'));
