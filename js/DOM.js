@@ -487,16 +487,23 @@ const domUpdates = {
         const mark14char7Element = document.querySelector('.mark14 .char14-7');
         const mark14char8Element = document.querySelector('.mark14 .char14-8');
         //const mark14char9Element = document.querySelector('.mark14 .char14-9');
+
+        const mark14Element = document.querySelector('.mark14');
+        mark14Element.style.left = '25%';
+        mark14Element.style.top = '10.5%';
   
         mark14char1Element.style.writingMode = 'horizontal-tb';
+        mark14char1Element.style.letterSpacing = '0px';
+        mark14char2Element.style.letterSpacing = '0px';
+        
         mark14char1Element.style.fontSize = '1.4rem';
-        mark14char2Element.style.fontSize = '0.7rem';
-        mark14char3Element.style.fontSize = '1.3rem';
+        mark14char2Element.style.fontSize = '0.1rem';
+        mark14char3Element.style.fontSize = '1.4rem';
         mark14char4Element.style.fontSize = '0.7rem';
-        mark14char5Element.style.fontSize = '1.2rem';
-        mark14char6Element.style.fontSize = '1.1rem';
-        mark14char7Element.style.fontSize = '1.0rem';
-        mark14char8Element.style.fontSize = '0.9rem';
+        mark14char5Element.style.fontSize = '2.1rem';
+        mark14char6Element.style.fontSize = '1.8rem';
+        mark14char7Element.style.fontSize = '1.5rem';
+        mark14char8Element.style.fontSize = '1.2rem';
         //mark14char9Element.style.fontSize = '1.0rem';
       }
     }
