@@ -14,7 +14,8 @@ class Wheel {
 
   /* If user selects a wheel value manually, this function should look up and return that wheel value. */
   getManualSpinValue(manualValue) {
-    this.currentValue = manualValue.toString();
+    //this.currentValue = manualValue.toString();
+    this.currentValue = manualValue;
     domUpdates.updateCurrentSpin(this.currentValue);
   }
   

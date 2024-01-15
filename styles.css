@@ -35,7 +35,7 @@
 body {
   background-image: url(./pics/background.png);
   background-size: cover; 
-  //font-family: 'Fortune';
+  /* font-family: 'Fortune'; */
   font-family: 'Helvetica-Condensed-Black-Se';
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -457,7 +457,7 @@ h2 {
 .mark2 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; text-shadow: 1px 1px 0 white,-1px -1px 0 white,1px -1px 0 white,-1px 1px 0 white; } /* 600 */
 .mark3 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; text-shadow: 1px 1px 0 white,-1px -1px 0 white,1px -1px 0 white,-1px 1px 0 white; } /* 250 */
 .mark4 { transform: rotate(-33.5deg); left: 28%; top: 7%; width: 40px; text-shadow: 1px 1px 0 white,-1px -1px 0 white,1px -1px 0 white,-1px 1px 0 white; } /* 5000 */
-.mark5 { transform: rotate(-32.5deg); left: 29.5%; top: 6%; width: 40px; font-size: 1.3rem; color: white; } /* BANKRUPT */
+.mark5 { transform: rotate(-32.5deg); left: 29%; top: 6%; width: 40px; font-size: 1.3rem; color: white; letter-spacing: -5px;} /* BANKRUPT */
 .mark6 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; text-shadow: 1px 1px 0 white,-1px -1px 0 white,1px -1px 0 white,-1px 1px 0 white; } /* 900 */
 .mark7 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; text-shadow: 1px 1px 0 white,-1px -1px 0 white,1px -1px 0 white,-1px 1px 0 white; } /* 600 */
 .mark8 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; text-shadow: 1px 1px 0 white,-1px -1px 0 white,1px -1px 0 white,-1px 1px 0 white; } /* 250 */
@@ -466,10 +466,10 @@ h2 {
 .mark11 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; text-shadow: 1px 1px 0 white,-1px -1px 0 white,1px -1px 0 white,-1px 1px 0 white; } /* 900 */
 .mark12 { transform: rotate(-33.5deg); left: 28%; top: 7%; width: 40px; text-shadow: 1px 1px 0 white,-1px -1px 0 white,1px -1px 0 white,-1px 1px 0 white; } /* 3500 */
 .mark13 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; text-shadow: 1px 1px 0 white,-1px -1px 0 white,1px -1px 0 white,-1px 1px 0 white; } /* 250 */
-.mark14 { transform: rotate(-32.5deg); left: 29.5%; top: 5%; width: 40px; font-size: 1.2rem; font-weight: bolder; } /* LOSE TURN */
+.mark14 { transform: rotate(-32.5deg); left: 29%; top: 6%; width: 40px; font-size: 1.2rem; font-weight: bolder; letter-spacing: -5px; } /* LOSE TURN */
 .mark15 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; text-shadow: 1px 1px 0 white,-1px -1px 0 white,1px -1px 0 white,-1px 1px 0 white; } /* 900 */
 .mark16 { transform: rotate(-33deg); left: 28%; top: 10%; width: 40px; text-shadow: 1px 1px 0 white,-1px -1px 0 white,1px -1px 0 white,-1px 1px 0 white; } /* 600 */
-
+ 
 .option1 { background: #ab79db; transform: rotate(0deg); }
 .option2 { background: #ff0000; transform: rotate(22.5deg); }
 .option3 { background: #3abaff; transform: rotate(45deg); }
@@ -498,27 +498,26 @@ h2 {
     z-index: 8; /* Place it in front of the wheel-options */
 }
 
-/*
-// Variable font sizes per character for BANKRUPT and LOSE TURN wedges
-.mark5 .char5-1 { font-size: 1.8rem; } //B
-.mark5 .char5-2 { font-size: 1.7rem; } //A
-.mark5 .char5-3 { font-size: 1.6rem; } //N
-.mark5 .char5-4 { font-size: 1.5rem; } //K
-.mark5 .char5-5 { font-size: 1.4rem; } //R
-.mark5 .char5-6 { font-size: 1.3rem; } //U
-.mark5 .char5-7 { font-size: 1.2rem; } //P
-.mark5 .char5-8 { font-size: 1.1rem; } //T
 
-.mark14 .char14-1 { font-size: 1.8rem; } //L
-.mark14 .char14-2 { font-size: 1.7rem; } //O
-.mark14 .char14-3 { font-size: 1.6rem; } //S
-.mark14 .char14-4 { font-size: 1.5rem; } //E
-.mark14 .char14-5 { font-size: 0.7rem; } //_
-.mark14 .char14-6 { font-size: 1.3rem; } //T
-.mark14 .char14-7 { font-size: 1.2rem; } //U
-.mark14 .char14-8 { font-size: 1.1rem; } //R
-.mark14 .char14-9 { font-size: 1.0rem; } //N
-*/
+/* Variable font sizes per character for BANKRUPT and LOSE TURN wedges */
+.mark5 .char5-1 { font-size: 1.8rem; } /* B */
+.mark5 .char5-2 { font-size: 1.7rem; } /* A */
+.mark5 .char5-3 { font-size: 1.6rem; } /* N */
+.mark5 .char5-4 { font-size: 1.5rem; } /* K */
+.mark5 .char5-5 { font-size: 1.4rem; } /* R */
+.mark5 .char5-6 { font-size: 1.3rem; } /* U */
+.mark5 .char5-7 { font-size: 1.2rem; } /* P */
+.mark5 .char5-8 { font-size: 1.1rem; } /* T */
+
+.mark14 .char14-1 { font-size: 1.8rem; } /* L */
+.mark14 .char14-2 { font-size: 1.7rem; } /* O */
+.mark14 .char14-3 { font-size: 1.6rem; } /* S */
+.mark14 .char14-4 { font-size: 1.5rem; } /* E */
+.mark14 .char14-5 { font-size: 0.7rem; } /* _ */
+.mark14 .char14-6 { font-size: 1.3rem; } /* T */
+.mark14 .char14-7 { font-size: 1.2rem; } /* U */
+.mark14 .char14-8 { font-size: 1.1rem; } /* R */
+.mark14 .char14-9 { font-size: 1.0rem; } /* N */
 
 .slide-in {
   animation: slide 1s ease;

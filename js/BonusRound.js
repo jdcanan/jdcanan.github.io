@@ -30,7 +30,12 @@ class BonusRound extends Round {
         wheelVals.push(data.bonusWheel[i]);
     }
 
+    let bonusWheel = new Wheel(wheelVals);
+
     //Need to modify placement of wheel labels so they align properly for bonus wheel values
+    //const qmarkElement = document.querySelector('q-mark');
+    const qmarkElements = document.querySelectorAll('.q-mark');
+    
     const mark1Element = document.querySelector('.mark1');
     const mark2Element = document.querySelector('.mark2');
     const mark3Element = document.querySelector('.mark3');
@@ -47,32 +52,84 @@ class BonusRound extends Round {
     const mark14Element = document.querySelector('.mark14');
     const mark15Element = document.querySelector('.mark15');
     const mark16Element = document.querySelector('.mark16');
+    
     const option5Element = document.querySelector('.option5');
-    const option14Element = document.querySelector('.option14');    
-    mark1Element.style.top = '5%';
-    mark2Element.style.top = '5%';
-    mark3Element.style.top = '5%';
-    mark4Element.style.top = '5%';
+    const option14Element = document.querySelector('.option14');
+
+    /*
+    const mark14char1Element = document.querySelector('.mark14 .char14-1');
+    const mark14char2Element = document.querySelector('.mark14 .char14-2');
+    const mark14char3Element = document.querySelector('.mark14 .char14-3');
+    const mark14char4Element = document.querySelector('.mark14 .char14-4');
+    const mark14char5Element = document.querySelector('.mark14 .char14-5');
+    const mark14char6Element = document.querySelector('.mark14 .char14-6');
+    const mark14char7Element = document.querySelector('.mark14 .char14-7');
+    const mark14char8Element = document.querySelector('.mark14 .char14-8');
+    const mark14char9Element = document.querySelector('.mark14 .char14-9');
+    */
+    
+    //qmarkElement.style.letterSpacing = '-5px';   
+    qmarkElements.forEach(qmarkElement => {
+        qmarkElement.style.letterSpacing = '-5px';
+    });
+    
+    mark1Element.style.top = '6%';
+    mark1Element.style.left = '29%';
+    mark2Element.style.top = '6%';
+    mark2Element.style.left = '29%';
+    mark3Element.style.top = '6%';
+    mark3Element.style.left = '29%';
+    mark4Element.style.top = '6%';
+    mark4Element.style.left = '29%';
+    
     mark5Element.style.top = '5%';
-    mark5Element.style.fontSize = '1.5rem';
+    mark5Element.style.fontSize = '1.6rem';
     mark5Element.style.left = '28.5%';
     mark5Element.style.color = 'black';
-    mark6Element.style.top = '5%';
-    mark7Element.style.top = '5%';
-    mark8Element.style.top = '5%';
-    mark9Element.style.top = '5%';
-    mark10Element.style.top = '5%';
-    mark11Element.style.top = '5%';
-    mark12Element.style.top = '5%';
-    mark13Element.style.top = '5%';
-    mark14Element.style.top = '5%';
-    mark14Element.style.left = '29.5%';
-    mark15Element.style.top = '5%';
-    mark16Element.style.top = '5%';
+    mark5Element.style.textShadow = '1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white';
+    
+    mark6Element.style.top = '6%';
+    mark6Element.style.left = '29%';
+    mark7Element.style.top = '6%';
+    mark7Element.style.left = '29%';
+    mark8Element.style.top = '6%';
+    mark8Element.style.left = '29%';
+    mark9Element.style.top = '6%';
+    mark9Element.style.left = '29%';
+    mark10Element.style.top = '6%';
+    mark10Element.style.left = '29%';
+    mark11Element.style.top = '6%';
+    mark11Element.style.left = '29%';
+    mark12Element.style.top = '6%';
+    mark12Element.style.left = '29%';
+    mark13Element.style.top = '6%';
+    mark13Element.style.left = '29%';
+    
+    mark14Element.style.top = '4.5%';
+    mark14Element.style.left = '29%';
+    mark14Element.style.textShadow = '1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white';
+    
+    mark15Element.style.top = '6%';
+    mark15Element.style.left = '29%';
+    mark16Element.style.top = '6%';
+    mark16Element.style.left = '29%';
+    
     option5Element.style.background = '#FF33DA';
     option14Element.style.background = '#39FF33';
+
+    /*
+    mark14char1Element.style.fontSize = '2.5rem';
+    mark14char2Element.style.fontSize = '0.7rem';
+    mark14char3Element.style.fontSize = '1.6rem';
+    mark14char4Element.style.fontSize = '1.5rem';
+    mark14char5Element.style.fontSize = '1.4rem';
+    mark14char6Element.style.fontSize = '1.3rem';
+    mark14char7Element.style.fontSize = '1.2rem';
+    mark14char8Element.style.fontSize = '1.1rem';
+    mark14char9Element.style.fontSize = '1.0rem';
+    */
     
-    return new Wheel(wheelVals);
+    return bonusWheel;
 }
 
 
@@ -121,8 +178,8 @@ postBonusResult() {
     if (this.didWinBonus) {
       $('.win-message').text(` WINS THE BONUS!`);
   
-      // Check if the bonus wheel value is "1 Million"
-      if (this.bonusWheelValue === "1 Million") {
+      // Check if the bonus wheel value is "$1 Million"
+      if (this.bonusWheelValue === "$1 Million") {
           var winnings = parseFloat(this.bonusPlayer.bankAcct) + 1000000;
       } else {
           var winnings = parseFloat(this.bonusPlayer.bankAcct) + parseFloat(this.bonusWheelValue);
