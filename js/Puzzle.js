@@ -123,21 +123,22 @@ generatePuzzleGridLines(puzzleAnswer) {
     }
   }
 
-  /*
+  
   checkGuess(guess) {
     if (this.currentPuzzle.correct_answer.toUpperCase().includes(guess)) {
       return true;
     }
     return false;
   }
-  */
-
+  
+  /*
   checkGuess(guess) {
     const trimmedGuess = guess.toUpperCase().trim();
     const trimmedCorrectAnswer = this.currentPuzzle.correct_answer.toUpperCase().trim();
 
     return trimmedCorrectAnswer.includes(trimmedGuess);
   }
+  */
 
 
   checkIfVowelAvailable(vowel, player, e) {
@@ -222,10 +223,10 @@ generatePuzzleGridLines(puzzleAnswer) {
 
   solvePuzzle(guess) {
     // Replace curly apostrophes with straight apostrophes in the guess
-    const normalizedGuess = guess.replace(/[\u2018\u2019]/g, "'").toLowerCase();
+    const normalizedGuess = guess.replace(/[\u2018\u2019]/g, "'").toLowerCase().trim();
     
     // Replace curly apostrophes with straight apostrophes in the puzzle
-    const normalizedPuzzle = this.currentPuzzle.correct_answer.replace(/[\u2018\u2019]/g, "'").toLowerCase();
+    const normalizedPuzzle = this.currentPuzzle.correct_answer.replace(/[\u2018\u2019]/g, "'").toLowerCase().trim();
 
     if (normalizedGuess === normalizedPuzzle) {
         domUpdates.hideSolvePopup();
