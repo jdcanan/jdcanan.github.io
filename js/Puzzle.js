@@ -123,12 +123,22 @@ generatePuzzleGridLines(puzzleAnswer) {
     }
   }
 
+  /*
   checkGuess(guess) {
     if (this.currentPuzzle.correct_answer.toUpperCase().includes(guess)) {
       return true;
     }
     return false;
   }
+  */
+
+  checkGuess(guess) {
+    const trimmedGuess = guess.toUpperCase().trim();
+    const trimmedCorrectAnswer = this.currentPuzzle.correct_answer.toUpperCase().trim();
+
+    return trimmedCorrectAnswer.includes(trimmedGuess);
+  }
+
 
   checkIfVowelAvailable(vowel, player, e) {
     if ($(e.target).hasClass('active-vowel')) {
