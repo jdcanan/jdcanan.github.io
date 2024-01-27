@@ -337,7 +337,7 @@ const domUpdates = {
   //  }
   //},
 
-  /* WORKS: COMMENTING TEMPORARILY TO MODIFY LOSE TURN WEDGE
+  // WORKS FOR LOSE TURN WEDGE
   displayWheelValues(wheel) {
     for (let i = 0; i < wheel.spinValues.length; i++) {
       const value = wheel.spinValues[i];
@@ -415,8 +415,8 @@ const domUpdates = {
       }
     }
   },
-  */
-
+  
+  /* Use this for LOSE A TURN WEDGE, ONLY WORKS ON PC THOUGH
   displayWheelValues(wheel) {
     for (let i = 0; i < wheel.spinValues.length; i++) {
         const value = wheel.spinValues[i];
@@ -513,7 +513,7 @@ const domUpdates = {
       }
     }
 },
-
+*/
 
   enableLetters() {
     let keyboardLetters = Array.from($('.keyboard-letters'));
