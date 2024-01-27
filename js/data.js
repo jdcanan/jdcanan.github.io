@@ -21,7 +21,7 @@ const data = {
     900, 
     3500, 
     700, 
-    'LOSE A TURN', 
+    'LOSE TURN', 
     900, 
     600 
   ],
