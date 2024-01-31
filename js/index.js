@@ -408,7 +408,7 @@ function spinHandler(optionNumber) {
 }
 
 function badSpinHandler() {
-  if (wheel.currentValue === 'LOSE A TURN') {
+  if (wheel.currentValue === 'LOSE TURN') {
     game.endTurn();
     buzzer.play();
   } else if (wheel.currentValue === 'BANKRUPT') {
